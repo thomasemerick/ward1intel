@@ -854,7 +854,7 @@ with tab4:
         }
     )
     st.markdown("""
-        #### The theory of the case:
+        #### The Theory of the Case:
 
         Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
         0% among conservatives, and has no small business or public safety record.
