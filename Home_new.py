@@ -36,7 +36,7 @@ with tab1:
     st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
     st.markdown("""
-    **From the PPP poll — projected to full Ward 1 Dem primary electorate (~9,000 ballots):**
+    **From the PPP poll — projected to full Ward 1 Dem primary electorate (projecting ~9,000 ballots):**
     - **Lynch:** 8% → ~720 actual votes
     - **Reyes Yanes:** 9% → ~810 actual votes
     - **Combined:** ~1,530 votes eliminated in rounds 1-2 — roughly **17% of all ballots cast**
