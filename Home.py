@@ -25,7 +25,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "♻️ Minor Candidate Transfers",
     "🔴 Issue Universes",
     "🧬 Identity Universes",
-    "🎯 Overall Victory Plan"
+    "🎯 Targeting Model"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -794,10 +794,23 @@ with tab3:
         column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
 # ══════════════════════════════════════════════════════════
-# TAB 4 — OVERALL BATTLE PLAN
+# TAB 4 — TARGETING MODEL
 # ══════════════════════════════════════════════════════════
 with tab4:
-    st.subheader("🎯 The Overall Battle Plan")
+    st.subheader("🎯 Targeting Model")
+    st.markdown("""
+    ## 🎯 Ward 1 Targeting Model
+    **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
+
+    Every precinct in Ward 1 is scored across 10 targeting universes — 5 issue-based and 5 identity-based — 
+    using real 2024 DCBOE precinct turnout data and PPP/GGWash poll crosstabs.
+    The matrix below tells you exactly where to knock doors and why.
+
+    **The three numbers that matter:**
+    - 🔴 Red dot = high priority universe for that precinct
+    - 🟡 Yellow dot = medium priority
+    - Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool
+    """)
     st.markdown("""
     **Theory of the case in one paragraph:**
 
