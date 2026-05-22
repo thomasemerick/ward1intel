@@ -111,7 +111,7 @@ with tab1:
 
     # Lynch Transfer Universe
     st.subheader("🔄 Lynch Voter RCV Conversion")
-    st.caption("8% of decided votes likely exhausting. These voters are ideologically Trindade Deramo's people.")
+    st.caption("8% of decided votes likely exhausting. These voters are ideologically amenable enough to rank Trindade Deramo No.2.")
 
     lynch_universe = pd.DataFrame({
         "Precinct": [23, 24, 35, 37, 40],
@@ -160,9 +160,9 @@ with tab1:
     Lynch voters didn't rank a second choice per the GGWash simulation.
     ~720 votes going nowhere. In a race this tight, those votes can make the difference.
     A targeted RCV education push among Lynch supporters in Mt Pleasant and U Street
-    — just explaining that ranking a 2nd choice doesn't hurt their #1 —
+    and just explaining that ranking a 2nd choice doesn't hurt their #1
     could be the difference between Trindade Deramo surviving Round 2 or not.
-    **This is the lowest-cost, highest-leverage canvassing play in the race.**
+    **This is the low-cost, highest-leverage canvassing play in the race.**
     """)
 
     st.divider()
