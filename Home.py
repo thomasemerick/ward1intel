@@ -13,7 +13,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("🗳️ DC Ward 1 Campaign Intel")
-st.caption("Targeting model and insights for Miguel Trindade Deramo in the 2026 Primary | By Thomas Emerick")
+st.caption("Targeting model and insights pitched to Miguel Trindade Deramo for the 2026 Primary | By Thomas Emerick")
 
 
 
@@ -36,7 +36,7 @@ with tab1:
     st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
     st.markdown("""
-    **From the PPP poll — projected to full Ward 1 Dem primary electorate (~9,000 ballots):**
+    **From the PPP poll — projected to full Ward 1 Dem primary electorate (projecting ~9,000 ballots):**
     - **Lynch:** 8% → ~720 actual votes
     - **Reyes Yanes:** 9% → ~810 actual votes
     - **Combined:** ~1,530 votes eliminated in rounds 1-2 — roughly **17% of all ballots cast**
@@ -78,7 +78,16 @@ with tab1:
     )
 
     st.markdown("""
-    **All likely voters (est.):**
+    #### All likely voters (est.):
+    - 🔵 Raj: 18%
+    - 🟡 Brown: 13%  
+    - 🟢 Trindade Deramo: 7%
+    - 🟠 Reyes Yanes: 4%
+    - ⚪ Lynch: 3%
+    - ❓ Undecided: 55%
+    """)
+    st.markdown("""
+    #### All likely voters including undecideds (est.):**
     - 🔵 Raj: 18%
     - 🟡 Brown: 13%  
     - 🟢 Trindade Deramo: 7%
@@ -90,19 +99,11 @@ with tab1:
     **What Trindade Deramo stands to gain:**
     - If 75% of Lynch's ~720 votes transfer to Trindade Deramo → **+540 votes**
     - If 75% of Reyes Yanes' ~810 votes transfer to Trindade Deramo → **+608 votes**
-    - Combined upside: **~1,148 votes** — potentially decisive
+    - Combined upside: **~1,148 votes** to get in range with Brown in penultimate round
     - Current gap to close: Trindade Deramo at 7% vs Brown at 13% among all likely voters
-    - 1,148 transferred votes in a ~9,000 vote primary = **~13% swing**
-    - Minor candidate transfers alone could vault Trindade Deramo past Brown into Round 3 contention
-    - Second choice on Brown's ballots then propels Trindade Deramo to final round
+    - 1,148 transferred votes in a ~9,000 vote primary = **~5% swing**
+    - Second choice on Brown's ballots then propels Trindade Deramo past Raj in final round
     """)
-    st.divider()
-
-    col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Lynch Est. Votes", "~280", delta="8% decided voters")
-    col2.metric("Reyes Yanes Est. Votes", "~225", delta="9% decided voters")
-    col3.metric("Combined Transfer Pool", "~505 votes")
-    col4.metric("Trindade Deramo Upside if 50% Transfer", "+260 votes", delta="Likely margin")
 
     st.divider()
 
@@ -157,7 +158,7 @@ with tab1:
     st.error("""
     **Lynch ballots in poll, most votes exhausting:**
     Lynch voters didn't rank a second choice per the GGWash simulation.
-    ~300 votes going nowhere. In a race this tight, 300 votes is the entire margin.
+    ~720 votes going nowhere. In a race this tight, those votes can make the difference.
     A targeted RCV education push among Lynch supporters in Mt Pleasant and U Street
     — just explaining that ranking a 2nd choice doesn't hurt their #1 —
     could be the difference between Trindade Deramo surviving Round 2 or not.
@@ -234,10 +235,10 @@ with tab1:
     That way if your first choice doesn't make it to the final round,
     your vote still matters."*
 
-    **What we're really doing:** Quietly making sure those 450-550 votes go to Trindade Deramo
-    in rounds 2-3 rather than Brown — or worst case — Raj.
-    Brown will be doing the same thing.
-    Whoever wins this transfer battle likely wins the seat.
+    **What we're really doing:** Quietly making sure those votes go to Trindade Deramo
+    in early rounds rather than Brown or (worst case) Raj.
+    Brown may be doing the same thing.
+    Whoever wins this transfer battle could win the seat.
     """)
 
     st.divider()
@@ -310,9 +311,9 @@ with tab2:
         "Deramo_Message": [
             "'Public safety is foundational' — Miguel will reestablish trust with MPD",
             "Miguel supported violence interruption funding as ANC chair",
-            "Raj says 'not a police officer' — Miguel says crime is real",
+            "Raj doesn't really differentiate MPD from ICE — Miguel listens to residents on crime concerns",
             "Miguel: 'safe streets are indispensable to a thriving economy'",
-            "14th St businesses closing — Miguel ties crime to economic health",
+            "14th St businesses closing — Miguel ties crime as part of equation on school and economic health",
         ],
         "Raj_Vulnerability": [
             "Her platform: replace police with social workers",
@@ -364,7 +365,7 @@ with tab2:
 
     # Universe 3: Schools
     st.subheader("🏫 Universe 3 — Parents with Children in DC Schools")
-    st.caption("Target: Households with school-age children. Crime + fiscal responsibility, not union politics.")
+    st.caption("Target: Households with school-age children. Crime + fiscal responsibility to have revenue for investing in public schools.")
 
     school_precincts = pd.DataFrame({
         "Precinct": [35, 36, 37, 38, 23],
@@ -385,7 +386,7 @@ with tab2:
         ],
         "Raj_Vulnerability": [
             "Teachers union-aligned, no critique of school closure decisions",
-            "DSA-backed; teachers unions backed COVID closures longest",
+            "DSA-backed; teachers unions are her base, not parents (see Brandon Johnson in Chicago)",
             "No specific K-12 record or parent-facing safety platform",
             "Safety platform explicitly avoids police response, parents feel this",
             "No school-adjacent crime policy",
@@ -435,7 +436,7 @@ with tab2:
 
     # Universe 5: Anti-Nadeau
     st.subheader("📉 Universe 5 — Nadeau Underperformance Precincts")
-    st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidate — Brown's liability")
+    st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Trindade Deramo")
 
     nadeau_precincts = pd.DataFrame({
         "Precinct": [22, 39, 40, 25, 20],
@@ -657,7 +658,7 @@ with tab3:
             "2nd out LGBTQ+ on DC Council, first Latino — historic",
             "Record vs Raj: 5 years ANC vs zero elected record",
             "Safety from discrimination explicitly in Miguel's platform",
-            "Note: Raj also queer — message must be RECORD not just identity",
+            "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Miguel down stretch)",
             "Cross-universe: LGBTQ+ + crime + business all align here",
         ],
         "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
@@ -775,7 +776,7 @@ with tab3:
         "Deramo_Message": [
             "'Public safety is foundational' — not ideology, results",
             "Homeowner investment angle: business closures hurt property values",
-            "Schools + crime — COVID closures hurt kids, need pragmatic not union leadership",
+            "Schools + crime — closures hurt kids, need pragmatism not marching orders",
             "Former State Dept / DHS — competence credential resonates",
             "12 years of Nadeau, businesses still closing — Miguel = change",
         ],
