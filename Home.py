@@ -853,31 +853,31 @@ with tab4:
             ),
         }
     )
- st.markdown("""
-    **Theory of the case in one paragraph:**
+    st.markdown("""
+        **Theory of the case in one paragraph:**
 
-    Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
-    0% among conservatives, and has no small business or public safety record.
-    Brown is strong but Nadeau's endorsement is a liability among the exact voters
-    Trindade Deramo needs — moderates, men over 45, anti-establishment whites.
-    Trindade Deramo wins by being the only candidate who takes seriously the voters
-    Raj ignores and Brown can't fully reach: parents, small business owners,
-    crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity,
-    and the Latino community that sees two of their own in the race.
+        Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
+        0% among conservatives, and has no small business or public safety record.
+        Brown is strong but Nadeau's endorsement is a liability among the exact voters
+        Trindade Deramo needs — moderates, men over 45, anti-establishment whites.
+        Trindade Deramo wins by being the only candidate who takes seriously the voters
+        Raj ignores and Brown can't fully reach: parents, small business owners,
+        crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity,
+        and the Latino community that sees two of their own in the race.
 
-    **The RCV math that makes it possible:**
-    - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
-    - Lynch + Reyes Yanes = 450-550 votes that mostly exhaust, Trindade Deramo needs those transfers
-    - Brown's Nadeau endorsement is a net negative among moderates and men over 45
-    - Raj's DSA brand is net negative among men, moderates, and conservatives
-    - Every door knocked in Petworth and Park View is worth 3x a door in Adams Morgan
+        **The RCV math that makes it possible:**
+        - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
+        - Lynch + Reyes Yanes = 450-550 votes that mostly exhaust, Trindade Deramo needs those transfers
+        - Brown's Nadeau endorsement is a net negative among moderates and men over 45
+        - Raj's DSA brand is net negative among men, moderates, and conservatives
+        - Every door knocked in Petworth and Park View is worth 3x a door in Adams Morgan
 
-    **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
-    If she outperforms him, he's eliminated before the transfers happen.
-    Mt Pleasant and the Hispanic universe are existential, not optional.
-    """)
+        **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
+        If she outperforms him, he's eliminated before the transfers happen.
+        Mt Pleasant and the Hispanic universe are existential, not optional.
+        """)
 
-    
+        
     st.success("""
     **Path to Victory Plan in One Paragraph:**
 
