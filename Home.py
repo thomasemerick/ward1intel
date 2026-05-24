@@ -816,6 +816,21 @@ with tab4:
     st.subheader("🎯 Combined Issue + Identity Priority Matrix")
     st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
 
+# ── ACCESS GATE ────────────────────────────────────────────
+access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
+
+if access_code != "miguel2026":
+    st.info("""
+    ### 🔒 Full Targeting Model — Access After Meeting
+    
+    This section contains precinct-level canvassing intelligence, 
+    voter universe targeting, and the full battle plan for the 
+    June 16, 2026 Democratic Primary.
+    
+    **To request access, contact Thomas Emerick.**
+    """)
+    st.stop()
+
     combined = pd.DataFrame({
         "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
         "Neighborhood": [
