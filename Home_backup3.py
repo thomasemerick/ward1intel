@@ -280,202 +280,203 @@ with tab1:
 with tab2:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-    else:
-        st.subheader("🔴 Issue-Based Targeting — Trindade Deramo's Argument to Edge the Field")
-        st.markdown("""
-        **Theory of the case on issues:**
-        Raj has no meaningful public safety platform, no business development record,
-        and no specific K-12 policy beyond teachers union alignment.
-        Brown has a strong record but is tied to Nadeau's legacy.
-        Trindade Deramo's edge: he is the only candidate who explicitly names crime as foundational,
-        who has watched businesses close and made it a priority,
-        and whose mother was a schoolteacher — giving him authentic K-12 credibility
-        with parents.
+        else:
+                st.subheader("🔴 Issue-Based Targeting — Trindade Deramo's Argument to Edge the Field")
+            st.markdown("""
+            **Theory of the case on issues:**
+            Raj has no meaningful public safety platform, no business development record,
+            and no specific K-12 policy beyond teachers union alignment.
+            Brown has a strong record but is tied to Nadeau's legacy.
+            Trindade Deramo's edge: he is the only candidate who explicitly names crime as foundational,
+            who has watched businesses close and made it a priority,
+            and whose mother was a schoolteacher — giving him authentic K-12 credibility
+            with parents.
 
-        
-        """)
+            
+            """)
 
-        st.markdown("""**The three issues where Raj is most vulnerable:**
-        - 🚔 **Crime:** "Not a police officer" — her own words
-        - 🏪 **Business:** Zero commercial corridor platform
-        - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
-                
-        """)
-        st.divider()
+            st.stop()
+            st.markdown("""**The three issues where Raj is most vulnerable:**
+            - 🚔 **Crime:** "Not a police officer" — her own words
+            - 🏪 **Business:** Zero commercial corridor platform
+            - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
+                    
+            """)
+            st.divider()
 
-        # Universe 1: Crime
-        st.subheader("🔴 Universe 1 — High Crime / Public Safety Voters")
-        st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
+            # Universe 1: Crime
+            st.subheader("🔴 Universe 1 — High Crime / Public Safety Voters")
+            st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
 
-        crime_precincts = pd.DataFrame({
-            "Precinct": [40, 41, 43, 39, 22],
-            "Neighborhood": ["Mount Pleasant", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
-            "Why_Target": [
-                "High foot traffic corridor, business crime, late-night incidents",
-                "Bar district, assault/robbery concentration, longtime residents fed up",
-                "U St nightlife corridor, visible disorder complaints",
-                "14th St corridor, property crime, auto theft",
-                "High density, mixed income, crime a top ANC complaint",
-            ],
-            "Registered_Dems": [3322, 3337, 1751, 3911, 4038],
-            "Turnout_2024_pct": [30.5, 23.2, 23.3, 26.5, 26.6],
-            "Deramo_Message": [
-                "'Public safety is foundational' — Miguel will reestablish trust with MPD",
-                "Miguel supported violence interruption funding as ANC chair",
-                "Raj doesn't really differentiate MPD from ICE — Miguel listens to residents on crime concerns",
-                "Miguel: 'safe streets are indispensable to a thriving economy'",
-                "14th St businesses closing — Miguel ties crime as part of equation on school and economic health",
-            ],
-            "Raj_Vulnerability": [
-                "Her platform: replace police with social workers",
-                "Her platform: 'not a police officer' for crisis response",
-                "MPD = ICE in her framing",
-                "No acknowledgment that crime affects small business",
-                "Zero business development platform",
-            ],
-        })
+            crime_precincts = pd.DataFrame({
+                "Precinct": [40, 41, 43, 39, 22],
+                "Neighborhood": ["Mount Pleasant", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
+                "Why_Target": [
+                    "High foot traffic corridor, business crime, late-night incidents",
+                    "Bar district, assault/robbery concentration, longtime residents fed up",
+                    "U St nightlife corridor, visible disorder complaints",
+                    "14th St corridor, property crime, auto theft",
+                    "High density, mixed income, crime a top ANC complaint",
+                ],
+                "Registered_Dems": [3322, 3337, 1751, 3911, 4038],
+                "Turnout_2024_pct": [30.5, 23.2, 23.3, 26.5, 26.6],
+                "Deramo_Message": [
+                    "'Public safety is foundational' — Miguel will reestablish trust with MPD",
+                    "Miguel supported violence interruption funding as ANC chair",
+                    "Raj doesn't really differentiate MPD from ICE — Miguel listens to residents on crime concerns",
+                    "Miguel: 'safe streets are indispensable to a thriving economy'",
+                    "14th St businesses closing — Miguel ties crime as part of equation on school and economic health",
+                ],
+                "Raj_Vulnerability": [
+                    "Her platform: replace police with social workers",
+                    "Her platform: 'not a police officer' for crisis response",
+                    "MPD = ICE in her framing",
+                    "No acknowledgment that crime affects small business",
+                    "Zero business development platform",
+                ],
+            })
 
-        st.dataframe(crime_precincts, use_container_width=True, hide_index=True)
+            st.dataframe(crime_precincts, use_container_width=True, hide_index=True)
 
-        st.divider()
+            st.divider()
 
-        # Universe 2: Business
-        st.subheader("🏪 Universe 2 — Business Corridor Decay Voters")
-        st.caption("Target: Residents who've watched neighborhood businesses close")
+            # Universe 2: Business
+            st.subheader("🏪 Universe 2 — Business Corridor Decay Voters")
+            st.caption("Target: Residents who've watched neighborhood businesses close")
 
-        business_precincts = pd.DataFrame({
-            "Precinct": [40, 43, 41, 39, 22],
-            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Mount Pleasant", "U Street"],
-            "Corridor": ["U Street NW", "U Street NW", "18th Street NW", "14th Street NW", "14th Street NW"],
-            "Business_Vulnerability": [
-                "U St nightlife corridor losing anchor tenants post-pandemic",
-                "Late-night corridor, closures accelerating since federal occupation",
-                "18th St seeing turnover, longtime bars and restaurants closing",
-                "14th St mid-range dining and retail hollowing out",
-                "Columbia Heights Plaza area, chain replacement of local business",
-            ],
-            "Deramo_Quote": [
-                "'I am watching long-time businesses close... the corner restaurant where you don't break the bank'",
-                "Same — explicitly names late-night food options as Ward 1 lifeblood",
-                "Hosted campaign event AT a local bar (Grand Duchess) — shows up",
-                "Ties business closure directly to federal occupation economic impact",
-                "Calls for YES to local businesses as Councilmember",
-            ],
-            "Raj_Gap": [
-                "No small business platform section",
-                "No mention of U Street corridor health",
-                "Economic platform = unions and wages only",
-                "No 14th St or commercial corridor policy",
-                "Zero local business record",
-            ],
-        })
+            business_precincts = pd.DataFrame({
+                "Precinct": [40, 43, 41, 39, 22],
+                "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Mount Pleasant", "U Street"],
+                "Corridor": ["U Street NW", "U Street NW", "18th Street NW", "14th Street NW", "14th Street NW"],
+                "Business_Vulnerability": [
+                    "U St nightlife corridor losing anchor tenants post-pandemic",
+                    "Late-night corridor, closures accelerating since federal occupation",
+                    "18th St seeing turnover, longtime bars and restaurants closing",
+                    "14th St mid-range dining and retail hollowing out",
+                    "Columbia Heights Plaza area, chain replacement of local business",
+                ],
+                "Deramo_Quote": [
+                    "'I am watching long-time businesses close... the corner restaurant where you don't break the bank'",
+                    "Same — explicitly names late-night food options as Ward 1 lifeblood",
+                    "Hosted campaign event AT a local bar (Grand Duchess) — shows up",
+                    "Ties business closure directly to federal occupation economic impact",
+                    "Calls for YES to local businesses as Councilmember",
+                ],
+                "Raj_Gap": [
+                    "No small business platform section",
+                    "No mention of U Street corridor health",
+                    "Economic platform = unions and wages only",
+                    "No 14th St or commercial corridor policy",
+                    "Zero local business record",
+                ],
+            })
 
-        st.dataframe(business_precincts, use_container_width=True, hide_index=True)
+            st.dataframe(business_precincts, use_container_width=True, hide_index=True)
 
-        st.divider()
+            st.divider()
 
-        # Universe 3: Schools
-        st.subheader("🏫 Universe 3 — Parents with Children in DC Schools")
-        st.caption("Target: Households with school-age children. Crime + fiscal responsibility to have revenue for investing in public schools.")
+            # Universe 3: Schools
+            st.subheader("🏫 Universe 3 — Parents with Children in DC Schools")
+            st.caption("Target: Households with school-age children. Crime + fiscal responsibility to have revenue for investing in public schools.")
 
-        school_precincts = pd.DataFrame({
-            "Precinct": [35, 36, 37, 38, 23],
-            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
-            "Nearby_School": [
-                "Brightwood EC, MacFarland MS",
-                "Petworth ES, MacFarland MS",
-                "Park View ES, Columbia Heights EC",
-                "Park View ES, Columbia Heights EC",
-                "Mount Pleasant Library zone, Bancroft ES",
-            ],
-            "Deramo_Message": [
-                "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
-                "COVID closures hurt kids, need leaders who won't bow to union pressure over parent needs",
-                "Miguel: education is foundational, his mother was a schoolteacher",
-                "Crime near schools is a parent issue, public safety IS a school issue",
-                "Bilingual community — Trindade Deramo speaks Portuguese, values immigrant education",
-            ],
-            "Raj_Vulnerability": [
-                "Teachers union-aligned, no critique of school closure decisions",
-                "DSA-backed; teachers unions are her base, not parents (see Brandon Johnson in Chicago)",
-                "No specific K-12 record or parent-facing safety platform",
-                "Safety platform explicitly avoids police response, parents feel this",
-                "No school-adjacent crime policy",
-            ],
-            "Median_Age": [45, 46, 44, 43, 35],
-            "Owner_pct": [44, 47, 42, 43, 28],
-        })
+            school_precincts = pd.DataFrame({
+                "Precinct": [35, 36, 37, 38, 23],
+                "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
+                "Nearby_School": [
+                    "Brightwood EC, MacFarland MS",
+                    "Petworth ES, MacFarland MS",
+                    "Park View ES, Columbia Heights EC",
+                    "Park View ES, Columbia Heights EC",
+                    "Mount Pleasant Library zone, Bancroft ES",
+                ],
+                "Deramo_Message": [
+                    "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
+                    "COVID closures hurt kids, need leaders who won't bow to union pressure over parent needs",
+                    "Miguel: education is foundational, his mother was a schoolteacher",
+                    "Crime near schools is a parent issue, public safety IS a school issue",
+                    "Bilingual community — Trindade Deramo speaks Portuguese, values immigrant education",
+                ],
+                "Raj_Vulnerability": [
+                    "Teachers union-aligned, no critique of school closure decisions",
+                    "DSA-backed; teachers unions are her base, not parents (see Brandon Johnson in Chicago)",
+                    "No specific K-12 record or parent-facing safety platform",
+                    "Safety platform explicitly avoids police response, parents feel this",
+                    "No school-adjacent crime policy",
+                ],
+                "Median_Age": [45, 46, 44, 43, 35],
+                "Owner_pct": [44, 47, 42, 43, 28],
+            })
 
-        st.dataframe(school_precincts, use_container_width=True, hide_index=True)
+            st.dataframe(school_precincts, use_container_width=True, hide_index=True)
 
-        st.divider()
+            st.divider()
 
-        # Universe 4: LGBTQ+ Issue
-        st.subheader("🏳️‍🌈 Universe 4 — LGBTQ+ Voters (Issue + Safety Frame)")
-        st.caption("Miguel explicitly includes 'safety from discrimination' in his platform")
+            # Universe 4: LGBTQ+ Issue
+            st.subheader("🏳️‍🌈 Universe 4 — LGBTQ+ Voters (Issue + Safety Frame)")
+            st.caption("Miguel explicitly includes 'safety from discrimination' in his platform")
 
-        lgbtq_precincts = pd.DataFrame({
-            "Precinct": [40, 43, 41, 42, 39],
-            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
-            "LGBTQ_Context": [
-                "Historic Black LGBTQ+ corridor, Shaw/U St anchors",
-                "U Street nightlife, queer bars and venues concentrated here",
-                "Adams Morgan — diverse LGBTQ+ community, long-established",
-                "Adams Morgan — younger queer renters, high transplant population",
-                "Columbia Heights — growing LGBTQ+ residential presence",
-            ],
-            "Deramo_Message": [
-                "First Latino on DC Council, second LGBTQ+ — historic AND substantive",
-                "Miguel hosted campaign events in neighborhood venues, shows up here",
-                "Safety platform explicitly includes 'safety from discrimination'",
-                "Record vs Raj: 5 years ANC work vs Raj's zero elected record",
-                "Miguel ties LGBTQ+ safety to broader community safety",
-            ],
-            "2024_Turnout_pct": [30.5, 23.3, 23.2, 27.3, 26.5],
-            "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
-        })
+            lgbtq_precincts = pd.DataFrame({
+                "Precinct": [40, 43, 41, 42, 39],
+                "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
+                "LGBTQ_Context": [
+                    "Historic Black LGBTQ+ corridor, Shaw/U St anchors",
+                    "U Street nightlife, queer bars and venues concentrated here",
+                    "Adams Morgan — diverse LGBTQ+ community, long-established",
+                    "Adams Morgan — younger queer renters, high transplant population",
+                    "Columbia Heights — growing LGBTQ+ residential presence",
+                ],
+                "Deramo_Message": [
+                    "First Latino on DC Council, second LGBTQ+ — historic AND substantive",
+                    "Miguel hosted campaign events in neighborhood venues, shows up here",
+                    "Safety platform explicitly includes 'safety from discrimination'",
+                    "Record vs Raj: 5 years ANC work vs Raj's zero elected record",
+                    "Miguel ties LGBTQ+ safety to broader community safety",
+                ],
+                "2024_Turnout_pct": [30.5, 23.3, 23.2, 27.3, 26.5],
+                "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
+            })
 
-        st.dataframe(lgbtq_precincts, use_container_width=True, hide_index=True,
-            column_config={
-                "Untapped_Voters": st.column_config.ProgressColumn(
-                    "Untapped", min_value=0, max_value=3500, format="%d"
-                ),
-            }
-        )
+            st.dataframe(lgbtq_precincts, use_container_width=True, hide_index=True,
+                column_config={
+                    "Untapped_Voters": st.column_config.ProgressColumn(
+                        "Untapped", min_value=0, max_value=3500, format="%d"
+                    ),
+                }
+            )
 
-        st.divider()
+            st.divider()
 
-        # Universe 5: Anti-Nadeau
-        st.subheader("📉 Universe 5 — Nadeau Underperformance Precincts")
-        st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Trindade Deramo")
+            # Universe 5: Anti-Nadeau
+            st.subheader("📉 Universe 5 — Nadeau Underperformance Precincts")
+            st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Trindade Deramo")
 
-        nadeau_precincts = pd.DataFrame({
-            "Precinct": [22, 39, 40, 25, 20],
-            "Neighborhood": ["U Street", "Mount Pleasant", "Mount Pleasant", "Adams Morgan", "LeDroit Park"],
-            "Nadeau_Weakness": [
-                "14th St corridor business closures happened on her watch — 12 years, limited action",
-                "Columbia Heights Plaza blight, longstanding constituent frustration",
-                "U Street safety complaints went unaddressed for years under Nadeau",
-                "Housing affordability worsened dramatically during her tenure",
-                "Small precinct, high symbolic value in anti-establishment framing",
-            ],
-            "Deramo_Angle": [
-                "I've been your ANC commissioner actually fixing things block by block",
-                "Miguel passed resolutions; Nadeau made promises — contrast the records",
-                "ANC Home Rule Caucus was Miguel's work, not the council's",
-                "Miguel opposes same bad developers Nadeau enabled",
-                "Fresh start: 44 years of same leadership, time for change",
-            ],
-            "Poll_Data": [
-                "23% of W1 voters less likely to vote Nadeau-endorsed",
-                "Nadeau endorsement net negative among men (-26% vs +12%)",
-                "Nadeau less likely among moderates (29% vs 10%)",
-                "Among 46-65: 29% less likely with Nadeau endorsement",
-                "Anti-establishment voters: Brown's biggest liability is Nadeau's blessing",
-            ],
-        })
+            nadeau_precincts = pd.DataFrame({
+                "Precinct": [22, 39, 40, 25, 20],
+                "Neighborhood": ["U Street", "Mount Pleasant", "Mount Pleasant", "Adams Morgan", "LeDroit Park"],
+                "Nadeau_Weakness": [
+                    "14th St corridor business closures happened on her watch — 12 years, limited action",
+                    "Columbia Heights Plaza blight, longstanding constituent frustration",
+                    "U Street safety complaints went unaddressed for years under Nadeau",
+                    "Housing affordability worsened dramatically during her tenure",
+                    "Small precinct, high symbolic value in anti-establishment framing",
+                ],
+                "Deramo_Angle": [
+                    "I've been your ANC commissioner actually fixing things block by block",
+                    "Miguel passed resolutions; Nadeau made promises — contrast the records",
+                    "ANC Home Rule Caucus was Miguel's work, not the council's",
+                    "Miguel opposes same bad developers Nadeau enabled",
+                    "Fresh start: 44 years of same leadership, time for change",
+                ],
+                "Poll_Data": [
+                    "23% of W1 voters less likely to vote Nadeau-endorsed",
+                    "Nadeau endorsement net negative among men (-26% vs +12%)",
+                    "Nadeau less likely among moderates (29% vs 10%)",
+                    "Among 46-65: 29% less likely with Nadeau endorsement",
+                    "Anti-establishment voters: Brown's biggest liability is Nadeau's blessing",
+                ],
+            })
 
-        st.dataframe(nadeau_precincts, use_container_width=True, hide_index=True)
+            st.dataframe(nadeau_precincts, use_container_width=True, hide_index=True)
 
 # ══════════════════════════════════════════════════════════
 # TAB 3 — IDENTITY UNIVERSES
