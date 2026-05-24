@@ -508,7 +508,7 @@ access_code = st.text_input("🔒 Enter access code to view targeting model:", t
 
 if access_code != "miguel2026":
     st.info("""
-    ### 🔒 Full Electorate Identity Breakdown — Access After Meeting
+    ### 🔒 Model — Access After Meeting
     
     This section contains precinct-level canvassing intelligence, 
     voter universe targeting, and the full battle plan for the 
