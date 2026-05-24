@@ -279,7 +279,7 @@ with tab1:
 # ══════════════════════════════════════════════════════════
 with tab2:
     if not unlocked:
-        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
         st.subheader("🔴 Issue-Based Targeting — Trindade Deramo's Argument to Edge the Field")
         st.markdown("""
@@ -482,7 +482,7 @@ with tab2:
 # ══════════════════════════════════════════════════════════
 with tab3:
     if not unlocked:
-        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
         st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
         st.markdown("""
@@ -812,7 +812,7 @@ with tab3:
 # ══════════════════════════════════════════════════════════
 with tab4:
     if not unlocked:
-        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
         st.subheader("🎯 Targeting Model")
         st.markdown("""
@@ -918,7 +918,7 @@ with tab4:
 # ══════════════════════════════════════════════════════════
     with tab5:
         if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
             st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
             st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
