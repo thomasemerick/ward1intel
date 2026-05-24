@@ -141,6 +141,7 @@ with tab1:
             "'Lynch is anti-Nadeau, so is Miguel — rank both, block the Nadeau machine'",
             "'Lynch and Miguel both want safe streets, rank Miguel 2nd'",
             "'Lynch and Miguel both want a thriving Park View, rank Miguel 2nd'",
+        ],
         "RCV_Ask": [
             "Lynch #1, Deramo #2, Brown #3",
             "Lynch #1, Deramo #2",
