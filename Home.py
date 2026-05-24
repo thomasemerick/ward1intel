@@ -84,15 +84,6 @@ with tab1:
     )
 
     st.markdown("""
-    #### All likely voters (est.):
-    - 🔵 Raj: 18%
-    - 🟡 Brown: 13%  
-    - 🟢 Trindade Deramo: 7%
-    - 🟠 Reyes Yanes: 4%
-    - ⚪ Lynch: 3%
-    - ❓ Undecided: 55%
-    """)
-    st.markdown("""
     #### All likely voters including undecideds (est.):
     - 🔵 Raj: 18%
     - 🟡 Brown: 13%  
