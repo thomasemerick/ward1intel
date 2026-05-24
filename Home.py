@@ -293,7 +293,7 @@ with tab2:
 # ── ACCESS GATE ────────────────────────────────────────────
 access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
 
-if access_code != "miguel2026":
+if access_code != "miguel20xxjune":
     st.info("""
     ### 🔒 Access After Meeting
     
@@ -506,7 +506,7 @@ with tab3:
 # ── ACCESS GATE ────────────────────────────────────────────
 access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
 
-if access_code != "miguel2026":
+if access_code != "miguel20xxjune":
     st.info("""
     ### 🔒 Access After Meeting
     
@@ -847,7 +847,7 @@ with tab4:
 # ── ACCESS GATE ────────────────────────────────────────────
 access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
 
-if access_code != "miguel2026":
+if access_code != "miguel20xxjune":
     st.info("""
     ### 🔒 Access After Meeting
     
