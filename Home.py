@@ -140,7 +140,7 @@ with tab1:
             "'Don't let your ballot exhaust — Lynch #1, Trindade Deramo #2 keeps Raj out'",
             "'Lynch is anti-Nadeau, so is Miguel — rank both, block the Nadeau machine'",
             "'Lynch and Miguel both want safe streets, rank Miguel 2nd'",
-            "'Lynch and Miguel both want a thriving U Street, rank Miguel 2nd'",],
+            "'Lynch and Miguel both want a thriving Park View, rank Miguel 2nd'",],
         "RCV_Ask": [
             "Lynch #1, Deramo #2, Brown #3",
             "Lynch #1, Deramo #2",
@@ -383,10 +383,10 @@ with tab2:
             "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
             "Nearby_School": [
                 "Brightwood EC, MacFarland MS",
-                "Petworth ES, MacFarland MS",
-                "Park View ES, Columbia Heights EC",
-                "Park View ES, Columbia Heights EC",
-                "Mount Pleasant Library zone, Bancroft ES",
+                "Adams Morgan ES, MacFarland MS",
+                "Columbia Heights ES, MacFarland MS",
+                "Pleasant Plains, Park View ES area",
+                "Park View ES, Georgia Ave corridor",
             ],
             "Deramo_Message": [
                 "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
@@ -595,7 +595,7 @@ with tab3:
 
             **Whites 46+ (sleeper)**
             46-65: Deramo 11%, Brown 10%, Raj 13% — genuinely competitive
-            Petworth/Park View homeowners: safety, schools, business
+            "Columbia Heights/Adams Morgan homeowners: safety, schools, business"
 
             **No college degree (24% of electorate)**
             Brown 33%, Deramo 6%, Raj 0%
@@ -663,9 +663,9 @@ with tab3:
             "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
             "LGBTQ_Context": [
                 "Historic Black LGBTQ+ corridor",
-                "U Street queer nightlife concentration",
+                "Park View — near Shaw/U St queer nightlife corridor"
                 "Adams Morgan w/ established LGBTQ+ residential + nightlife",
-                "Adams Morgan w/ younger queer renters",
+                "Columbia Heights — younger queer renters, high density"
                 "Columbia Heights w/ growing LGBTQ+ presence",
             ],
             "Deramo_Edge": [
@@ -715,8 +715,8 @@ with tab3:
             "Precinct": [35, 36, 37, 38, 22],
             "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
             "Profile": [
-                "Petworth — oldest residents, moderate Dems, longest tenure",
-                "Petworth — homeowners, pragmatic, not ideological",
+                "Adams Morgan — longest tenure residents, moderate Dems"
+                "Columbia Heights — homeowners, pragmatic, not ideological"
                 "Park View — working class moderate Dems, crime top concern",
                 "Park View — Brown's ANC base but Deramo can compete",
                 "Columbia Heights — moderate Dems frustrated with progressive performance",
@@ -889,7 +889,7 @@ with tab4:
             - Lynch + Reyes Yanes = 450-550 votes that mostly exhaust, Trindade Deramo needs those transfers
             - Brown's Nadeau endorsement is a net negative among moderates and men over 45
             - Raj's DSA brand is net negative among men, moderates, and conservatives
-            - Every door knocked in Petworth and Park View is worth 3x a door in Adams Morgan
+            - "Every door knocked in Columbia Heights and Adams Morgan carries outsized value for Miguel"
 
             **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
             If she outperforms him, he's eliminated before the transfers happen.
@@ -903,7 +903,7 @@ with tab4:
             Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
             on both issue and identity dimensions, and anti-Nadeau sentiment.
             Precincts 41 and 39 (Adams Morgan and Columbia Heights) round out the Tier 1 trifecta.
-            The White 46+ play in Petworth (35, 36) is the sleeper — massive untapped universe
+            The White 46+ play in Columbia Heights (36) and Adams Morgan (35) is the sleeper
             (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
             Nadeau endorsement is a liability.
             Mt Pleasant (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
