@@ -484,35 +484,25 @@ with tab3:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
-    st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
-    st.markdown("""
-    **Theory of the case on identity:**
-    Trindade Deramo is a gay Hispanic candidate in a field with a Black woman (Brown),
-    an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
-    self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
-    lines in ways that create non-obvious opportunities.
+        st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
+        st.markdown("""
+        **Theory of the case on identity:**
+        Trindade Deramo is a gay Hispanic candidate in a field with a Black woman (Brown),
+        an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
+        self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
+        lines in ways that create non-obvious opportunities.
 
-    **Deramo's identity advantages:**
-    - Only gay man in the race → LGBTQ+ community, gay male voters specifically
-    - Only candidate with Brazilian/Latino heritage still in serious contention → Hispanic voters
-    - Former State Dept / DHS background → moderate and conservative Dems who want competence
-    - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
+        **Deramo's identity advantages:**
+        - Only gay man in the race → LGBTQ+ community, gay male voters specifically
+        - Only candidate with Brazilian/Latino heritage still in serious contention → Hispanic voters
+        - Former State Dept / DHS background → moderate and conservative Dems who want competence
+        - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
 
-    **Trindade Deramo's identity vulnerabilities:**
-    - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
-    - College-educated under 45 women → Raj's core, largely locked
-    """)
-# ── ACCESS GATE ────────────────────────────────────────────
-    st.info("""
-    ### 🔒 Access After Meeting
-    
-    This section contains precinct-level canvassing intelligence, 
-    voter universe targeting, and the full battle plan for the 
-    June 16, 2026 Democratic Primary.
-    
-    **To request access, contact Thomas Emerick.**
-    """)
-    st.stop()
+        **Trindade Deramo's identity vulnerabilities:**
+        - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
+        - College-educated under 45 women → Raj's core, largely locked
+        """)
+
     st.divider()
 
     # Identity crosstabs
@@ -856,17 +846,7 @@ with tab4:
     st.subheader("🎯 Combined Issue + Identity Priority Matrix")
     st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
 
-# ── ACCESS GATE ────────────────────────────────────────────
-    st.info("""
-    ### 🔒 Access After Meeting
-    
-    This section contains precinct-level canvassing intelligence, 
-    voter universe targeting, and the full battle plan for the 
-    June 16, 2026 Democratic Primary.
-    
-    **To request access, contact Thomas Emerick.**
-    """)
-    st.stop()
+
 
     combined = pd.DataFrame({
         "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
