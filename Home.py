@@ -286,6 +286,7 @@ with tab2:
     with parents.
 
     
+    """)
 
 # ── ACCESS GATE ────────────────────────────────────────────
 access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
@@ -301,13 +302,12 @@ if access_code != "miguel20xxjune":
     **To request access, contact Thomas Emerick.**
     """)
     st.stop()
-
-    **The three issues where Raj is most vulnerable:**
+    st.markdown("""**The three issues where Raj is most vulnerable:**
     - 🚔 **Crime:** "Not a police officer" — her own words
     - 🏪 **Business:** Zero commercial corridor platform
     - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
+            
     """)
-    
     st.divider()
 
     # Universe 1: Crime
