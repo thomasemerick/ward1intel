@@ -18,7 +18,7 @@ st.caption("Targeting model and insights pitched to Miguel Trindade Deramo for t
 
 
 st.markdown("""
-**The Argument:** Aparna Raj has a solidified base but limited ceiling, while Miguel Trindade Deramo is uniquely positioned to emerge atop the field in RCV. 
+**The Argument:** Aparna Raj has a solidified base but limited ceiling, while Miguel Trindade Deramo is uniquely positioned to gain late and pull ahead of the field in RCV. 
 """)
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
