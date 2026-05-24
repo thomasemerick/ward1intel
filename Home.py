@@ -21,6 +21,10 @@ st.markdown("""
 **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Miguel Trindade Deramo is uniquely positioned to gain late and pull ahead of the field in RCV. 
 """)
 
+# access gate first
+access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
+unlocked = access_code == "miguel20xxjune"
+
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "♻️ Minor Candidate Transfers",
     "🔴 Issue Universes",
@@ -32,9 +36,6 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # ══════════════════════════════════════════════════════════
 # TAB 1 — MINOR CANDIDATE TRANSFER STRATEGY
 # ══════════════════════════════════════════════════════════
-# ── ACCESS GATE FOR TABS 2-5 ──────────────────────────────
-access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
-unlocked = access_code == "miguel20xxjune"
 
 with tab1:
     st.subheader("♻️ Lynch & Reyes Yanes — The Transfer Game")
