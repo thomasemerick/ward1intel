@@ -292,7 +292,7 @@ with tab2:
     """)
 
 # ── ACCESS GATE ────────────────────────────────────────────
-access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
+access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
 
 if access_code != "miguel20xxjune":
     st.info("""
@@ -505,9 +505,6 @@ with tab3:
     - College-educated under 45 women → Raj's core, largely locked
     """)
 # ── ACCESS GATE ────────────────────────────────────────────
-access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
-
-if access_code != "miguel20xxjune":
     st.info("""
     ### 🔒 Access After Meeting
     
@@ -846,9 +843,6 @@ with tab4:
     st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
 
 # ── ACCESS GATE ────────────────────────────────────────────
-access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
-
-if access_code != "miguel20xxjune":
     st.info("""
     ### 🔒 Access After Meeting
     
@@ -937,6 +931,10 @@ if access_code != "miguel20xxjune":
         two doors anywhere else in the ward.**
         """)
 
+
+# ══════════════════════════════════════════════════════════
+# TAB 4 — PRECINCT HEATMAP
+# ══════════════════════════════════════════════════════════
     with tab5:
         st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
         st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
