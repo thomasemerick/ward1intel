@@ -87,7 +87,7 @@ with tab1:
     - ❓ Undecided: 55%
     """)
     st.markdown("""
-    #### All likely voters including undecideds (est.):**
+    #### All likely voters including undecideds (est.):
     - 🔵 Raj: 18%
     - 🟡 Brown: 13%  
     - 🟢 Trindade Deramo: 7%
