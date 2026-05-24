@@ -98,7 +98,7 @@ with tab1:
     - If 75% of Reyes Yanes' ~810 votes transfer to Trindade Deramo → **+608 votes**
     - Combined upside: **~1,148 votes** to get in range with Brown in penultimate round
     - Current gap to close: Trindade Deramo at 7% vs Brown at 13% among all likely voters
-    - 1,148 transferred votes in a ~9,000 vote primary = **~5% swing**
+    - 1,148 transferred votes in a ~9,000 vote primary = **~5% swing** alongside post-MDW persuasion
     - Second choice on Brown's ballots then propels Trindade Deramo past Raj in final round
     """)
 
