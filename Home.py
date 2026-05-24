@@ -290,6 +290,21 @@ with tab2:
     - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
     """)
 
+# ── ACCESS GATE ────────────────────────────────────────────
+access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
+
+if access_code != "miguel2026":
+    st.info("""
+    ### 🔒 Full Electorate Issue Breakdown — Access After Meeting
+    
+    This section contains precinct-level canvassing intelligence, 
+    voter universe targeting, and the full battle plan for the 
+    June 16, 2026 Democratic Primary.
+    
+    **To request access, contact Thomas Emerick.**
+    """)
+    st.stop()
+
     st.divider()
 
     # Universe 1: Crime
@@ -488,7 +503,20 @@ with tab3:
     - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
     - College-educated under 45 women → Raj's core, largely locked
     """)
+# ── ACCESS GATE ────────────────────────────────────────────
+access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password")
 
+if access_code != "miguel2026":
+    st.info("""
+    ### 🔒 Full Electorate Identity Breakdown — Access After Meeting
+    
+    This section contains precinct-level canvassing intelligence, 
+    voter universe targeting, and the full battle plan for the 
+    June 16, 2026 Democratic Primary.
+    
+    **To request access, contact Thomas Emerick.**
+    """)
+    st.stop()
     st.divider()
 
     # Identity crosstabs
