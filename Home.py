@@ -115,7 +115,7 @@ with tab1:
 
     lynch_universe = pd.DataFrame({
         "Precinct": [23, 24, 35, 37, 40],
-        "Neighborhood": ["Mt Pleasant", "Mt Pleasant", "Petworth", "Park View", "U Street"],
+        "Neighborhood": ["Columbia Heights", "Adams Morgan", "Adams Morgan", "Pleasant Plains", "Mount Pleasant"],
         "Lynch_Voter_Profile": [
             "Lynch is a Mt Pleasant resident — crime-frustrated, anti-Nadeau, pro-jobs",
             "Mt Pleasant adjacent — moderate to conservative Dem, wants results",
@@ -173,7 +173,7 @@ with tab1:
 
     reyes_yanes_universe = pd.DataFrame({
         "Precinct": [23, 24, 20, 25, 37],
-        "Neighborhood": ["Mt Pleasant", "Mt Pleasant", "Columbia Heights", "Columbia Heights", "Park View"],
+        "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Pleasant Plains"],
         "Why_Reyes_Yanes_Strong_Here": [
             "Her home turf — arrived in DC 1990 via Mt Pleasant, deep community roots",
             "Mt Pleasant adjacent — Salvadoran and Central American community anchor",
@@ -298,7 +298,7 @@ with tab2:
 
     crime_precincts = pd.DataFrame({
         "Precinct": [40, 41, 43, 39, 22],
-        "Neighborhood": ["U Street", "Adams Morgan", "U Street", "Columbia Heights", "Columbia Heights"],
+        "Neighborhood": ["Mount Pleasant", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
         "Why_Target": [
             "High foot traffic corridor, business crime, late-night incidents",
             "Bar district, assault/robbery concentration, longtime residents fed up",
@@ -334,7 +334,7 @@ with tab2:
 
     business_precincts = pd.DataFrame({
         "Precinct": [40, 43, 41, 39, 22],
-        "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Columbia Heights", "Columbia Heights"],
+        "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Mount Pleasant", "U Street"],
         "Corridor": ["U Street NW", "U Street NW", "18th Street NW", "14th Street NW", "14th Street NW"],
         "Business_Vulnerability": [
             "U St nightlife corridor losing anchor tenants post-pandemic",
@@ -369,7 +369,7 @@ with tab2:
 
     school_precincts = pd.DataFrame({
         "Precinct": [35, 36, 37, 38, 23],
-        "Neighborhood": ["Petworth", "Petworth", "Park View", "Park View", "Mount Pleasant"],
+        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
         "Nearby_School": [
             "Brightwood EC, MacFarland MS",
             "Petworth ES, MacFarland MS",
@@ -405,7 +405,7 @@ with tab2:
 
     lgbtq_precincts = pd.DataFrame({
         "Precinct": [40, 43, 41, 42, 39],
-        "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Columbia Heights"],
+        "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
         "LGBTQ_Context": [
             "Historic Black LGBTQ+ corridor, Shaw/U St anchors",
             "U Street nightlife, queer bars and venues concentrated here",
@@ -440,7 +440,7 @@ with tab2:
 
     nadeau_precincts = pd.DataFrame({
         "Precinct": [22, 39, 40, 25, 20],
-        "Neighborhood": ["Columbia Heights", "Columbia Heights", "U Street", "Columbia Heights", "Columbia Heights"],
+        "Neighborhood": ["U Street", "Mount Pleasant", "Mount Pleasant", "Adams Morgan", "LeDroit Park"],
         "Nadeau_Weakness": [
             "14th St corridor business closures happened on her watch — 12 years, limited action",
             "Columbia Heights Plaza blight, longstanding constituent frustration",
@@ -620,7 +620,7 @@ with tab3:
     st.markdown("#### 🌎 Identity Universe 1 — Hispanic/Latino Max Turnout")
     identity_universe_1 = pd.DataFrame({
         "Precinct": [23, 24, 20, 25, 35],
-        "Neighborhood": ["Mt Pleasant", "Mt Pleasant", "Columbia Heights", "Columbia Heights", "Petworth"],
+        "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Adams Morgan"],
         "Why_Target": [
             "Largest Salvadoran/Central American concentration in Ward 1",
             "High Hispanic family density, longtime residents",
@@ -646,7 +646,7 @@ with tab3:
     st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
     identity_universe_2 = pd.DataFrame({
         "Precinct": [40, 43, 41, 42, 39],
-        "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Columbia Heights"],
+        "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
         "LGBTQ_Context": [
             "Historic Black LGBTQ+ corridor",
             "U Street queer nightlife concentration",
@@ -673,7 +673,7 @@ with tab3:
     st.caption("Most underrated universe in the race. Raj is irrelevant. It's Brown vs Deramo.")
     identity_universe_3 = pd.DataFrame({
         "Precinct": [35, 36, 37, 38, 23],
-        "Neighborhood": ["Petworth", "Petworth", "Park View", "Park View", "Mt Pleasant"],
+        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
         "Profile": [
             "Highest median age (45) — white long-tenure homeowners",
             "Highest owner-occupancy (47%) — invested, pragmatic, anti-ideology",
@@ -699,7 +699,7 @@ with tab3:
     st.markdown("#### 🗳️ Identity Universe 4 — Moderate + Conservative Dem")
     identity_universe_4 = pd.DataFrame({
         "Precinct": [35, 36, 37, 38, 22],
-        "Neighborhood": ["Petworth", "Petworth", "Park View", "Park View", "Columbia Heights"],
+        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
         "Profile": [
             "Petworth — oldest residents, moderate Dems, longest tenure",
             "Petworth — homeowners, pragmatic, not ideological",
@@ -731,7 +731,7 @@ with tab3:
     st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
     identity_universe_5 = pd.DataFrame({
         "Precinct": [22, 39, 25, 37, 23],
-        "Neighborhood": ["Columbia Heights", "Columbia Heights", "Columbia Heights", "Park View", "Mt Pleasant"],
+        "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Pleasant Plains", "Columbia Heights"],
         "Profile": [
             "Asian, multiracial, mixed-income non-black voters",
             "Other race voters: Deramo 11%, Raj 20% — competitive",
@@ -758,7 +758,7 @@ with tab3:
     st.caption("Most underrated universe. Raj is radioactive here. It's Brown vs Deramo.")
     identity_universe_6 = pd.DataFrame({
         "Precinct": [35, 36, 37, 38, 22],
-        "Neighborhood": ["Petworth", "Petworth", "Park View", "Park View", "Columbia Heights"],
+        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
         "Profile": [
             "Long-tenure white homeowners, bought pre-2010, moderate-to-conservative Dems",
             "Highest owner-occupancy, most invested in neighborhood stability",
@@ -819,9 +819,9 @@ with tab4:
     combined = pd.DataFrame({
         "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
         "Neighborhood": [
-            "U Street", "Adams Morgan", "Columbia Heights", "Petworth", "Petworth",
-            "Mt Pleasant", "Park View", "Park View", "U Street", "Columbia Heights",
-            "Adams Morgan", "Columbia Heights", "Mt Pleasant", "Columbia Heights", "Columbia Heights"
+            "Mount Pleasant", "Columbia Heights", "Mount Pleasant", "Adams Morgan", "Columbia Heights",
+            "Columbia Heights", "Pleasant Plains", "Park View", "Park View", "U Street",
+            "Columbia Heights", "Adams Morgan", "Adams Morgan", "LeDroit Park", "U Street"
         ],
         "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
         "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
