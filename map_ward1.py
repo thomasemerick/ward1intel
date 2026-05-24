@@ -17,7 +17,7 @@ precincts_data = pd.DataFrame({
         "Columbia Heights",    # 36
         "Pleasant Plains",     # 37
         "Park View",           # 38
-        "Mount Pleasant/Columbia Heights",      # 39
+        "Mount Pleasant / Columbia Heights",      # 39
         "Mount Pleasant",      # 40
         "Columbia Heights",    # 41
         "Columbia Heights",    # 42

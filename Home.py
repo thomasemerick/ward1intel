@@ -21,11 +21,12 @@ st.markdown("""
 **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Miguel Trindade Deramo is uniquely positioned to climb ahead of the field in RCV. 
 """)
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "♻️ Minor Candidate Transfers",
     "🔴 Issue Universes",
     "🧬 Identity Universes",
-    "🎯 Targeting Model"
+    "🎯 Targeting Model",
+    "🗺️ Precinct Heatmap"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -935,3 +936,12 @@ if access_code != "miguel20xxjune":
     **Every door knocked in these 8 precincts before June 16 is worth more than
     two doors anywhere else in the ward.**
     """)
+
+    with tab5:
+        st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
+        st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
+        
+        import streamlit.components.v1 as components
+        with open("ward1_heatmap.html", "r") as f:
+            html = f.read()
+        components.html(html, height=600, scrolling=False)
