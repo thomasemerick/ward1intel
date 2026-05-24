@@ -484,328 +484,328 @@ with tab3:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
-        st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
-        st.markdown("""
-        **Theory of the case on identity:**
-        Trindade Deramo is a gay Hispanic candidate in a field with a Black woman (Brown),
-        an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
-        self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
-        lines in ways that create non-obvious opportunities.
+            st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
+            st.markdown("""
+            **Theory of the case on identity:**
+            Trindade Deramo is a gay Hispanic candidate in a field with a Black woman (Brown),
+            an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
+            self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
+            lines in ways that create non-obvious opportunities.
 
-        **Deramo's identity advantages:**
-        - Only gay man in the race → LGBTQ+ community, gay male voters specifically
-        - Only candidate with Brazilian/Latino heritage still in serious contention → Hispanic voters
-        - Former State Dept / DHS background → moderate and conservative Dems who want competence
-        - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
+            **Deramo's identity advantages:**
+            - Only gay man in the race → LGBTQ+ community, gay male voters specifically
+            - Only candidate with Brazilian/Latino heritage still in serious contention → Hispanic voters
+            - Former State Dept / DHS background → moderate and conservative Dems who want competence
+            - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
 
-        **Trindade Deramo's identity vulnerabilities:**
-        - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
-        - College-educated under 45 women → Raj's core, largely locked
-        """)
+            **Trindade Deramo's identity vulnerabilities:**
+            - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
+            - College-educated under 45 women → Raj's core, largely locked
+            """)
 
-    st.divider()
+        st.divider()
 
-    # Identity crosstabs
-    st.markdown("#### First-Choice Vote Share by Demographic Group")
-    st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
+        # Identity crosstabs
+        st.markdown("#### First-Choice Vote Share by Demographic Group")
+        st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
 
-    identity_matrix = pd.DataFrame({
-        "Demographic Group": [
-            "White voters",
-            "Black / African-American voters",
-            "Hispanic / Latino voters",
-            "Other race voters",
-            "18-45 years old",
-            "46-65 years old",
-            "65+ years old",
-            "Women",
-            "Men",
-            "Non-binary",
-            "Very liberal",
-            "Somewhat liberal",
-            "Moderate",
-            "Conservative",
-            "No college degree",
-            "4-year college degree",
-            "Post-graduate degree",
-            "White moderate voters (est.)",
-            "White conservative voters",
-        ],
-        "Deramo %": [7, 1, 20, 11, 9, 11, 0, 6, 9, 0, 8, 5, 9, 0, 6, 4, 10, 15, 0],
-        "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
-        "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
-        "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
-        "Deramo_Opportunity": [
-            "🟡 Medium — gap closeable",
-            "🔴 Hard — Brown dominates",
-            "✅ High — tied with Brown at 20%, Raj only 9%",
-            "🟡 Medium — tied with Raj at 20%",
-            "🔴 Hard — Raj dominates",
-            "✅ Soft target — competitive",
-            "⚠️ Problem — Brown 21%, Deramo 0%",
-            "🔴 Hard — women break Brown/Raj",
-            "✅ Advantage — men break Deramo",
-            "⚠️ Problem — Raj dominates",
-            "🔴 Hard — Raj at 33%",
-            "🟡 Medium — room to grow",
-            "✅ Key target — Raj only 1%",
-            "✅ Sleeper — Brown leads but Raj irrelevant",
-            "✅ Underrated — Raj at 0%",
-            "🔴 Hard — Raj and grad-degree voters aligned",
-            "🟡 Medium — three-way split",
-            "✅ Key target — Raj near zero",
-            "⚠️ Brown dominates — RCV transfer play only",
-        ],
-    })
+        identity_matrix = pd.DataFrame({
+            "Demographic Group": [
+                "White voters",
+                "Black / African-American voters",
+                "Hispanic / Latino voters",
+                "Other race voters",
+                "18-45 years old",
+                "46-65 years old",
+                "65+ years old",
+                "Women",
+                "Men",
+                "Non-binary",
+                "Very liberal",
+                "Somewhat liberal",
+                "Moderate",
+                "Conservative",
+                "No college degree",
+                "4-year college degree",
+                "Post-graduate degree",
+                "White moderate voters (est.)",
+                "White conservative voters",
+            ],
+            "Deramo %": [7, 1, 20, 11, 9, 11, 0, 6, 9, 0, 8, 5, 9, 0, 6, 4, 10, 15, 0],
+            "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
+            "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
+            "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
+            "Deramo_Opportunity": [
+                "🟡 Medium — gap closeable",
+                "🔴 Hard — Brown dominates",
+                "✅ High — tied with Brown at 20%, Raj only 9%",
+                "🟡 Medium — tied with Raj at 20%",
+                "🔴 Hard — Raj dominates",
+                "✅ Soft target — competitive",
+                "⚠️ Problem — Brown 21%, Deramo 0%",
+                "🔴 Hard — women break Brown/Raj",
+                "✅ Advantage — men break Deramo",
+                "⚠️ Problem — Raj dominates",
+                "🔴 Hard — Raj at 33%",
+                "🟡 Medium — room to grow",
+                "✅ Key target — Raj only 1%",
+                "✅ Sleeper — Brown leads but Raj irrelevant",
+                "✅ Underrated — Raj at 0%",
+                "🔴 Hard — Raj and grad-degree voters aligned",
+                "🟡 Medium — three-way split",
+                "✅ Key target — Raj near zero",
+                "⚠️ Brown dominates — RCV transfer play only",
+            ],
+        })
 
-    identity_matrix["Deramo_vs_Raj"] = identity_matrix["Deramo %"] - identity_matrix["Raj %"]
+        identity_matrix["Deramo_vs_Raj"] = identity_matrix["Deramo %"] - identity_matrix["Raj %"]
 
-    st.dataframe(
-        identity_matrix,
-        use_container_width=True,
-        hide_index=True,
-        column_config={
-            "Deramo %": st.column_config.ProgressColumn("Deramo %", min_value=0, max_value=40, format="%d%%"),
-            "Brown %": st.column_config.ProgressColumn("Brown %", min_value=0, max_value=40, format="%d%%"),
-            "Raj %": st.column_config.ProgressColumn("Raj %", min_value=0, max_value=40, format="%d%%"),
-            "Share_of_Ward1_Dems": st.column_config.NumberColumn("% of Electorate", format="%d%%"),
-            "Deramo_vs_Raj": st.column_config.NumberColumn("vs Raj", format="%+d pts"),
-        }
-    )
+        st.dataframe(
+            identity_matrix,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Deramo %": st.column_config.ProgressColumn("Deramo %", min_value=0, max_value=40, format="%d%%"),
+                "Brown %": st.column_config.ProgressColumn("Brown %", min_value=0, max_value=40, format="%d%%"),
+                "Raj %": st.column_config.ProgressColumn("Raj %", min_value=0, max_value=40, format="%d%%"),
+                "Share_of_Ward1_Dems": st.column_config.NumberColumn("% of Electorate", format="%d%%"),
+                "Deramo_vs_Raj": st.column_config.NumberColumn("vs Raj", format="%+d pts"),
+            }
+        )
 
-    st.divider()
+        st.divider()
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.success("""
-        **✅ Press Hard — Deramo's Strongest Groups**
+        col1, col2 = st.columns(2)
+        with col1:
+            st.success("""
+            **✅ Press Hard — Deramo's Strongest Groups**
 
-        **Hispanic/Latino (8% of electorate)**
-        Deramo 20%, Brown 20%, Raj 9%
-        Only Latino still in serious contention after Reyes Yanes
-        First Latino on DC Council if elected
+            **Hispanic/Latino (8% of electorate)**
+            Deramo 20%, Brown 20%, Raj 9%
+            Only Latino still in serious contention after Reyes Yanes
+            First Latino on DC Council if elected
 
-        **Men (42% of electorate)**
-        Deramo 9%, Brown 7%, Raj 19%
-        Moderate men are the target — DSA net negative among men
+            **Men (42% of electorate)**
+            Deramo 9%, Brown 7%, Raj 19%
+            Moderate men are the target — DSA net negative among men
 
-        **Moderates (22% of electorate)**
-        Deramo 9%, Brown 24%, Raj 1%
-        Raj is essentially gone — Deramo + Brown own this lane
+            **Moderates (22% of electorate)**
+            Deramo 9%, Brown 24%, Raj 1%
+            Raj is essentially gone — Deramo + Brown own this lane
 
-        **Whites 46+ (sleeper)**
-        46-65: Deramo 11%, Brown 10%, Raj 13% — genuinely competitive
-        Petworth/Park View homeowners: safety, schools, business
+            **Whites 46+ (sleeper)**
+            46-65: Deramo 11%, Brown 10%, Raj 13% — genuinely competitive
+            Petworth/Park View homeowners: safety, schools, business
 
-        **No college degree (24% of electorate)**
-        Brown 33%, Deramo 6%, Raj 0%
-        Raj has zero ceiling — Deramo's upside is real
-        """)
+            **No college degree (24% of electorate)**
+            Brown 33%, Deramo 6%, Raj 0%
+            Raj has zero ceiling — Deramo's upside is real
+            """)
 
-    with col2:
-        st.error("""
-        **🔴 Manage, Don't Chase — Problem Groups**
+        with col2:
+            st.error("""
+            **🔴 Manage, Don't Chase — Problem Groups**
 
-        **Black voters (23% of electorate)**
-        Deramo 1%, Brown 15%, Raj 2%
-        Brown dominates — ceiling is ~5-8% even with perfect execution
-        RCV angle: get Black Brown voters to rank Deramo 2nd
+            **Black voters (23% of electorate)**
+            Deramo 1%, Brown 15%, Raj 2%
+            Brown dominates — ceiling is ~5-8% even with perfect execution
+            RCV angle: get Black Brown voters to rank Deramo 2nd
 
-        **Young voters 18-45 (45% of electorate)**
-        Raj 29%, Brown 10%, Deramo 9%
-        Raj's strongest group — don't chase, be selective
-        Young moderates, young Hispanics, young LGBTQ+ men are reachable
+            **Young voters 18-45 (45% of electorate)**
+            Raj 29%, Brown 10%, Deramo 9%
+            Raj's strongest group — don't chase, be selective
+            Young moderates, young Hispanics, young LGBTQ+ men are reachable
 
-        **Women (56% of electorate)**
-        Brown 17%, Raj 17%, Deramo 6%
-        Focus on women 45+, mothers with school-age kids
-        Non-binary → Raj 51%, Deramo 0% — concede
+            **Women (56% of electorate)**
+            Brown 17%, Raj 17%, Deramo 6%
+            Focus on women 45+, mothers with school-age kids
+            Non-binary → Raj 51%, Deramo 0% — concede
 
-        **Post-grad degree (35% of electorate)**
-        Raj 26%, Brown 9%, Deramo 10%
-        Raj's educational stronghold — focus elsewhere
-        """)
+            **Post-grad degree (35% of electorate)**
+            Raj 26%, Brown 9%, Deramo 10%
+            Raj's educational stronghold — focus elsewhere
+            """)
 
-    st.divider()
+        st.divider()
 
-    # Identity universes
-    st.subheader("🗺️ Identity Universe Tables")
+        # Identity universes
+        st.subheader("🗺️ Identity Universe Tables")
 
-    st.markdown("#### 🌎 Identity Universe 1 — Hispanic/Latino Max Turnout")
-    identity_universe_1 = pd.DataFrame({
-        "Precinct": [23, 24, 20, 25, 35],
-        "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Adams Morgan"],
-        "Why_Target": [
-            "Largest Salvadoran/Central American concentration in Ward 1",
-            "High Hispanic family density, longtime residents",
-            "Large Latino population, community anchors",
-            "Hispanic renters and homeowners mixed",
-            "Growing Latino presence, longer-tenure families",
-        ],
-        "Deramo_Edge": [
-            "Only Latino in serious contention, first Latino on DC Council if elected",
-            "Speaks Portuguese, cultural proximity to Spanish speakers",
-            "Tied with Brown at 20% among Hispanics, Raj only 9%",
-            "Trindade Deramo's business grant platform resonates with Latino small business owners",
-            "Older Hispanic homeowners — schools + safety message resonates",
-        ],
-        "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-        "Untapped_Voters": [2355, 1920, 671, 2804, 2458],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2"],
-    })
-    st.dataframe(identity_universe_1, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.markdown("#### 🌎 Identity Universe 1 — Hispanic/Latino Max Turnout")
+        identity_universe_1 = pd.DataFrame({
+            "Precinct": [23, 24, 20, 25, 35],
+            "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Adams Morgan"],
+            "Why_Target": [
+                "Largest Salvadoran/Central American concentration in Ward 1",
+                "High Hispanic family density, longtime residents",
+                "Large Latino population, community anchors",
+                "Hispanic renters and homeowners mixed",
+                "Growing Latino presence, longer-tenure families",
+            ],
+            "Deramo_Edge": [
+                "Only Latino in serious contention, first Latino on DC Council if elected",
+                "Speaks Portuguese, cultural proximity to Spanish speakers",
+                "Tied with Brown at 20% among Hispanics, Raj only 9%",
+                "Trindade Deramo's business grant platform resonates with Latino small business owners",
+                "Older Hispanic homeowners — schools + safety message resonates",
+            ],
+            "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
+            "Untapped_Voters": [2355, 1920, 671, 2804, 2458],
+            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2"],
+        })
+        st.dataframe(identity_universe_1, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
-    st.divider()
-    st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
-    identity_universe_2 = pd.DataFrame({
-        "Precinct": [40, 43, 41, 42, 39],
-        "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
-        "LGBTQ_Context": [
-            "Historic Black LGBTQ+ corridor",
-            "U Street queer nightlife concentration",
-            "Adams Morgan w/ established LGBTQ+ residential + nightlife",
-            "Adams Morgan w/ younger queer renters",
-            "Columbia Heights w/ growing LGBTQ+ presence",
-        ],
-        "Deramo_Edge": [
-            "2nd out LGBTQ+ on DC Council, first Latino — historic",
-            "Record vs Raj: 5 years ANC vs zero elected record",
-            "Safety from discrimination explicitly in Miguel's platform",
-            "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Miguel down stretch)",
-            "Cross-universe: LGBTQ+ + crime + business all align here",
-        ],
-        "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-        "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2"],
-    })
-    st.dataframe(identity_universe_2, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.divider()
+        st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
+        identity_universe_2 = pd.DataFrame({
+            "Precinct": [40, 43, 41, 42, 39],
+            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
+            "LGBTQ_Context": [
+                "Historic Black LGBTQ+ corridor",
+                "U Street queer nightlife concentration",
+                "Adams Morgan w/ established LGBTQ+ residential + nightlife",
+                "Adams Morgan w/ younger queer renters",
+                "Columbia Heights w/ growing LGBTQ+ presence",
+            ],
+            "Deramo_Edge": [
+                "2nd out LGBTQ+ on DC Council, first Latino — historic",
+                "Record vs Raj: 5 years ANC vs zero elected record",
+                "Safety from discrimination explicitly in Miguel's platform",
+                "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Miguel down stretch)",
+                "Cross-universe: LGBTQ+ + crime + business all align here",
+            ],
+            "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
+            "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
+            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2"],
+        })
+        st.dataframe(identity_universe_2, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
-    st.divider()
-    st.markdown("#### 👴 Identity Universe 3 — White 46+ Sleeper Vote")
-    st.caption("Most underrated universe in the race. Raj is irrelevant. It's Brown vs Deramo.")
-    identity_universe_3 = pd.DataFrame({
-        "Precinct": [35, 36, 37, 38, 23],
-        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
-        "Profile": [
-            "Highest median age (45) — white long-tenure homeowners",
-            "Highest owner-occupancy (47%) — invested, pragmatic, anti-ideology",
-            "Park View white 46+ — active on crime and school quality",
-            "Park View — school-parent overlap",
-            "Mt Pleasant older white homeowners",
-        ],
-        "Deramo_Edge": [
-            "46-65: Deramo 11%, Brown 10% — genuinely competitive",
-            "Owner-occupants respond to safety/business record not union politics",
-            "McDuffie leads 46-65 on mayor — dual ticket works perfectly",
-            "65+ problem (Deramo 0%) but 46-65 is the real target",
-            "Tenure 5+ years — long enough to care, short enough to not be locked in",
-        ],
-        "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-        "Untapped_Voters": [2458, 3080, 2698, 2085, 2355],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
-    })
-    st.dataframe(identity_universe_3, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.divider()
+        st.markdown("#### 👴 Identity Universe 3 — White 46+ Sleeper Vote")
+        st.caption("Most underrated universe in the race. Raj is irrelevant. It's Brown vs Deramo.")
+        identity_universe_3 = pd.DataFrame({
+            "Precinct": [35, 36, 37, 38, 23],
+            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
+            "Profile": [
+                "Highest median age (45) — white long-tenure homeowners",
+                "Highest owner-occupancy (47%) — invested, pragmatic, anti-ideology",
+                "Park View white 46+ — active on crime and school quality",
+                "Park View — school-parent overlap",
+                "Mt Pleasant older white homeowners",
+            ],
+            "Deramo_Edge": [
+                "46-65: Deramo 11%, Brown 10% — genuinely competitive",
+                "Owner-occupants respond to safety/business record not union politics",
+                "McDuffie leads 46-65 on mayor — dual ticket works perfectly",
+                "65+ problem (Deramo 0%) but 46-65 is the real target",
+                "Tenure 5+ years — long enough to care, short enough to not be locked in",
+            ],
+            "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
+            "Untapped_Voters": [2458, 3080, 2698, 2085, 2355],
+            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
+        })
+        st.dataframe(identity_universe_3, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
-    st.divider()
-    st.markdown("#### 🗳️ Identity Universe 4 — Moderate + Conservative Dem")
-    identity_universe_4 = pd.DataFrame({
-        "Precinct": [35, 36, 37, 38, 22],
-        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
-        "Profile": [
-            "Petworth — oldest residents, moderate Dems, longest tenure",
-            "Petworth — homeowners, pragmatic, not ideological",
-            "Park View — working class moderate Dems, crime top concern",
-            "Park View — Brown's ANC base but Deramo can compete",
-            "Columbia Heights — moderate Dems frustrated with progressive performance",
-        ],
-        "Deramo_Edge": [
-            "Moderates: Deramo 9%, Raj 1% — Raj is irrelevant here",
-            "Conservative Dems: Brown 38%, Deramo 0% — RCV transfer play only",
-            "DSA endorsement net negative among moderates (-27% vs +20%)",
-            "Nadeau endorsed Brown — 23% of moderates less likely with Nadeau",
-            "The ask: rank Brown or Deramo 1-2, leave Raj unranked",
-        ],
-        "RCV_Ask": [
-            "Deramo #1, Brown #2 — or Brown #1, Deramo #2",
-            "Either order — stress RCV math",
-            "If Brown voter: Brown #1, Deramo #2, Raj unranked",
-            "If Deramo voter: Deramo #1, Brown #2, Raj unranked",
-            "Same regardless of preference order",
-        ],
-        "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
-    })
-    st.dataframe(identity_universe_4, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.divider()
+        st.markdown("#### 🗳️ Identity Universe 4 — Moderate + Conservative Dem")
+        identity_universe_4 = pd.DataFrame({
+            "Precinct": [35, 36, 37, 38, 22],
+            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
+            "Profile": [
+                "Petworth — oldest residents, moderate Dems, longest tenure",
+                "Petworth — homeowners, pragmatic, not ideological",
+                "Park View — working class moderate Dems, crime top concern",
+                "Park View — Brown's ANC base but Deramo can compete",
+                "Columbia Heights — moderate Dems frustrated with progressive performance",
+            ],
+            "Deramo_Edge": [
+                "Moderates: Deramo 9%, Raj 1% — Raj is irrelevant here",
+                "Conservative Dems: Brown 38%, Deramo 0% — RCV transfer play only",
+                "DSA endorsement net negative among moderates (-27% vs +20%)",
+                "Nadeau endorsed Brown — 23% of moderates less likely with Nadeau",
+                "The ask: rank Brown or Deramo 1-2, leave Raj unranked",
+            ],
+            "RCV_Ask": [
+                "Deramo #1, Brown #2 — or Brown #1, Deramo #2",
+                "Either order — stress RCV math",
+                "If Brown voter: Brown #1, Deramo #2, Raj unranked",
+                "If Deramo voter: Deramo #1, Brown #2, Raj unranked",
+                "Same regardless of preference order",
+            ],
+            "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
+            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
+        })
+        st.dataframe(identity_universe_4, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
-    st.divider()
-    st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
-    identity_universe_5 = pd.DataFrame({
-        "Precinct": [22, 39, 25, 37, 23],
-        "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Pleasant Plains", "Columbia Heights"],
-        "Profile": [
-            "Asian, multiracial, mixed-income non-black voters",
-            "Other race voters: Deramo 11%, Raj 20% — competitive",
-            "Working class renters, no college degree voters",
-            "African immigrant community, not Black Dem establishment aligned",
-            "Central American community — school/crime concerns",
-        ],
-        "Deramo_Edge": [
-            "Other race: three-way split — Deramo competitive",
-            "No college degree: Brown 33%, Deramo 6%, Raj 0%",
-            "Working class: crime + business message lands harder than DSA ideology",
-            "African immigrants often socially conservative — Raj's platform alienates",
-            "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
-        ],
-        "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-        "Untapped_Voters": [2964, 2873, 2804, 2698, 2355],
-        "Priority": ["🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
-    })
-    st.dataframe(identity_universe_5, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.divider()
+        st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
+        identity_universe_5 = pd.DataFrame({
+            "Precinct": [22, 39, 25, 37, 23],
+            "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Pleasant Plains", "Columbia Heights"],
+            "Profile": [
+                "Asian, multiracial, mixed-income non-black voters",
+                "Other race voters: Deramo 11%, Raj 20% — competitive",
+                "Working class renters, no college degree voters",
+                "African immigrant community, not Black Dem establishment aligned",
+                "Central American community — school/crime concerns",
+            ],
+            "Deramo_Edge": [
+                "Other race: three-way split — Deramo competitive",
+                "No college degree: Brown 33%, Deramo 6%, Raj 0%",
+                "Working class: crime + business message lands harder than DSA ideology",
+                "African immigrants often socially conservative — Raj's platform alienates",
+                "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
+            ],
+            "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
+            "Untapped_Voters": [2964, 2873, 2804, 2698, 2355],
+            "Priority": ["🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
+        })
+        st.dataframe(identity_universe_5, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
-    st.divider()
-    st.markdown("#### 🦅 Identity Universe 6 — White NonLeft (Moderate + Conservative)")
-    st.caption("Most underrated universe. Raj is radioactive here. It's Brown vs Deramo.")
-    identity_universe_6 = pd.DataFrame({
-        "Precinct": [35, 36, 37, 38, 22],
-        "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
-        "Profile": [
-            "Long-tenure white homeowners, bought pre-2010, moderate-to-conservative Dems",
-            "Highest owner-occupancy, most invested in neighborhood stability",
-            "Park View white moderates, active on crime and school quality",
-            "Park View: school-parent overlap, Georgia Ave safety concern",
-            "14th St corridor white moderates — watched businesses close 12 years",
-        ],
-        "Poll_Data": [
-            "Conservatives: Brown 38%, Raj 5%, Deramo 0% — Brown owns but Raj irrelevant",
-            "Moderates: Brown 24%, Deramo 9%, Raj 1% — two-person race",
-            "White 46-65 on mayor: McDuffie 52% — these voters exist and align",
-            "Nadeau endorsement: moderates 29% less likely — Brown's liability here",
-            "DSA endorsement: moderates 27% less likely — Raj radioactive",
-        ],
-        "Deramo_Message": [
-            "'Public safety is foundational' — not ideology, results",
-            "Homeowner investment angle: business closures hurt property values",
-            "Schools + crime — closures hurt kids, need pragmatism not marching orders",
-            "Former State Dept / DHS — competence credential resonates",
-            "12 years of Nadeau, businesses still closing — Miguel = change",
-        ],
-        "RCV_Strategy": [
-            "If Brown voter: Brown #1, Deramo #2, Raj unranked",
-            "If undecided: Deramo #1, Brown #2 — both beat Raj",
-            "Key ask: do NOT rank Raj, her platform is opposite of your values",
-            "Conservative Dems may stop at #1, educate on RCV math",
-            "White moderate undecideds are the direct Deramo target here",
-        ],
-        "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
-    })
-    st.dataframe(identity_universe_6, use_container_width=True, hide_index=True,
-        column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.divider()
+        st.markdown("#### 🦅 Identity Universe 6 — White NonLeft (Moderate + Conservative)")
+        st.caption("Most underrated universe. Raj is radioactive here. It's Brown vs Deramo.")
+        identity_universe_6 = pd.DataFrame({
+            "Precinct": [35, 36, 37, 38, 22],
+            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
+            "Profile": [
+                "Long-tenure white homeowners, bought pre-2010, moderate-to-conservative Dems",
+                "Highest owner-occupancy, most invested in neighborhood stability",
+                "Park View white moderates, active on crime and school quality",
+                "Park View: school-parent overlap, Georgia Ave safety concern",
+                "14th St corridor white moderates — watched businesses close 12 years",
+            ],
+            "Poll_Data": [
+                "Conservatives: Brown 38%, Raj 5%, Deramo 0% — Brown owns but Raj irrelevant",
+                "Moderates: Brown 24%, Deramo 9%, Raj 1% — two-person race",
+                "White 46-65 on mayor: McDuffie 52% — these voters exist and align",
+                "Nadeau endorsement: moderates 29% less likely — Brown's liability here",
+                "DSA endorsement: moderates 27% less likely — Raj radioactive",
+            ],
+            "Deramo_Message": [
+                "'Public safety is foundational' — not ideology, results",
+                "Homeowner investment angle: business closures hurt property values",
+                "Schools + crime — closures hurt kids, need pragmatism not marching orders",
+                "Former State Dept / DHS — competence credential resonates",
+                "12 years of Nadeau, businesses still closing — Miguel = change",
+            ],
+            "RCV_Strategy": [
+                "If Brown voter: Brown #1, Deramo #2, Raj unranked",
+                "If undecided: Deramo #1, Brown #2 — both beat Raj",
+                "Key ask: do NOT rank Raj, her platform is opposite of your values",
+                "Conservative Dems may stop at #1, educate on RCV math",
+                "White moderate undecideds are the direct Deramo target here",
+            ],
+            "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
+            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
+        })
+        st.dataframe(identity_universe_6, use_container_width=True, hide_index=True,
+            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
 # ══════════════════════════════════════════════════════════
 # TAB 4 — TARGETING MODEL
