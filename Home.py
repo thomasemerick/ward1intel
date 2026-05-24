@@ -288,19 +288,6 @@ with tab2:
     
     """)
 
-# ── ACCESS GATE ────────────────────────────────────────────
-access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
-
-if access_code != "miguel20xxjune":
-    st.info("""
-    ### 🔒 Access After Meeting
-    
-    This section contains precinct-level canvassing intelligence, 
-    voter universe targeting, and the full battle plan for the 
-    June 16, 2026 Democratic Primary.
-    
-    **To request access, contact Thomas Emerick.**
-    """)
     st.stop()
     st.markdown("""**The three issues where Raj is most vulnerable:**
     - 🚔 **Crime:** "Not a police officer" — her own words
@@ -826,6 +813,19 @@ with tab3:
 # ══════════════════════════════════════════════════════════
 with tab4:
     st.subheader("🎯 Targeting Model")
+    access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
+    
+    if access_code != "miguel20xxjune":
+        st.info("""
+        ### 🔒 Access After Meeting
+        
+        This section contains precinct-level canvassing intelligence, 
+        voter universe targeting, and the full battle plan for the 
+        June 16, 2026 Democratic Primary.
+        
+        **To request access, contact Thomas Emerick.**
+        """)
+        st.stop()
     st.markdown("""
     ## 🎯 Ward 1 Targeting Model
     **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
