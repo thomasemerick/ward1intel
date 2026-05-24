@@ -626,24 +626,24 @@ with tab3:
 
         st.markdown("#### 🌎 Identity Universe 1 — Hispanic/Latino Max Turnout")
         identity_universe_1 = pd.DataFrame({
-            "Precinct": [23, 24, 20, 25, 35],
-            "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Adams Morgan"],
+            "Precinct": [39, 40, 23, 24, 25],
+            "Neighborhood": ["Mount Pleasant/Columbia Heights", "Mount Pleasant", "Columbia Heights", "Adams Morgan", "Adams Morgan"],
             "Why_Target": [
-                "Largest Salvadoran/Central American concentration in Ward 1",
-                "High Hispanic family density, longtime residents",
-                "Large Latino population, community anchors",
-                "Hispanic renters and homeowners mixed",
-                "Growing Latino presence, longer-tenure families",
+                "Heart of DC's Salvadoran community — highest Hispanic concentration in Ward 1",
+                "Mount Pleasant — historic Latino residential anchor since 1980s",
+                "Columbia Heights — large Latino population, community anchors on 14th St",
+                "Adams Morgan — Hispanic family density, longtime residents",
+                "Adams Morgan — Hispanic renters and homeowners mixed",
             ],
             "Deramo_Edge": [
                 "Only Latino in serious contention, first Latino on DC Council if elected",
                 "Speaks Portuguese, cultural proximity to Spanish speakers",
                 "Tied with Brown at 20% among Hispanics, Raj only 9%",
-                "Trindade Deramo's business grant platform resonates with Latino small business owners",
-                "Older Hispanic homeowners — schools + safety message resonates",
+                "Business platform resonates with Latino small business owners",
+                "Schools + safety message resonates with longer-tenure families",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            "Untapped_Voters": [2355, 1920, 671, 2804, 2458],
+            "Untapped_Voters": [2873, 2310, 2355, 1920, 2804],
             "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2"],
         })
         st.dataframe(identity_universe_1, use_container_width=True, hide_index=True,
