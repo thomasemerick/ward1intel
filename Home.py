@@ -922,20 +922,20 @@ if access_code != "miguel20xxjune":
         """)
 
         
-    st.success("""
-    **Path to Victory Plan in One Paragraph:**
+        st.success("""
+        **Path to Victory Plan in One Paragraph:**
 
-    Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
-    on both issue and identity dimensions, and anti-Nadeau sentiment.
-    Precincts 41 and 39 (Adams Morgan and Columbia Heights) round out the Tier 1 trifecta.
-    The White 46+ play in Petworth (35, 36) is the sleeper — massive untapped universe
-    (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
-    Nadeau endorsement is a liability.
-    Mt Pleasant (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
-    transfer play.
-    **Every door knocked in these 8 precincts before June 16 is worth more than
-    two doors anywhere else in the ward.**
-    """)
+        Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
+        on both issue and identity dimensions, and anti-Nadeau sentiment.
+        Precincts 41 and 39 (Adams Morgan and Columbia Heights) round out the Tier 1 trifecta.
+        The White 46+ play in Petworth (35, 36) is the sleeper — massive untapped universe
+        (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
+        Nadeau endorsement is a liability.
+        Mt Pleasant (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
+        transfer play.
+        **Every door knocked in these 8 precincts before June 16 is worth more than
+        two doors anywhere else in the ward.**
+        """)
 
     with tab5:
         st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
