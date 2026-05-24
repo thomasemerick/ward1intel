@@ -922,7 +922,7 @@ if access_code != "miguel20xxjune":
         """)
 
         
-        st.success("""
+    st.success("""
         **Path to Victory Plan in One Paragraph:**
 
         Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
