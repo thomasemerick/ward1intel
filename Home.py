@@ -920,10 +920,10 @@ with tab4:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
-        st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
-        st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
-        
-        import streamlit.components.v1 as components
-        with open("ward1_heatmap.html", "r") as f:
-            html = f.read()
-        components.html(html, height=600, scrolling=False)
+            st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
+            st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
+            
+            import streamlit.components.v1 as components
+            with open("ward1_heatmap.html", "r") as f:
+                html = f.read()
+            components.html(html, height=600, scrolling=False)
