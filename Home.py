@@ -814,120 +814,107 @@ with tab4:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
-    st.subheader("🎯 Targeting Model")
-    access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
+        st.subheader("🎯 Targeting Model")
+        st.markdown("""
+        ## 🎯 Ward 1 Targeting Model
+        **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
+
+        Every precinct in Ward 1 is scored across 10 targeting universes — 5 issue-based and 5 identity-based — 
+        using real 2024 DCBOE precinct turnout data and PPP/GGWash poll crosstabs.
+        The matrix below tells you exactly where to knock doors and why.
+
+        **The three numbers that matter:**
+        - 🔴 Red dot = high priority universe for that precinct
+        - 🟡 Yellow dot = medium priority
+        - Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool
+        """)
     
-    if access_code != "miguel20xxjune":
-        st.info("""
-        ### 🔒 Access After Meeting
-        
-        This section contains precinct-level canvassing intelligence, 
-        voter universe targeting, and the full battle plan for the 
-        June 16, 2026 Democratic Primary.
-        
-        **To request access, contact Thomas Emerick.**
-        """)
-        st.stop()
-    st.markdown("""
-    ## 🎯 Ward 1 Targeting Model
-    **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
 
-    Every precinct in Ward 1 is scored across 10 targeting universes — 5 issue-based and 5 identity-based — 
-    using real 2024 DCBOE precinct turnout data and PPP/GGWash poll crosstabs.
-    The matrix below tells you exactly where to knock doors and why.
-
-    **The three numbers that matter:**
-    - 🔴 Red dot = high priority universe for that precinct
-    - 🟡 Yellow dot = medium priority
-    - Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool
-    """)
-   
-
-    st.subheader("🎯 Combined Issue + Identity Priority Matrix")
-    st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
+        st.subheader("🎯 Combined Issue + Identity Priority Matrix")
+        st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
 
 
 
-    combined = pd.DataFrame({
-        "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
-        "Neighborhood": [
-            "Mount Pleasant", "Columbia Heights", "Mount Pleasant", "Adams Morgan", "Columbia Heights",
-            "Columbia Heights", "Pleasant Plains", "Park View", "Park View", "U Street",
-            "Columbia Heights", "Adams Morgan", "Adams Morgan", "LeDroit Park", "U Street"
-        ],
-        "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
-        "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
-        "Schools": ["🟡","🟡","🟡","🔴","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "LGBTQ": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-        "Anti_Nadeau": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🔴","🟡"],
-        "Hispanic": ["🟡","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡"],
-        "LGBTQ_Id": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-        "White_46+": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "Moderate": ["🔴","🟡","🔴","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
-        "White_NonLeft": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "Untapped": [2310, 2563, 2873, 2458, 3080, 2355, 2698, 2085, 1343, 2964, 1246, 2804, 1920, 671, 890],
-        "Final_Priority": [
-            "🥇 #1", "🥇 #2", "🥇 #3",
-            "🥈 #4", "🥈 #5", "🥈 #6",
-            "🥈 #7", "🥈 #8",
-            "🥉 #9", "🥉 #10",
-            "🥉 #11", "🥉 #12", "🥉 #13", "🥉 #14", "🥉 #15"
-        ],
-    })
+        combined = pd.DataFrame({
+            "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
+            "Neighborhood": [
+                "Mount Pleasant", "Columbia Heights", "Mount Pleasant", "Adams Morgan", "Columbia Heights",
+                "Columbia Heights", "Pleasant Plains", "Park View", "Park View", "U Street",
+                "Columbia Heights", "Adams Morgan", "Adams Morgan", "LeDroit Park", "U Street"
+            ],
+            "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
+            "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
+            "Schools": ["🟡","🟡","🟡","🔴","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
+            "LGBTQ": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
+            "Anti_Nadeau": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🔴","🟡"],
+            "Hispanic": ["🟡","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡"],
+            "LGBTQ_Id": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
+            "White_46+": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
+            "Moderate": ["🔴","🟡","🔴","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+            "White_NonLeft": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
+            "Untapped": [2310, 2563, 2873, 2458, 3080, 2355, 2698, 2085, 1343, 2964, 1246, 2804, 1920, 671, 890],
+            "Final_Priority": [
+                "🥇 #1", "🥇 #2", "🥇 #3",
+                "🥈 #4", "🥈 #5", "🥈 #6",
+                "🥈 #7", "🥈 #8",
+                "🥉 #9", "🥉 #10",
+                "🥉 #11", "🥉 #12", "🥉 #13", "🥉 #14", "🥉 #15"
+            ],
+        })
 
-    st.dataframe(
-        combined,
-        use_container_width=True,
-        hide_index=True,
-        column_config={
-            "Untapped": st.column_config.ProgressColumn(
-                "Untapped Voters", min_value=0, max_value=3500, format="%d"
-            ),
-        }
-    )
-    st.markdown("""
-        #### The Theory of the Case:
+        st.dataframe(
+            combined,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Untapped": st.column_config.ProgressColumn(
+                    "Untapped Voters", min_value=0, max_value=3500, format="%d"
+                ),
+            }
+        )
+        st.markdown("""
+            #### The Theory of the Case:
 
-        Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
-        0% among conservatives, and has no small business or public safety record.
-        Brown is strong but Nadeau's endorsement is a liability among the exact voters
-        Trindade Deramo needs — moderates, men over 45, anti-establishment whites.
-        Trindade Deramo wins by being the only candidate who takes seriously the voters
-        Raj ignores and Brown can't fully reach: parents, small business owners,
-        crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity,
-        and the Latino community that sees two of their own in the race.
+            Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
+            0% among conservatives, and has no small business or public safety record.
+            Brown is strong but Nadeau's endorsement is a liability among the exact voters
+            Trindade Deramo needs — moderates, men over 45, anti-establishment whites.
+            Trindade Deramo wins by being the only candidate who takes seriously the voters
+            Raj ignores and Brown can't fully reach: parents, small business owners,
+            crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity,
+            and the Latino community that sees two of their own in the race.
 
-        **The RCV math that makes it possible:**
-        - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
-        - Lynch + Reyes Yanes = 450-550 votes that mostly exhaust, Trindade Deramo needs those transfers
-        - Brown's Nadeau endorsement is a net negative among moderates and men over 45
-        - Raj's DSA brand is net negative among men, moderates, and conservatives
-        - Every door knocked in Petworth and Park View is worth 3x a door in Adams Morgan
+            **The RCV math that makes it possible:**
+            - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
+            - Lynch + Reyes Yanes = 450-550 votes that mostly exhaust, Trindade Deramo needs those transfers
+            - Brown's Nadeau endorsement is a net negative among moderates and men over 45
+            - Raj's DSA brand is net negative among men, moderates, and conservatives
+            - Every door knocked in Petworth and Park View is worth 3x a door in Adams Morgan
 
-        **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
-        If she outperforms him, he's eliminated before the transfers happen.
-        Mt Pleasant and the Hispanic universe are existential, not optional.
-        """)
+            **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
+            If she outperforms him, he's eliminated before the transfers happen.
+            Mt Pleasant and the Hispanic universe are existential, not optional.
+            """)
 
-        
-    st.success("""
-        **Path to Victory Plan in One Paragraph:**
+            
+        st.success("""
+            **Path to Victory Plan in One Paragraph:**
 
-        Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
-        on both issue and identity dimensions, and anti-Nadeau sentiment.
-        Precincts 41 and 39 (Adams Morgan and Columbia Heights) round out the Tier 1 trifecta.
-        The White 46+ play in Petworth (35, 36) is the sleeper — massive untapped universe
-        (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
-        Nadeau endorsement is a liability.
-        Mt Pleasant (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
-        transfer play.
-        **Every door knocked in these 8 precincts before June 16 is worth more than
-        two doors anywhere else in the ward.**
-        """)
+            Precinct 40 (U Street) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
+            on both issue and identity dimensions, and anti-Nadeau sentiment.
+            Precincts 41 and 39 (Adams Morgan and Columbia Heights) round out the Tier 1 trifecta.
+            The White 46+ play in Petworth (35, 36) is the sleeper — massive untapped universe
+            (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
+            Nadeau endorsement is a liability.
+            Mt Pleasant (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
+            transfer play.
+            **Every door knocked in these 8 precincts before June 16 is worth more than
+            two doors anywhere else in the ward.**
+            """)
 
 
 # ══════════════════════════════════════════════════════════
-# TAB 4 — PRECINCT HEATMAP
+# TAB 5 — PRECINCT HEATMAP
 # ══════════════════════════════════════════════════════════
     with tab5:
         if not unlocked:
