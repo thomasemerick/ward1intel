@@ -32,6 +32,10 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # ══════════════════════════════════════════════════════════
 # TAB 1 — MINOR CANDIDATE TRANSFER STRATEGY
 # ══════════════════════════════════════════════════════════
+# ── ACCESS GATE FOR TABS 2-5 ──────────────────────────────
+access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
+unlocked = access_code == "miguel20xxjune"
+
 with tab1:
     st.subheader("♻️ Lynch & Reyes Yanes — The Transfer Game")
     st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
@@ -274,6 +278,9 @@ with tab1:
 # TAB 2 — ISSUE UNIVERSES
 # ══════════════════════════════════════════════════════════
 with tab2:
+    if not unlocked:
+        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+    else:
     st.subheader("🔴 Issue-Based Targeting — Trindade Deramo's Argument to Edge the Field")
     st.markdown("""
     **Theory of the case on issues:**
@@ -475,6 +482,9 @@ with tab2:
 # TAB 3 — IDENTITY UNIVERSES
 # ══════════════════════════════════════════════════════════
 with tab3:
+    if not unlocked:
+        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+    else:
     st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
     st.markdown("""
     **Theory of the case on identity:**
@@ -812,6 +822,9 @@ with tab3:
 # TAB 4 — TARGETING MODEL
 # ══════════════════════════════════════════════════════════
 with tab4:
+    if not unlocked:
+        st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+    else:
     st.subheader("🎯 Targeting Model")
     access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
     
@@ -938,6 +951,9 @@ with tab4:
 # TAB 4 — PRECINCT HEATMAP
 # ══════════════════════════════════════════════════════════
     with tab5:
+        if not unlocked:
+            st.info("### 🔒 Access After Meeting\nEnter the access code at the top to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        else:
         st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
         st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
         
