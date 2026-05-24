@@ -283,13 +283,9 @@ with tab2:
     Trindade Deramo's edge: he is the only candidate who explicitly names crime as foundational,
     who has watched businesses close and made it a priority,
     and whose mother was a schoolteacher — giving him authentic K-12 credibility
-    without being union-captured.
+    with parents.
 
-    **The three issues where Raj is most vulnerable:**
-    - 🚔 **Crime:** "Not a police officer" — her own words
-    - 🏪 **Business:** Zero commercial corridor platform
-    - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
-    """)
+    
 
 # ── ACCESS GATE ────────────────────────────────────────────
 access_code = st.text_input("🔒 Enter access code to view targeting model:", type="password", key="battle_plan_access")
@@ -306,6 +302,12 @@ if access_code != "miguel20xxjune":
     """)
     st.stop()
 
+    **The three issues where Raj is most vulnerable:**
+    - 🚔 **Crime:** "Not a police officer" — her own words
+    - 🏪 **Business:** Zero commercial corridor platform
+    - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
+    """)
+    
     st.divider()
 
     # Universe 1: Crime
