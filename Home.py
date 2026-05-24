@@ -480,14 +480,14 @@ with tab3:
         st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
         st.markdown("""
         **Theory of the case on identity:**
-        Trindade Deramo is a gay Hispanic candidate in a field with a Black woman (Brown),
+        Trindade Deramo is a gay Latino candidate in a field with a Black woman (Brown),
         an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
         self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
         lines in ways that create non-obvious opportunities.
 
         **Deramo's identity advantages:**
         - Only gay man in the race → LGBTQ+ community, gay male voters specifically
-        - Only candidate with Brazilian/Latino heritage still in serious contention → Hispanic voters
+        - Only candidate with Brazilian/Latino heritage still in serious contention → Latino & Hispanic voters
         - Former State Dept / DHS background → moderate and conservative Dems who want competence
         - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
 
@@ -636,8 +636,8 @@ with tab3:
                 "Adams Morgan — Hispanic renters and homeowners mixed",
             ],
             "Deramo_Edge": [
-                "Only Latino in serious contention, first Latino on DC Council if elected",
-                "Speaks Portuguese, cultural proximity to Spanish speakers",
+                "Only Latino w/ double digits in PPP poll, first Latino on DC Council if elected",
+                "Speaks Portuguese, Brazilian heritage resonates with Latino voters",
                 "Tied with Brown at 20% among Hispanics, Raj only 9%",
                 "Business platform resonates with Latino small business owners",
                 "Schools + safety message resonates with longer-tenure families",
