@@ -837,12 +837,12 @@ with tab4:
             ],
             "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
             "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
-            "Schools": ["🟡","🟡","🟡","🔴","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
+            "Schools": ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🔴","🟡"],      
             "LGBTQ": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-            "Anti_Nadeau": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🔴","🟡"],
-            "Hispanic": ["🟡","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡"],
+            "Anti_Nadeau": ["🟡","🟡","🔴","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🔴","🔴","🟡"],       
+            "Hispanic": ["🟡","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡"], 
             "LGBTQ_Id": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-            "White_46+": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
+            "White_46+": ["🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡"],      
             "Moderate": ["🔴","🟡","🔴","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
             "White_NonLeft": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
             "Untapped": [2310, 2563, 2873, 2458, 3080, 2355, 2698, 2085, 1343, 2964, 1246, 2804, 1920, 671, 890],
@@ -899,7 +899,7 @@ with tab4:
             The White 46+ play in Columbia Heights (36) and Adams Morgan (35) is the sleeper.
             (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
             Nadeau endorsement is a liability.
-            Columbia Heights (23) is the Hispanic/bilingual activation play AND the Reyes Yanes
+            Columbia Heights (23) is the Latino/Hispanic/bilingual activation play AND the Reyes Yanes
             transfer play.
             **Every door knocked in these 8 precincts before June 16 is worth more than
             two doors anywhere else in the ward.**
