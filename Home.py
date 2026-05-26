@@ -798,10 +798,14 @@ with tab4:
         The matrix below tells you exactly where to knock doors and why.
 
         **The three numbers that matter:**
-        - 🔴 Red dot = high priority universe for that precinct
-        - 🟡 Yellow dot = medium priority
-        - Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool
         """)
+        st.markdown("""
+        <ul>
+        <li>🔴 Red dot = high priority universe for that precinct</li>
+        <li>🟡 Yellow dot = medium priority</li>
+        <li><span style="display:inline-block;width:60px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool</li>
+        </ul>
+        """, unsafe_allow_html=True)
     
 
         st.subheader("🎯 Combined Issue + Identity Priority Matrix")

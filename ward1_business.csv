@@ -1,0 +1,16 @@
+Precinct,Neighborhood,Active_Licenses,Inactive_Licenses,Total_Licenses,Stress_Rate,Business_Score,Business_Dot
+137,U Street,291,665,956,0.6956,10.0,🔴
+22,U Street,859,1565,2424,0.6456,7.0,🔴
+25,Adams Morgan,836,1506,2342,0.643,6.9,🔴
+39,Mt Pleasant/Col Hts,579,992,1571,0.6314,6.2,🔴
+37,Pleasant Plains,655,1048,1703,0.6154,5.2,🟡
+41,Columbia Heights,520,828,1348,0.6142,5.1,🟡
+35,Adams Morgan,509,805,1314,0.6126,5.0,🟡
+40,Mount Pleasant,347,533,880,0.6057,4.6,🟡
+24,Adams Morgan,622,929,1551,0.599,4.2,🟡
+38,Park View,534,789,1323,0.5964,4.1,🟡
+43,Park View,332,490,822,0.5961,4.0,🟡
+36,Columbia Heights,560,768,1328,0.5783,3.0,🟡
+42,Columbia Heights,288,381,669,0.5695,2.4,🟡
+23,Columbia Heights,432,561,993,0.565,2.2,🟡
+20,LeDroit Park,140,157,297,0.5286,0.0,🟡
