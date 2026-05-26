@@ -41,14 +41,6 @@ with tab1:
     st.subheader("♻️ Lynch & Reyes Yanes — The Transfer Game")
     st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
-    st.info("""
-    **🗳️ Historical Precedent: The Kathryn Garcia Playbook (NYC 2021)**
-
-    In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NY race with Adams -> Raj, Wiley -> Brown, and Trindade Deramo -> Garcia. After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates. For Trindade Deramo, making inroads with minor candidates' voters as their second choice could produce an even bigger additional boost for a late-surging candidate here in the 2026 DC Ward 1 primary than it did in the 2021 NYC mayoral primary.
-
-    **In short:** Raj consolidates the very liberal base. Brown is strong with conservatives. The moderate and somewhat liberal lanes are genuinely contested and Trindade Deramo's best persuasion targets, and the most likely to be undecided. If Trindade Deramo can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
-    """)
-
     st.markdown("""
     **From the PPP poll — projected to full Ward 1 Dem primary electorate (projecting ~9,000 ballots):**
     - **Lynch:** 8% → ~720 actual votes
@@ -110,7 +102,13 @@ with tab1:
     - Second choice on Brown's ballots then propels Trindade Deramo past Raj in final round
     """)
 
-    
+    st.info("""
+    **🗳️ Historical Precedent: The Kathryn Garcia Playbook (NYC 2021)**
+
+    In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NY race with Adams -> Raj, Wiley -> Brown, and Garcia -> Trindade Deramo. After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates. For Trindade Deramo, making inroads with minor candidates' voters as their second choice could produce an even bigger additional boost for a late-surging candidate here in the 2026 DC Ward 1 primary than it did in the 2021 NYC mayoral primary.
+
+    **In short:** Raj consolidates the very liberal base. Brown is strong with conservatives. The moderate and somewhat liberal lanes are genuinely contested and Trindade Deramo's best persuasion targets, and the most likely to be undecided. If Trindade Deramo can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
+    """)
 
     st.divider()
 
