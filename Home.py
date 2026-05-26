@@ -880,7 +880,7 @@ with tab4:
             }
         )
 
-        
+
         st.markdown("""
             #### The Theory of the Case:
 
@@ -929,7 +929,7 @@ with tab4:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
-            st.subheader("🗺️ Ward 1 Untapped Voter Heatmap")
+            st.subheader("🗺️ Heatmap of Registered Dems Who Stayed Home Last Cycle")
             st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
             
             import streamlit.components.v1 as components
