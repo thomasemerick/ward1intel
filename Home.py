@@ -803,7 +803,7 @@ with tab4:
         <ul>
         <li>🔴 Red dot = high priority universe for that precinct</li>
         <li>🟡 Yellow dot = medium priority</li>
-        <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Untapped Voters = registered Dems who didn't vote in 2024 — your persuasion pool</li>
+        <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Untapped Voters = registered Dems who didn't vote in 2024</li>
         </ul>
         """, unsafe_allow_html=True)
     
