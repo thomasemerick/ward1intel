@@ -788,9 +788,8 @@ with tab4:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
-        st.subheader("🎯 Targeting Model")
+        st.subheader("🎯 Ward 1 Targeting Model")
         st.markdown("""
-        ## 🎯 Ward 1 Targeting Model
         **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
 
         Every precinct in Ward 1 is scored across 10 targeting universes — 5 issue-based and 5 identity-based — 
