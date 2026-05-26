@@ -804,7 +804,7 @@ with tab4:
         <ul>
         <li>🔴 Red dot = high priority universe for that precinct</li>
         <li>🟡 Yellow dot = medium priority</li>
-        <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Untapped Voters = registered Dems who didn't vote in 2024</li>
+        <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Registered Dems = registered Democrats who didn't vote in 2024</li>
         </ul>
         """, unsafe_allow_html=True)
     
@@ -911,16 +911,7 @@ with tab4:
         st.success("""
             **Path to Victory Plan in One Paragraph:**
 
-            Precinct 40 (Mount Pleasant) is Trindade Deramo's #1 target: hits crime, business, LGBTQ+
-            on both issue and identity dimensions, and anti-Nadeau sentiment.
-            Precincts 41 (Columbia Heights) and 39 (Mount Pleasant) round out the Tier 1 trifecta.
-            The White 46+ play in Columbia Heights (36) and Adams Morgan (35) is the sleeper.
-            (3,080 and 2,458 respectively) where Raj is essentially nonexistent and Brown's
-            Nadeau endorsement is a liability.
-            Columbia Heights (23) is the Latino/Hispanic/bilingual activation play AND the Reyes Yanes
-            transfer play.
-            **Every door knocked in these 8 precincts before June 16 is worth more than
-            two doors anywhere else in the ward.**
+            Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 7 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and Not_Leftist universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper — largest registered Dem pool in the ward at 3,962 with strong Not_Leftist and Minrty_NoAlign signal. Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts before June 16 is worth more than two doors anywhere else in the ward.
             """)
 
 
