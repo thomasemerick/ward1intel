@@ -812,31 +812,61 @@ with tab4:
 
 
 
-        combined = pd.DataFrame({
-            "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
-            "Neighborhood": [
-                "Mount Pleasant", "Columbia Heights", "Mount Pleasant", "Adams Morgan", "Columbia Heights",
-                "Columbia Heights", "Pleasant Plains", "Park View", "Park View", "U Street",
-                "Columbia Heights", "Adams Morgan", "Adams Morgan", "LeDroit Park", "U Street"
-            ],
-            "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
-            "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
-            "Schools": ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🔴","🟡"],      
-            "LGBTQ": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-            "Anti_Nadeau": ["🟡","🟡","🔴","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🔴","🔴","🟡"],       
-            "Hispanic": ["🟡","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡"], 
-            "LGBTQ_Id": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-            "White_46+": ["🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡"],      
-            "Moderate": ["🔴","🟡","🔴","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
-            "White_NonLeft": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-            "Untapped": [2310, 2563, 2873, 2458, 3080, 2355, 2698, 2085, 1343, 2964, 1246, 2804, 1920, 671, 890],
-            "Final_Priority": [
-                "🥇 #1", "🥇 #2", "🥇 #3",
-                "🥈 #4", "🥈 #5", "🥈 #6",
-                "🥈 #7", "🥈 #8",
-                "🥉 #9", "🥉 #10",
-                "🥉 #11", "🥉 #12", "🥉 #13", "🥉 #14", "🥉 #15"
-            ],
+        reg_dems = {20:870, 22:4038, 23:2978, 24:2756, 25:4068, 35:3479,
+                    36:3962, 37:3336, 38:2718, 39:3911, 40:3322, 41:3337,
+                    42:1713, 43:1751, 137:1110}
+        untapped = {40:2310, 41:2563, 39:2873, 35:2458, 36:3080, 23:2355,
+                    37:2698, 38:2085, 43:1343, 22:2964, 42:1246, 25:2804,
+                    24:1920, 20:671, 137:890}
+
+        scored = pd.read_csv('ward1_scored.csv')
+        scored['Reg_Dems'] = scored['Precinct'].map(reg_dems)
+        scored['Untapped'] = scored['Precinct'].map(untapped)
+
+        dot_cols = ['Crime_Dot','Business_Dot','Schools_Dot','LGBTQ_Dot',
+                    'Anti_Nadeau_Dot','Hispanic_Dot','White_46plus_Dot',
+                    'Not_Leftist_Dot','Minrty_NoAlign_Dot']
+        for c in dot_cols:
+            scored[c + '_num'] = scored[c].map({'🔴': 1, '🟡': 0})
+        scored['Red_Count'] = scored[[c + '_num' for c in dot_cols]].sum(axis=1)
+
+        for col in ['Reg_Dems', 'Untapped']:
+            mn, mx = scored[col].min(), scored[col].max()
+            scored[col + '_norm'] = ((scored[col] - mn) / (mx - mn) * 10).round(2)
+
+        scored['Final_Score'] = (
+            scored['Red_Count']     * 0.60 +
+            scored['Reg_Dems_norm'] * 0.35 +
+            scored['Untapped_norm'] * 0.05
+        ).round(3)
+
+        scored = scored.sort_values('Final_Score', ascending=False).reset_index(drop=True)
+
+        def medal(i):
+            if i < 3: return f"🥇 #{i+1}"
+            elif i < 7: return f"🥈 #{i+1}"
+            elif i < 11: return f"🥉 #{i+1}"
+            else: return f"  #{i+1}"
+
+        scored['Final_Priority'] = [medal(i) for i in range(len(scored))]
+
+        display_cols = ['Precinct','Neighborhood','Crime_Dot','Business_Dot',
+                        'Schools_Dot','LGBTQ_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
+                        'White_46plus_Dot','Not_Leftist_Dot','Minrty_NoAlign_Dot',
+                        'Reg_Dems','Final_Priority']
+
+        combined = scored[display_cols].rename(columns={
+            'Crime_Dot': 'Crime',
+            'Business_Dot': 'Business',
+            'Schools_Dot': 'Schools',
+            'LGBTQ_Dot': 'LGBTQ',
+            'Anti_Nadeau_Dot': 'Anti_Nadeau',
+            'Hispanic_Dot': 'Hispanic',
+            'White_46plus_Dot': 'White_46+',
+            'Not_Leftist_Dot': 'Not_Leftist',
+            'Minrty_NoAlign_Dot': 'Minrty_NoAlign',
+            'Reg_Dems': 'Registered Dems',
+            'Final_Priority': 'Final_Priority',
         })
 
         st.dataframe(
@@ -844,11 +874,13 @@ with tab4:
             use_container_width=True,
             hide_index=True,
             column_config={
-                "Untapped": st.column_config.ProgressColumn(
-                    "Untapped Voters", min_value=0, max_value=3500, format="%d"
+                "Registered Dems": st.column_config.ProgressColumn(
+                    "Registered Dems", min_value=0, max_value=4500, format="%d"
                 ),
             }
         )
+
+        
         st.markdown("""
             #### The Theory of the Case:
 
