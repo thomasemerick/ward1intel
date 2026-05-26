@@ -1,0 +1,16 @@
+PrecinctNumber,Neighborhood,Nadeau_2022,Czapary_2022,Harris_2022,Total_2022,AntiNadeau_Rate,AntiNadeau_WeightedVol,AntiNadeau_Score,AntiNadeau_Dot
+22,U Street,636,673,291,1606,0.604,1643,10.0,red
+25,Adams Morgan,751,642,395,1792,0.5809,1683,9.1,red
+39,Mt Pleasant/Col Hts,740,429,397,1569,0.5284,1258,6.2,red
+137,U Street,164,211,49,424,0.6132,471,6.2,red
+36,Columbia Heights,623,367,326,1318,0.5273,1062,5.7,yellow
+24,Adams Morgan,537,397,204,1138,0.5281,998,5.5,yellow
+23,Columbia Heights,506,317,224,1048,0.5172,859,4.7,yellow
+37,Pleasant Plains,518,356,170,1044,0.5038,882,4.3,yellow
+35,Adams Morgan,752,379,303,1441,0.4781,1068,3.8,yellow
+40,Mount Pleasant,803,372,314,1496,0.4632,1065,3.2,yellow
+41,Columbia Heights,581,270,205,1059,0.4514,748,1.9,yellow
+42,Columbia Heights,359,205,119,684,0.4751,530,1.9,yellow
+38,Park View,528,234,201,966,0.4534,672,1.7,yellow
+20,LeDroit Park,139,87,45,272,0.489,220,0.0,yellow
+43,Park View,339,153,108,602,0.4369,416,0.0,yellow

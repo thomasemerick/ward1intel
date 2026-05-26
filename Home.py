@@ -102,6 +102,14 @@ with tab1:
     - Second choice on Brown's ballots then propels Trindade Deramo past Raj in final round
     """)
 
+    st.info("""
+    **🗳️ Historical Precedent: The Kathryn Garcia Playbook (NYC 2021)**
+
+    In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines — Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NY race with Adams -> Raj, Wiley -> Brown, and Trindade Deramo -> Garcia. After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates polling approximately 20% combined among undecideds, making second- and third-choice in roads even more potent here than the 2021 NYC mayoral race.
+
+    **The parallel to Ward 1:** Raj consolidates the very liberal base. Brown competes for moderates. The somewhat liberal lane — 27% of the Ward 1 electorate — is genuinely contested and Trindade Deramo's best persuasion target. If Trindade Deramo can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
+    """)
+
     st.divider()
 
 

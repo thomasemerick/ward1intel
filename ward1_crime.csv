@@ -1,0 +1,16 @@
+Precinct,Total_Incidents,Weighted_Score,Neighborhood,Crime_Score,Crime_Dot
+22,4108,4121,U Street,10.0,🔴
+37,3565,3579,Pleasant Plains,8.6,🔴
+39,3447,3458,Mt Pleasant/Col Hts,8.2,🔴
+137,2169,2178,U Street,4.8,🟡
+35,1643,1647,Adams Morgan,3.4,🟡
+36,1536,1546,Columbia Heights,3.1,🟡
+41,1543,1551,Columbia Heights,3.1,🟡
+25,1432,1432,Adams Morgan,2.8,🟡
+38,1302,1313,Park View,2.5,🟡
+24,1166,1169,Adams Morgan,2.1,🟡
+23,862,866,Columbia Heights,1.3,🟡
+40,877,879,Mount Pleasant,1.3,🟡
+43,796,801,Park View,1.1,🟡
+42,713,715,Columbia Heights,0.9,🟡
+20,381,382,LeDroit Park,0.0,🟡
