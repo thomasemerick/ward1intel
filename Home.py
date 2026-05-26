@@ -247,33 +247,6 @@ with tab1:
     Whoever wins this transfer battle could win the seat.
     """)
 
-    st.divider()
-
-    # Transfer scenario table
-    st.subheader("📊 Transfer Scenario — What the Numbers Mean")
-
-    transfer_scenario = pd.DataFrame({
-        "Candidate Eliminated": ["Lynch (Round 2)", "Reyes Yanes (Round 2-3)"],
-        "Est_Votes": ["~280", "~225"],
-        "If_Goes_To_Deramo": [
-            "Trindade Deramo survives Round 2, stays above Reyes Yanes",
-            "Trindade Deramo gets boost into Round 3, closes gap on Brown/Raj",
-        ],
-        "If_Goes_To_Brown": [
-            "Brown strengthens but Trindade Deramo may still survive",
-            "Brown pulls ahead — Trindade Deramo at risk of elimination",
-        ],
-        "If_Goes_To_Raj": [
-            "🚨 Raj extends lead — hardest path for alliance",
-            "🚨 Raj potentially locks up majority early",
-        ],
-        "If_Exhausts": [
-            "🚨 Wasted — happened with most Lynch voters per GGWash sim",
-            "Smaller risk — Reyes Yanes voters more RCV-educated",
-        ],
-    })
-
-    st.dataframe(transfer_scenario, use_container_width=True, hide_index=True)
 
 # ══════════════════════════════════════════════════════════
 # TAB 2 — ISSUE UNIVERSES
