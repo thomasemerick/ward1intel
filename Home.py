@@ -911,7 +911,7 @@ with tab4:
         st.success("""
             **Path to Victory Plan in One Paragraph:**
 
-            Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 7 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and Not_Leftist universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper — largest registered Dem pool in the ward at 3,962 with strong Not_Leftist and Minrty_NoAlign signal. Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts before June 16 is worth more than two doors anywhere else in the ward.
+            Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 7 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and Not_Leftist universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper — largest registered Dem pool in the ward at 3,962 with strong Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown) signal. Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts before June 16 is worth more than two doors anywhere else in the ward.
             """)
 
 
