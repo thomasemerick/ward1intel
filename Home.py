@@ -972,7 +972,7 @@ with tab4:
                     "Rock Creek to 16th; Lamont to Piney Branch",
                     "16th to Holmead; Park to Spring",
                     "Holmead to New Hampshire; Park to Spring",
-                    "New Hampshr-Park Plc; Park Rd-Rock Crk Church Rd",
+                    "New Hampshire to Park Place; Park Road to Rock Creek Church Rd",
                     "13th to Wiltberger Ave; S to T->Vermont->Florida",
                 ],
                 "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
