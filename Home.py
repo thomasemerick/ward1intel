@@ -965,7 +965,7 @@ with tab4:
                     "18th to 16th; U to Euclid",
                     "Connecticut to 18th; Florida to Adams Mills",
                     "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
-                    "16th-11th; Euclid/Columbia detour Irving 15th-14th",
+                    "16th-11th; Euclid->Columbia detour Irving 15th-14th",
                     "11th to 4th; Florida to Columbia",
                     "11th to Park Place, Columbia to Park Road",
                     "RockCrk-11th; Harv/Clmbia detour Irv-Lamont/Park",
