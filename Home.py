@@ -794,8 +794,7 @@ with tab4:
         st.markdown("""
         **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
 
-        Every precinct in Ward 1 is scored across 10 targeting universes — 5 issue-based and 5 identity-based — 
-        using real 2024 DCBOE precinct turnout data and PPP/GGWash poll crosstabs.
+        Every precinct scored across 9 validated universes — sourced from MPD crime data, DCBOE 2022/2024 election results, DC DLCP business licenses, 2020/2023 Census, and PPP/GGWash poll crosstabs.
         The matrix below tells you exactly where to knock doors and why.
 
         **The three numbers that matter:**
@@ -930,3 +929,62 @@ with tab4:
                 html = f.read()
             components.html(html, height=600, scrolling=False)
 
+            st.divider()
+st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
+precinct_ref = pd.DataFrame({
+    "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
+    "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
+                     "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
+                     "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
+                     "Columbia Heights", "Park View", "U Street"],
+    "Ward Area": ["Southeast", "South Central", "South Central", "Southwest", "Southwest",
+                  "West", "Central", "East", "Northeast",
+                  "North", "North", "North",
+                  "Northeast", "Northeast", "Southeast"],
+    "One_Phrase": [
+        "Historic Black neighborhood, Howard University adjacent",
+        "Restaurants, bars, and residential; heart of U Street corridor",
+        "Latino commercial corridor, Columbia Heights Metro hub",
+        "Dense renters, diverse 18th St corridor, Pitchers side",
+        "Pitchers/ALOHO strip, rowhouse renters, Adams Morgan heart",
+        "Upper Adams Morgan, longer-tenure homeowners, Rock Creek edge",
+        "Largest Dem pool in ward, 14th St transit crossroads",
+        "Working-class corridor, crime-focused voters, Pleasant Plains proper",
+        "Transitional rowhouse blocks, family-heavy Park View",
+        "#1 target — multi-issue powerhouse, Mt Pleasant meets Col Hts",
+        "Latino Mount Pleasant, Rock Creek Park edge, family density",
+        "High Hispanic density, working-class families, north Col Hts",
+        "Compact dense blocks, Metro-adjacent, smaller north Col Hts",
+        "Quieter rowhouses, Park View proper, Georgia Ave corridor",
+        "Residential U Street both sides, smaller but high LGBTQ signal",
+    ],
+    "Boundaries": [
+        "16th to 9th; S to Florida",
+        "16th to 11th; Florida to Euclid",
+        "18th to 16th; U to Euclid",
+        "Florida Ave to Kalorama Rd, 16th to 19th St NW",
+        "California St to Kalorama Rd, 19th St to Rock Creek Park",
+        "Kalorama Rd to Columbia Rd, 16th St to Rock Creek Park",
+        "Euclid St to Irving St, 13th to 16th St NW",
+        "Florida Ave to Spring Rd, 13th to Sherman Ave NW",
+        "Spring Rd to Otis Pl, 1st to 13th St NW",
+        "Irving St to Park Rd, 13th to 16th St NW",
+        "Park Rd to Piney Branch, 16th St to Rock Creek Park",
+        "Park Rd to Quincy St, 13th to 14th St NW",
+        "Park Rd to Quincy St, 11th to 13th St NW",
+        "Otis Pl to Quincy St, 11th St to Georgia Ave NW",
+        "Florida Ave to T St, 9th to 13th St NW",
+    ],
+    "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
+})
+
+st.dataframe(precinct_ref, use_container_width=True, hide_index=True,
+    column_config={
+        "Reg_Dems": st.column_config.ProgressColumn(
+            "Registered Dems", min_value=0, max_value=4500, format="%d"
+        ),
+        "One_Phrase": st.column_config.TextColumn("Description", width="large"),
+        "Boundaries": st.column_config.TextColumn("Street Boundaries", width="large"),
+    }
+)
+ 
