@@ -968,7 +968,7 @@ with tab4:
                     "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
                     "11th to 4th; Florida to Columbia",
                     "11th to Park Place, Columbia to Park Road",
-                    "RockCrk to 11th; Harv->Clmbia->Irv15th14 to Lamont->Park",
+                    "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
                     "Rock Creek to 16th; Lamont to Piney Branch",
                     "16th to Holmead; Park to Spring",
                     "Holmead to New Hampshire; Park to Spring",
