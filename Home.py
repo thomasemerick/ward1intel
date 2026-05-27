@@ -929,7 +929,6 @@ with tab4:
             with open("ward1_heatmap.html", "r") as f:
                 html = f.read()
             components.html(html, height=600, scrolling=False)
-
 st.divider()
 st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
 precinct_ref = pd.DataFrame({
