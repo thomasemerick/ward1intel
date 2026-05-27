@@ -931,20 +931,20 @@ with tab4:
             components.html(html, height=600, scrolling=False)
 
 st.divider()
-st.markdown("#### 📍 Precinct Quick Reference")
+st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
 precinct_ref = pd.DataFrame({
     "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
     "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
                      "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
                      "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
                      "Columbia Heights", "Park View", "U Street"],
-    "Direction": ["Central-East", "Central-South", "Central", "Central-West", "Southwest",
-                  "West-Central", "Central", "Central-East", "Northeast",
-                  "Central-North", "Northwest", "North-Central",
-                  "North-Central", "Northeast", "South-Central"],
+    "Region": ["Southeast", "South Central", "South Central", "Southwest", "Southwest",
+                  "West", "Central", "East", "Northeast",
+                  "North", "North", "North",
+                  "Northeast", "Northeast", "Southeast"],
     "One_Phrase": [
         "Historic Black neighborhood, Howard University adjacent",
-        "Gay bar strip, nightlife and anti-establishment core",
+        "Restaurants, bars, and residential; heart of U Street corridor",
         "Latino commercial corridor, Columbia Heights Metro hub",
         "Dense renters, diverse 18th St corridor, Pitchers side",
         "Pitchers/ALOHO strip, rowhouse renters, Adams Morgan heart",
