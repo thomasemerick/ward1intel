@@ -964,7 +964,7 @@ with tab4:
                     "16th to 11th; Florida to Euclid",
                     "18th to 16th; U to Euclid",
                     "Connecticut to 18th; Florida to Adams Mills",
-                    "Rock Creek to 16th; Adams Mill/Euclid to Harvard",
+                    "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
                     "16th-11th; Euclid/Columbia detour Irving 15th-14th",
                     "11th to 4th; Florida to Columbia",
                     "11th to Park Place, Columbia to Park Road",
@@ -973,7 +973,7 @@ with tab4:
                     "16th to Holmead; Park to Spring",
                     "Holmead to New Hampshire; Park to Spring",
                     "New Hampshr-Park Plc; Park Rd-Rock Crk Church Rd",
-                    "13th to Wiltberger Ave; S to T/Vermont/Florida",
+                    "13th to Wiltberger Ave; S to T->Vermont->Florida",
                 ],
                 "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
             })
