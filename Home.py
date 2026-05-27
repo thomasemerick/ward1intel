@@ -949,7 +949,7 @@ with tab4:
                     "Rowhouse renters, West side 18th St + Columbia Rd bars/dining",
                     "Upper Adams Morgan, longer-tenure homeowners, Rock Creek edge",
                     "Largest Dem pool in ward, 14th St transit crossroads",
-                    "Working-class corridor, crime-focused voters, Pleasant Plains proper",
+                    "Working-class corridor, crime-focused voters",
                     "Transitional rowhouse blocks, family-heavy Park View",
                     "#1 target — multi-issue powerhouse, Mt Pleasant meets Col Hts",
                     "Latino Mount Pleasant, Rock Creek Park edge, family density",
