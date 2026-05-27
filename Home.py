@@ -942,7 +942,7 @@ with tab4:
                             "North", "North", "North",
                             "Northeast", "Northeast", "Southeast"],
                 "One_Phrase": [
-                    "Historic Black neighborhood, Howard University adjacent",
+                    "Howard-adjacent transitional block, mixed tenure, smallest Dem pool in ward",
                     "Restaurants, bars, and residential; heart of U Street corridor",
                     "Latino commercial corridor, Columbia Heights Metro hub",
                     "Dense renters, East side 18th St, Pitchers/ALOHO side",
