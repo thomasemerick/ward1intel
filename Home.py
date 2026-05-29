@@ -30,7 +30,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "🔴 Issue Universes",
     "🧬 Identity Universes",
     "🎯 Targeting Model",
-    "🗺️ Precinct Heatmap"
+    "🗺️ RV Heatmap"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -889,7 +889,7 @@ with tab4:
             targeting_html = f.read()
         components.html(targeting_html, height=550, scrolling=False)
 
-        
+
         st.markdown("""
             #### The Theory of the Case:
 
@@ -923,7 +923,7 @@ with tab4:
 
 
 # ══════════════════════════════════════════════════════════
-# TAB 5 — PRECINCT HEATMAP
+# TAB 5 — RV HEATMAP
 # ══════════════════════════════════════════════════════════
     with tab5:
         if not unlocked:
