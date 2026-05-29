@@ -903,7 +903,7 @@ with tab4:
             - Lynch + Reyes Yanes = voter transfers to help Trindade Deramo advance to final round
             - Brown's Nadeau endorsement is a net negative among moderates and men over 45
             - Raj's DSA brand is net negative among men, moderates, and conservatives
-            - Every door knocked in Columbia Heights and Adams Morgan carries outsized value for Miguel
+            - Doors knocked in Tier 1 districts carry outsized value for Miguel
 
             **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
             If she outperforms him, he's eliminated before the transfers happen.
