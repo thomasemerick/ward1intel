@@ -881,7 +881,15 @@ with tab4:
             }
         )
 
+        st.divider()
+        st.subheader("🗺️ Ward 1 Targeting Map")
+        st.caption("Precincts color-coded by targeting tier — Tier 1 (deep red) = highest priority")
+        import streamlit.components.v1 as components
+        with open("ward1_targeting_map.html", "r") as f:
+            targeting_html = f.read()
+        components.html(targeting_html, height=550, scrolling=False)
 
+        
         st.markdown("""
             #### The Theory of the Case:
 
