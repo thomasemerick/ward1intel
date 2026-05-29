@@ -896,7 +896,7 @@ with tab4:
             Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
             0% among conservatives, and has no small business or public safety record.
             Brown is strong but Nadeau's endorsement is a liability among the exact voters
-            Trindade Deramo needs. Trindade Deramo wins by being the only candidate who takes seriously the voters Raj ignores and Brown can't fully reach: parents, small business owners, crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity, and the Latino community that sees two of their own in the race.
+            Trindade Deramo needs. Miguel wins by being the only candidate who takes seriously the voters Raj ignores and Brown can't fully reach: parents, small business owners, crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity, and the Latino community that sees two of their own in the race.
 
             **The RCV math that makes it possible:**
             - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
