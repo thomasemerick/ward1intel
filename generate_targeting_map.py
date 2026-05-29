@@ -36,7 +36,7 @@ precincts = gdf[['Precinct','geometry']].dissolve(by='Precinct').reset_index()
 precincts = precincts.to_crs('EPSG:4326')
 
 # Center map on Ward 1
-center = [38.928, -77.033]
+center = [38.9255, -77.033]
 m = folium.Map(
     location=center,
     zoom_start=14,
