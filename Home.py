@@ -30,7 +30,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "🔴 Issue Universes",
     "🧬 Identity Universes",
     "🎯 Targeting Model",
-    "🗺️ RV Heatmap"
+    "🗺️ Precinct Reference"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -923,7 +923,7 @@ with tab4:
 
 
 # ══════════════════════════════════════════════════════════
-# TAB 5 — RV HEATMAP
+# TAB 5 — PRECINCT HEATMAP
 # ══════════════════════════════════════════════════════════
     with tab5:
         if not unlocked:
