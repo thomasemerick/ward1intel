@@ -191,14 +191,14 @@ with tab1:
         ],
         "Why_NOT_To_Compete_For_1st": [
             "She owns this precinct, competing directly alienates the Latino community",
-            "Her 30+ year Mt Pleasant roots are unbeatable on first choice here",
+            "Her 30+ year Mt Pleasant roots are tough to beat on first choice here",
             "She has government service record with these families",
             "She connected these residents to COVID vaccines and eviction relief",
             "Her business grant platform resonates strongly, don't outbid her",
         ],
         "Why_Her_Voters_Transfer_To_Deramo": [
             "Both Latino — when she's eliminated, Trindade Deramo is the natural home",
-            "Pro-business, pro-safety — identical to Trindade Deramo's platform",
+            "Pro-business, pro-safety — compatible with Trindade Deramo's platform",
             "Neither is DSA, Raj is not a transfer destination for Reyes Yanes voters",
             "Bowser-moderate — closer to Trindade Deramo/McDuffie than Raj/Lewis George",
             "Her voters already understand RCV, she ran bilingual RCV workshops",
