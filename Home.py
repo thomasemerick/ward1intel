@@ -170,7 +170,7 @@ with tab1:
     A targeted RCV education push among Lynch supporters in Mt Pleasant and U Street
     and just explaining that ranking a 2nd choice doesn't hurt their #1
     could be the difference between Trindade Deramo surviving Round 2 or not.
-    **This is a low-cost, highest-leverage canvassing play in the race.**
+    **This is a high-leverage canvassing play in the race.**
     """)
 
     st.divider()
