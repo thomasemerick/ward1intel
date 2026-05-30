@@ -475,7 +475,7 @@ with tab3:
         - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
 
         **Trindade Deramo's identity vulnerabilities:**
-        - Black voters (23% of electorate) → Brown dominates at 15%, Trindade Deramo at 1%
+        - Black voters (23% of electorate) → Brown dominates with Trindade Deramo at 1%
         - College-educated under 45 women → Raj's core, largely locked
         """)
 
@@ -520,7 +520,7 @@ with tab3:
                 "✅ Soft target — competitive",
                 "⚠️ Problem — Brown 21%, Deramo 0%",
                 "🔴 Hard — women break Brown/Raj",
-                "✅ Advantage — men break Deramo",
+                "✅ Advantage — Deramo 3 pts stronger",
                 "⚠️ Problem — Raj dominates",
                 "🔴 Hard — Raj at 33%",
                 "🟡 Medium — room to grow",
@@ -585,7 +585,7 @@ with tab3:
             **Black voters (23% of electorate)**
             Deramo 1%, Brown 15%, Raj 2%
             Brown dominates — ceiling is ~5-8% even with perfect execution
-            RCV angle: get Black Brown voters to rank Deramo 2nd
+            RCV angle: get Black Brown voters to rank Deramo 2nd per candidate pact
 
             **Young voters 18-45 (45% of electorate)**
             Raj 29%, Brown 10%, Deramo 9%
@@ -595,11 +595,11 @@ with tab3:
             **Women (56% of electorate)**
             Brown 17%, Raj 17%, Deramo 6%
             Focus on women 45+, mothers with school-age kids
-            Non-binary → Raj 51%, Deramo 0% — concede
+            Hispanic and Latina women as 1st and 2nd choice targets
 
             **Post-grad degree (35% of electorate)**
             Raj 26%, Brown 9%, Deramo 10%
-            Raj's educational stronghold — focus elsewhere
+            Raj's educational stronghold — difficult but not impossible terrain
             """)
 
         st.divider()
@@ -674,8 +674,8 @@ with tab3:
             "Deramo_Edge": [
                 "46-65: Deramo 11%, Brown 10% — genuinely competitive",
                 "Owner-occupants respond to safety/business record not union politics",
-                "McDuffie leads 46-65 on mayor — dual ticket works perfectly",
-                "65+ problem (Deramo 0%) but 46-65 is the real target",
+                "McDuffie leads 46-65 on mayor — realistic path to winning McDuffie voters",
+                "65+ problem (Deramo 0%) but 65-plus white and Hiispanic gettable",
                 "Tenure 5+ years — long enough to care, short enough to not be locked in",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
@@ -699,7 +699,7 @@ with tab3:
             ],
             "Deramo_Edge": [
                 "Moderates: Deramo 9%, Raj 1% — Raj is irrelevant here",
-                "Conservative Dems: Brown 38%, Deramo 0% — RCV transfer play only",
+                "Conservative Dems: Brown 38%, Deramo 0% — tough sledding but cut margins",
                 "DSA endorsement net negative among moderates (-27% vs +20%)",
                 "Nadeau endorsed Brown — 23% of moderates less likely with Nadeau",
                 "The ask: rank Brown or Deramo 1-2, leave Raj unranked",
@@ -733,7 +733,7 @@ with tab3:
                 "Other race: three-way split — Deramo competitive",
                 "No college degree: Brown 33%, Deramo 6%, Raj 0%",
                 "Working class: crime + business message lands harder than DSA ideology",
-                "African immigrants often socially conservative — Raj's platform alienates",
+                "African immigrants often socially conservative — Raj's may struggle here",
                 "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
@@ -773,7 +773,7 @@ with tab3:
             "RCV_Strategy": [
                 "If Brown voter: Brown #1, Deramo #2, Raj unranked",
                 "If undecided: Deramo #1, Brown #2 — both beat Raj",
-                "Key ask: do NOT rank Raj, her platform is opposite of your values",
+                "Key ask: Path to 2nd on Yanes Reyes and Lynch ballots",
                 "Conservative Dems may stop at #1, educate on RCV math",
                 "White moderate undecideds are the direct Deramo target here",
             ],
@@ -794,7 +794,7 @@ with tab4:
         st.markdown("""
         **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
 
-        Every precinct scored across 9 validated universes — sourced from MPD crime data, DCBOE 2022/2024 election results, DC DLCP business licenses, 2020/2023 Census, and PPP/GGWash poll crosstabs.
+        Every precinct scored across 9 validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
         The matrix below tells you exactly where to knock doors and why.
 
         **The three numbers that matter:**
@@ -851,10 +851,10 @@ with tab4:
 
         scored['Final_Priority'] = [medal(i) for i in range(len(scored))]
 
-        display_cols = ['Precinct','Neighborhood','Crime_Dot','Business_Dot',
+        display_cols = ['Final_Priority','Precinct','Neighborhood','Crime_Dot','Business_Dot',
                         'Schools_Dot','LGBTQ_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
                         'White_46plus_Dot','Not_Leftist_Dot','Minrty_NoAlign_Dot',
-                        'Reg_Dems','Final_Priority']
+                        'Reg_Dems']
 
         combined = scored[display_cols].rename(columns={
             'Crime_Dot': 'Crime',
@@ -867,7 +867,6 @@ with tab4:
             'Not_Leftist_Dot': 'Not_Leftist',
             'Minrty_NoAlign_Dot': 'Minrty_NoAlign',
             'Reg_Dems': 'Registered Dems',
-            'Final_Priority': 'Final_Priority',
         })
 
         st.dataframe(
@@ -905,16 +904,13 @@ with tab4:
             - Raj's DSA brand is net negative among men, moderates, and conservatives
             - Doors knocked in Tier 1 districts carry outsized value for Miguel
 
-            **The single most important number: Trindade Deramo must finish above Reyes Yanes in Round 1.**
-            If she outperforms him, he's eliminated before the transfers happen.
-            Mt Pleasant and the Hispanic universe are existential, not optional.
             """)
 
             
         st.success("""
             **Path to Victory Plan in One Paragraph:**
 
-            Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 8 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and Not_Leftist universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper: Largest registered Dem pool in the ward at 3,962 with strong signals from demos of Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown). Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts before June 16 is worth more than two doors anywhere else in the ward.
+            Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 8 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and non-DSA universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper: Largest registered Dem pool in the ward at 3,962 with strong signals from demos of Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown). Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts reaches voters who are persuadable on 4+ dimensions simultaneously, making for some of the most critical canvassing in the ward.
             """)
 
 
