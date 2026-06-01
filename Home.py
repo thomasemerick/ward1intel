@@ -355,14 +355,14 @@ with tab2:
         st.caption("Target: Households with school-age children. Crime + fiscal responsibility to have revenue for investing in public schools.")
 
         school_precincts = pd.DataFrame({
-            "Precinct": [35, 36, 37, 38, 23],
+            "Precinct": [41, 38, 39, 42, 43],
             "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
             "Nearby_School": [
-                "Brightwood EC, MacFarland MS",
-                "Adams Morgan ES, MacFarland MS",
-                "Columbia Heights ES, MacFarland MS",
-                "Pleasant Plains, Park View ES area",
-                "Park View ES, Georgia Ave corridor",
+                "20.0% Under 18",
+                "19.9% Under 18",
+                "18.2% Under 18%",
+                "16.8% Under 18",
+                "15.5% Under 18",
             ],
             "Deramo_Message": [
                 "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
