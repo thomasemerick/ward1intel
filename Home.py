@@ -339,7 +339,7 @@ with tab2:
 
         school_precincts = pd.DataFrame({
             "Precinct": [41, 38, 39, 42, 43],
-            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
+            "Neighborhood": ["Columbia Heights", "Park View", "Mount Pleasant/Co Hts", "Columbia Heights", "Park View"],
             "Nearby_School": [
                 "20.0% Under 18",
                 "19.9% Under 18",
