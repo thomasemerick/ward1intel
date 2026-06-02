@@ -284,11 +284,11 @@ with tab2:
         st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
 
         crime_precincts = pd.DataFrame({
-            "Precinct": [37, 39, 137, 22, 38],
-            "Neighborhood": ["Pleasant Plains", "Mount Pleasant/Co Hts", "U Street", "U Street", "Park View"],
+            "Precinct": [40, 39, 137, 22, 37],
+            "Neighborhood": ["Mount Pleasant", "Mount Pleasant/Co Hts", "U Street", "U Street", "Pleasant Plains"],
             "Why_Target": [
                 "High foot traffic corridor, late-night incidents",
-                "Bar district, assault/robbery concentration, longtime residents fed up",
+                "Bar district, assault/robbery concentration",
                 "U St nightlife corridor, visible disorder complaints",
                 "14th St corridor, property crime, auto theft",
                 "Mixed income, crime a top complaint",
