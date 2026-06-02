@@ -151,7 +151,6 @@ with tab1:
             "Lynch #1, Deramo #2 — crime frame",
             "Lynch #1, Deramo #2 — jobs/business frame",
         ],
-        "Priority": ["🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2", "🚨 Tier 1"],
     })
 
     st.dataframe(lynch_universe, use_container_width=True, hide_index=True)
@@ -213,17 +212,10 @@ with tab1:
         "Transfer_Value": [
             "🔴 Critical", "🔴 Critical", "🟡 Medium", "🟡 Medium", "🟡 Medium"
         ],
-        "Untapped_Voters": [2355, 1920, 671, 2804, 2698],
-        "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2"],
     })
 
-    st.dataframe(reyes_yanes_universe, use_container_width=True, hide_index=True,
-        column_config={
-            "Untapped_Voters": st.column_config.ProgressColumn(
-                "Untapped", min_value=0, max_value=3500, format="%d"
-            ),
-        }
-    )
+    st.dataframe(reyes_yanes_universe, use_container_width=True, hide_index=True
+        )
 
     st.info("""
     **The Low-Key Play for both Lynch and Reyes Yanes voters:**
@@ -607,11 +599,8 @@ with tab3:
                 "Schools + safety message resonates with longer-tenure families",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            "Untapped_Voters": [2873, 2310, 2355, 1920, 2804],
-            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2"],
         })
-        st.dataframe(identity_universe_1, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_1, use_container_width=True, hide_index=True)
 
         st.divider()
         st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
@@ -633,11 +622,8 @@ with tab3:
                 "Cross-universe: LGBTQ+ + crime + business all align here",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
-            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2"],
         })
-        st.dataframe(identity_universe_2, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_2, use_container_width=True, hide_index=True)
 
         st.divider()
         st.markdown("#### 👴 Identity Universe 3 — White 46+ Sleeper Vote")
@@ -660,11 +646,8 @@ with tab3:
                 "Tenure 5+ years — long enough to care, short enough to not be locked in",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            "Untapped_Voters": [2458, 3080, 2698, 2085, 2355],
-            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
         })
-        st.dataframe(identity_universe_3, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_3, use_container_width=True, hide_index=True)
 
         st.divider()
         st.markdown("#### 🗳️ Identity Universe 4 — Not Leftists")
@@ -692,11 +675,8 @@ with tab3:
                 "If Deramo voter: Deramo #1, Brown #2, Raj unranked",
                 "Same regardless of preference order",
             ],
-            "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
-            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
         })
-        st.dataframe(identity_universe_4, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_4, use_container_width=True, hide_index=True)
 
         st.divider()
         st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
@@ -718,11 +698,8 @@ with tab3:
                 "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            "Untapped_Voters": [2964, 2873, 2804, 2698, 2355],
-            "Priority": ["🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
         })
-        st.dataframe(identity_universe_5, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_5, use_container_width=True, hide_index=True)
 
         st.divider()
         st.markdown("#### 🦅 Identity Universe 6 — White NonLeft (Moderate + Conservative)")
@@ -758,11 +735,8 @@ with tab3:
                 "Conservative Dems may stop at #1, educate on RCV math",
                 "White moderate undecideds are the direct Deramo target here",
             ],
-            "Untapped_Voters": [2458, 3080, 2698, 2085, 2964],
-            "Priority": ["🚨 Tier 1", "🚨 Tier 1", "⭐ Tier 2", "⭐ Tier 2", "⭐ Tier 2"],
         })
-        st.dataframe(identity_universe_6, use_container_width=True, hide_index=True,
-            column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
+        st.dataframe(identity_universe_6, use_container_width=True, hide_index=True)
 
 # ══════════════════════════════════════════════════════════
 # TAB 4 — TARGETING MODEL
