@@ -859,7 +859,7 @@ with tab4:
 | **Minrty_NoAlign** | Census B03002 (2023 ACS) | Hispanic + Asian + Other non-white non-Black population in top tier |
 | **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
         """, unsafe_allow_html=True)
-        st.caption("Final Priority Score = 60% red dot count + 35% registered Dems + 5% untapped voters (2024 non-voters). All scores normalized within Ward 1 only.")
+        st.caption("Final Priority Score = 60% red dot count + 35% registered Dems + 5% untapped voters (2024 non-voters). All scores normalized within Ward 1 only. PPP poll data helped to validate which metrics to use as proxies.")
         
         st.markdown("""
             #### The Theory of the Case:
