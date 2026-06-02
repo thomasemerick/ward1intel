@@ -587,9 +587,9 @@ with tab3:
             "Why_Target": [
                 "Heart of DC's Salvadoran community — highest Hispanic concentration in Ward 1",
                 "Historic Latino residential anchor since 1980s",
-                "Large Latino population, community anchors on 14th St",
-                "Hispanic family density, longtime residents",
-                "Hispanic renters and homeowners mixed",
+                "Large Latino/Hispanic population, community anchors on 14th St",
+                "Latino/Hispanic family density, longtime residents",
+                "Latino/Hispanic renters and homeowners mixed",
             ],
             "Deramo_Edge": [
                 "Only Latino w/ double digits in PPP poll, first Latino on DC Council if elected",
