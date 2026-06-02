@@ -274,7 +274,7 @@ with tab2:
         st.markdown("""**The three issues where Raj is most vulnerable:**
         - 🚔 **Crime:** "Reform doesn't work. We have to defund the police" - her own words
         - 🏪 **Business:** Zero commercial corridor platform
-        - 🏫 **Schools:** Teachers union-aligned, COVID closure politics
+        - 🏫 **Schools:** Teachers union-aligned, but how will she help students and parents
                 
         """)
         st.divider()
