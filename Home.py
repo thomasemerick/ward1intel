@@ -284,10 +284,10 @@ with tab2:
         st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
 
         crime_precincts = pd.DataFrame({
-            "Precinct": [40, 41, 43, 39, 22],
-            "Neighborhood": ["Mount Pleasant", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
+            "Precinct": [37, 41, 43, 39, 22],
+            "Neighborhood": ["Pleasant Plains", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
             "Why_Target": [
-                "High foot traffic corridor, business crime, late-night incidents",
+                "High foot traffic corridor, late-night incidents",
                 "Bar district, assault/robbery concentration, longtime residents fed up",
                 "U St nightlife corridor, visible disorder complaints",
                 "14th St corridor, property crime, auto theft",
@@ -320,8 +320,8 @@ with tab2:
         st.caption("Target: Residents who've watched neighborhood businesses close")
 
         business_precincts = pd.DataFrame({
-            "Precinct": [40, 43, 41, 39, 22],
-            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Mount Pleasant", "U Street"],
+            "Precinct": [137, 22, 25, 24, 39],
+            "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mt Pleasant/Co Hts"],
             "Corridor": ["U Street NW", "U Street NW", "18th Street NW", "14th Street NW", "14th Street NW"],
             "Business_Vulnerability": [
                 "U St nightlife corridor losing anchor tenants post-pandemic",
@@ -341,7 +341,7 @@ with tab2:
                 "No small business platform section",
                 "No mention of U Street corridor health",
                 "Economic platform = unions and wages only",
-                "No 14th St or commercial corridor policy",
+                "No commercial corridor policy",
                 "Zero local business record",
             ],
         })
@@ -391,14 +391,14 @@ with tab2:
         st.caption("Miguel explicitly includes 'safety from discrimination' in his platform")
 
         lgbtq_precincts = pd.DataFrame({
-            "Precinct": [40, 43, 41, 42, 39],
-            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
+            "Precinct": [137, 22, 25, 24, 39],
+            "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mount Pleasant/Co Hts"],
             "LGBTQ_Context": [
                 "Historic Black LGBTQ+ corridor, Shaw/U St anchors",
                 "U Street nightlife, queer bars and venues concentrated here",
                 "Adams Morgan — diverse LGBTQ+ community, long-established",
                 "Adams Morgan — younger queer renters, high transplant population",
-                "Columbia Heights — growing LGBTQ+ residential presence",
+                "Growing LGBTQ+ residential presence",
             ],
             "Deramo_Message": [
                 "First Latino on DC Council, second LGBTQ+ — historic AND substantive",
@@ -426,7 +426,7 @@ with tab2:
         st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Trindade Deramo")
 
         nadeau_precincts = pd.DataFrame({
-            "Precinct": [22, 39, 40, 25, 20],
+            "Precinct": [22, 39, 137, 25, 20],
             "Neighborhood": ["U Street", "Mount Pleasant", "Mount Pleasant", "Adams Morgan", "LeDroit Park"],
             "Nadeau_Weakness": [
                 "14th St corridor business closures happened on her watch — 12 years, limited action",
@@ -635,14 +635,14 @@ with tab3:
         st.divider()
         st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
         identity_universe_2 = pd.DataFrame({
-            "Precinct": [40, 43, 41, 42, 39],
+            "Precinct": [137, 22, 25, 24, 39],
             "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
             "LGBTQ_Context": [
                 "Historic Black LGBTQ+ corridor",
-                "Park View — near Shaw/U St queer nightlife corridor",
+                "Near Shaw/U St queer nightlife corridor",
                 "Adams Morgan w/ established LGBTQ+ residential + nightlife",
-                "Columbia Heights — younger queer renters, high density",
-                "Columbia Heights w/ growing LGBTQ+ presence",
+                "Younger queer renters, high density",
+                "Growing LGBTQ+ presence",
             ],
             "Deramo_Edge": [
                 "2nd out LGBTQ+ on DC Council, first Latino — historic",
@@ -660,15 +660,15 @@ with tab3:
 
         st.divider()
         st.markdown("#### 👴 Identity Universe 3 — White 46+ Sleeper Vote")
-        st.caption("Most underrated universe in the race. Raj is irrelevant. It's Brown vs Deramo.")
+        st.caption("Deramo can run up margins here and score Lynch #2 votes.")
         identity_universe_3 = pd.DataFrame({
-            "Precinct": [35, 36, 37, 38, 23],
-            "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "Columbia Heights"],
+            "Precinct": [35, 24, 22, 25, 40],
+            "Neighborhood": ["Adams Morgan", "Adams Morgan", "U Street", "Adams Morgan", "Mount Pleasant"],
             "Profile": [
-                "Highest median age (45) — white long-tenure homeowners",
-                "Highest owner-occupancy (47%) — invested, pragmatic, anti-ideology",
-                "Park View white 46+ — active on crime and school quality",
-                "Park View — school-parent overlap",
+                "High median age — white long-tenure homeowners",
+                "Highest owner-occupancy — invested, pragmatic, anti-ideology",
+                "Significant presence in this precinct",
+                "School-parent overlap",
                 "Mt Pleasant older white homeowners",
             ],
             "Deramo_Edge": [
@@ -686,16 +686,16 @@ with tab3:
             column_config={"Untapped_Voters": st.column_config.ProgressColumn("Untapped", min_value=0, max_value=3500, format="%d")})
 
         st.divider()
-        st.markdown("#### 🗳️ Identity Universe 4 — Moderate + Conservative Dem")
+        st.markdown("#### 🗳️ Identity Universe 4 — Not Leftists")
         identity_universe_4 = pd.DataFrame({
-            "Precinct": [35, 36, 37, 38, 22],
+            "Precinct": [38, 36, 37, 38, 137],
             "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
             "Profile": [
-                "Adams Morgan — longest tenure residents, moderate Dems",
+                "Many longer-tenured residents and moderate Dems",
                 "Columbia Heights — homeowners, pragmatic, not ideological",
-                "Park View — working class moderate Dems, crime top concern",
-                "Park View — Brown's ANC base but Deramo can compete",
-                "Columbia Heights — moderate Dems frustrated with progressive performance",
+                "Working class moderate Dems, crime top concern",
+                "Brown's ANC base but Deramo can compete",
+                "Moderate Dems frustrated with governance",
             ],
             "Deramo_Edge": [
                 "Moderates: Deramo 9%, Raj 1% — Raj is irrelevant here",
@@ -720,20 +720,20 @@ with tab3:
         st.divider()
         st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
         identity_universe_5 = pd.DataFrame({
-            "Precinct": [22, 39, 25, 37, 23],
-            "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Pleasant Plains", "Columbia Heights"],
+            "Precinct": [36, 39, 35, 41, 42],
+            "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Columbia Heights", "Columbia Heights"],
             "Profile": [
-                "Asian, multiracial, mixed-income non-black voters",
-                "Other race voters: Deramo 11%, Raj 20% — competitive",
-                "Working class renters, no college degree voters",
-                "African immigrant community, not Black Dem establishment aligned",
-                "Central American community — school/crime concerns",
+                "Multiracial, mixed-income voter at nearly quarter Hispanic",
+                "'Other' race voters: Deramo 11%, Raj 20% — competitive",
+                "First in Asian American population at 8.5%; 5th in Hispanic",
+                "Hispanic community well-represented at 31%",
+                "At 25% Hispanic second only to Precinct 41",
             ],
             "Deramo_Edge": [
                 "Other race: three-way split — Deramo competitive",
                 "No college degree: Brown 33%, Deramo 6%, Raj 0%",
                 "Working class: crime + business message lands harder than DSA ideology",
-                "African immigrants often socially conservative — Raj's may struggle here",
+                "Working class: crime + business message lands harder than DSA ideology",
                 "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
             ],
             "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
