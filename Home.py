@@ -151,17 +151,10 @@ with tab1:
             "Lynch #1, Deramo #2 — crime frame",
             "Lynch #1, Deramo #2 — jobs/business frame",
         ],
-        "Untapped_Voters": [2355, 1920, 2458, 2698, 2310],
         "Priority": ["🚨 Tier 1", "🟡 Tier 2", "🟡 Tier 2", "🟡 Tier 2", "🚨 Tier 1"],
     })
 
-    st.dataframe(lynch_universe, use_container_width=True, hide_index=True,
-        column_config={
-            "Untapped_Voters": st.column_config.ProgressColumn(
-                "Untapped", min_value=0, max_value=3500, format="%d"
-            ),
-        }
-    )
+    st.dataframe(lynch_universe, use_container_width=True, hide_index=True)
 
     st.error("""
     **Lynch ballots in poll, most votes exhausting:**
@@ -376,8 +369,6 @@ with tab2:
                 "Safety platform explicitly avoids police response, parents feel this",
                 "No school-adjacent crime policy",
             ],
-            "Median_Age": [45, 46, 44, 43, 35],
-            "Owner_pct": [44, 47, 42, 43, 28],
         })
 
         st.dataframe(school_precincts, use_container_width=True, hide_index=True)
@@ -405,17 +396,9 @@ with tab2:
                 "Record vs Raj: 5 years ANC work vs Raj's zero elected record",
                 "Miguel ties LGBTQ+ safety to broader community safety",
             ],
-            "2024_Turnout_pct": [30.5, 23.3, 23.2, 27.3, 26.5],
-            "Untapped_Voters": [2310, 1343, 2563, 1246, 2873],
         })
 
-        st.dataframe(lgbtq_precincts, use_container_width=True, hide_index=True,
-            column_config={
-                "Untapped_Voters": st.column_config.ProgressColumn(
-                    "Untapped", min_value=0, max_value=3500, format="%d"
-                ),
-            }
-        )
+        st.dataframe(lgbtq_precincts, use_container_width=True, hide_index=True)
 
         st.divider()
 
