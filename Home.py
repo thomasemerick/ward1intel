@@ -293,8 +293,6 @@ with tab2:
                 "14th St corridor, property crime, auto theft",
                 "Mixed income, crime a top complaint",
             ],
-            "Registered_Dems": [3322, 3337, 1751, 3911, 4038],
-            "Turnout_2024_pct": [30.5, 23.2, 23.3, 26.5, 26.6],
             "Deramo_Message": [
                 "'Public safety is foundational' — Miguel will reestablish trust with MPD",
                 "Miguel supported violence interruption funding as ANC chair",
