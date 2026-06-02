@@ -284,14 +284,14 @@ with tab2:
         st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
 
         crime_precincts = pd.DataFrame({
-            "Precinct": [37, 41, 43, 39, 22],
-            "Neighborhood": ["Pleasant Plains", "Columbia Heights", "Park View", "Mount Pleasant", "U Street"],
+            "Precinct": [37, 39, 137, 22, 38],
+            "Neighborhood": ["Pleasant Plains", "Mount Pleasant/Co Hts", "U Street", "U Street", "Park View"],
             "Why_Target": [
                 "High foot traffic corridor, late-night incidents",
                 "Bar district, assault/robbery concentration, longtime residents fed up",
                 "U St nightlife corridor, visible disorder complaints",
                 "14th St corridor, property crime, auto theft",
-                "High density, mixed income, crime a top ANC complaint",
+                "Mixed income, crime a top complaint",
             ],
             "Registered_Dems": [3322, 3337, 1751, 3911, 4038],
             "Turnout_2024_pct": [30.5, 23.2, 23.3, 26.5, 26.6],
@@ -613,10 +613,10 @@ with tab3:
             "Neighborhood": ["Mount Pleasant/Columbia Heights", "Mount Pleasant", "Columbia Heights", "Adams Morgan", "Adams Morgan"],
             "Why_Target": [
                 "Heart of DC's Salvadoran community — highest Hispanic concentration in Ward 1",
-                "Mount Pleasant — historic Latino residential anchor since 1980s",
-                "Columbia Heights — large Latino population, community anchors on 14th St",
-                "Adams Morgan — Hispanic family density, longtime residents",
-                "Adams Morgan — Hispanic renters and homeowners mixed",
+                "Historic Latino residential anchor since 1980s",
+                "Large Latino population, community anchors on 14th St",
+                "Hispanic family density, longtime residents",
+                "Hispanic renters and homeowners mixed",
             ],
             "Deramo_Edge": [
                 "Only Latino w/ double digits in PPP poll, first Latino on DC Council if elected",
