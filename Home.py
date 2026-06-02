@@ -764,7 +764,7 @@ with tab4:
     
 
         st.subheader("🎯 Combined Issue + Identity Priority Matrix")
-        st.caption("Every precinct scored across all 10 universes — 5 issue + 5 identity")
+        st.caption("Every precinct scored across all 9 universes — 4 issue + 4 identity + LGBTQ+ as both")
 
 
 
