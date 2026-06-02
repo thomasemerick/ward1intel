@@ -603,10 +603,10 @@ with tab3:
         st.dataframe(identity_universe_1, use_container_width=True, hide_index=True)
 
         st.divider()
-        st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Activation")
+        st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Presence")
         identity_universe_2 = pd.DataFrame({
             "Precinct": [137, 22, 25, 24, 39],
-            "Neighborhood": ["Mount Pleasant", "Park View", "Columbia Heights", "Columbia Heights", "Mount Pleasant"],
+            "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mount Pleasant/Co Hts"],
             "LGBTQ_Context": [
                 "Historic Black LGBTQ+ corridor",
                 "Near Shaw/U St queer nightlife corridor",
