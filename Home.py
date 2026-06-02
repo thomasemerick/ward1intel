@@ -843,7 +843,24 @@ with tab4:
             targeting_html = f.read()
         components.html(targeting_html, height=550, scrolling=False)
 
-
+        st.divider()
+        st.markdown("#### 📋 How Each Variable Is Measured")
+        st.markdown("""
+| Variable | Source | What Makes a Precinct 🔴 |
+|---|---|---|
+| **Crime** | MPD incident data 2020–2026 | Top 3 precincts by weighted crime density (homicide x2, all others x1) |
+| **Business** | DC DLCP business licenses | Closure/stress rate ≥ 63% (inactive licenses ÷ total licenses) |
+| **Schools** | Census B09001 (2023 ACS) | Under-18 population in top tier by precinct |
+| **LGBTQ** | Venue geography + residential research | Known LGBTQ venue concentration and residential density |
+| **Anti_Nadeau** | 2022 DCBOE primary results | High non-Nadeau vote rate, weighted: Czapary x2, Harris x1 |
+| **Hispanic** | Census B03003 (2023 ACS) | Hispanic/Latino population ≥ 22% |
+| **White_46+** | Census B01001A (2023 ACS) | White population 45+ in top tier by precinct |
+| **Not_Leftist** | Census composite (2023 ACS) | Low postgrad (30%) + high Black (20%) + high Hispanic (20%) + high Asian (10%) + high Anti-Nadeau rate (20%) |
+| **Minrty_NoAlign** | Census B03002 (2023 ACS) | Hispanic + Asian + Other non-white non-Black population in top tier |
+| **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
+        """, unsafe_allow_html=True)
+        st.caption("Final Priority Score = 60% red dot count + 35% registered Dems + 5% untapped voters (2024 non-voters). All scores normalized within Ward 1 only.")
+        
         st.markdown("""
             #### The Theory of the Case:
 
