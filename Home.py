@@ -979,8 +979,7 @@ with tab6:
             use_container_width=True,
             hide_index=True,
             column_config={
-                "Business_Stress_Rate": st.column_config.NumberColumn("Business Stress %", format="%.1f%%"),
-                "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
+                "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closed (2015+)", format="%d"),                "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
                 "Czapary_Vote_Pct": st.column_config.NumberColumn("Czapary %", format="%.1f%%"),
                 "Harris_Vote_Pct": st.column_config.NumberColumn("Harris %", format="%.1f%%"),
                 "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
@@ -996,4 +995,4 @@ with tab6:
                 "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
             }
         )
-        st.caption("Sources: MPD (2020–2026), DC DLCP business licenses, DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
+        st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
