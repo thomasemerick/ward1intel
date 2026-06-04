@@ -983,6 +983,9 @@ with tab6:
             use_container_width=True,
             hide_index=True,
             column_config={
+                "Registered_Dems": st.column_config.ProgressColumn(
+                "Registered Dems", min_value=0, max_value=4500, format="%d"
+                ),
                 "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
                 "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
                 "Czapary_Vote_Pct": st.column_config.NumberColumn("Czapary %", format="%.1f%%"),
