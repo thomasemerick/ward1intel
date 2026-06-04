@@ -996,6 +996,7 @@ with tab6:
                 "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
                 "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
                 "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
+                "Median_Age": st.column_config.NumberColumn("Median Age", format="%.1f"),
                 "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
                 "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
                 "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
