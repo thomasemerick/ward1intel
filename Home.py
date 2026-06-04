@@ -25,12 +25,13 @@ st.markdown("""
 access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
 unlocked = access_code == "miguel20xxjune"
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "♻️ Minor Candidate Transfers",
     "🔴 Issue Universes",
     "🧬 Identity Universes",
     "🎯 Targeting Model",
-    "🗺️ Precinct Heatmap"
+    "🗺️ Precinct Heatmap",
+    "📊 Underlying Data"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -960,3 +961,39 @@ with tab4:
                 }
             )
             
+            # ══════════════════════════════════════════════════════════
+# TAB 6 — UNDERLYING DATA
+# ══════════════════════════════════════════════════════════
+with tab6:
+    if not unlocked:
+        st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+    else:
+        st.subheader("📊 Underlying Data Tables")
+        st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
+
+        underlying = pd.read_csv('ward1_underlying.csv')
+        underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
+
+        st.dataframe(
+            underlying,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Business_Stress_Rate": st.column_config.NumberColumn("Business Stress %", format="%.1f%%"),
+                "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
+                "Czapary_Vote_Pct": st.column_config.NumberColumn("Czapary %", format="%.1f%%"),
+                "Harris_Vote_Pct": st.column_config.NumberColumn("Harris %", format="%.1f%%"),
+                "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
+                "Black_Pct": st.column_config.NumberColumn("Black %", format="%.1f%%"),
+                "White_Pct": st.column_config.NumberColumn("White %", format="%.1f%%"),
+                "Asian_Pct": st.column_config.NumberColumn("Asian %", format="%.1f%%"),
+                "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
+                "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
+                "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
+                "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
+                "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
+                "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
+                "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
+            }
+        )
+        st.caption("Sources: MPD (2020–2026), DC DLCP business licenses, DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
