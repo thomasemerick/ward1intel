@@ -850,7 +850,7 @@ with tab4:
 | Variable | Source | What Makes a Precinct 🔴 |
 |---|---|---|
 | **Crime** | MPD incident data 2020–2026 | Top 3 precincts by weighted crime density (homicide x2, all others x1) |
-| **Business** | DC DLCP business licenses | Closure/stress rate ≥ 63% (inactive licenses ÷ total licenses) |
+| **Business** | DC DLCP business licenses started Jan 1 2015-June 1 2026 | 200+ closures or more than .06 closures per registered Democrat |
 | **Schools** | Census B09001 (2023 ACS) | Under-18 population in top tier by precinct |
 | **LGBTQ** | Venue geography + residential research | Known LGBTQ venue concentration and residential density |
 | **Anti_Nadeau** | 2022 DCBOE primary results | High non-Nadeau vote rate, weighted: Czapary x2, Harris x1 |
