@@ -983,7 +983,8 @@ with tab6:
             use_container_width=True,
             hide_index=True,
             column_config={
-                "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closed (2015+)", format="%d"),                "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
+                "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
+                "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
                 "Czapary_Vote_Pct": st.column_config.NumberColumn("Czapary %", format="%.1f%%"),
                 "Harris_Vote_Pct": st.column_config.NumberColumn("Harris %", format="%.1f%%"),
                 "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
