@@ -31,7 +31,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "🧬 Identity Universes",
     "🎯 Targeting Model",
     "🗺️ Precinct Heatmap",
-    "📊 Underlying Data"
+    "📊 Sortable Data"
 ])
 
 # ══════════════════════════════════════════════════════════
@@ -962,13 +962,13 @@ with tab4:
             )
             
             # ══════════════════════════════════════════════════════════
-# TAB 6 — UNDERLYING DATA
+# TAB 6 — SORTABLE DATA
 # ══════════════════════════════════════════════════════════
 with tab6:
     if not unlocked:
         st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
     else:
-        st.subheader("📊 Underlying Data Tables")
+        st.subheader("📊 Sortable Data")
         st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
 
         underlying = pd.read_csv('ward1_underlying.csv')
