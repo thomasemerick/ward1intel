@@ -849,7 +849,7 @@ with tab4:
         st.markdown("""
 | Variable | Source | What Makes a Precinct 🔴 |
 |---|---|---|
-| **Crime** | MPD incident data 2020–2026 | Top 3 precincts by weighted crime density (homicide x2, all others x1) |
+| **Crime** | MPD incident data 2020–2026 | Top 5 precincts by weighted crime density (homicide x2, all others x1) |
 | **Business** | DC DLCP business licenses started Jan 1 2015-June 1 2026 | 200+ closures or more than .06 closures per registered Democrat |
 | **Schools** | Census B09001 (2023 ACS) | Under-18 population in top tier by precinct |
 | **LGBTQ** | Venue geography + residential research | Known LGBTQ venue concentration and residential density |
