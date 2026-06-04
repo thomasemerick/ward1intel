@@ -974,6 +974,10 @@ with tab6:
         underlying = pd.read_csv('ward1_underlying.csv')
         underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
 
+        # Move Biz_Closed_Since2015 to front after Precinct and Neighborhood
+        cols = ['Precinct', 'Neighborhood', 'Biz_Closed_Since2015'] + [c for c in underlying.columns if c not in ['Precinct', 'Neighborhood', 'Biz_Closed_Since2015']]
+        underlying = underlying[cols]
+
         st.dataframe(
             underlying,
             use_container_width=True,
