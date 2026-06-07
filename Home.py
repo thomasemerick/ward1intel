@@ -13,7 +13,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("🗳️ DC Ward 1 Campaign Intel")
-st.caption("Targeting model and insights pitched to Miguel Trindade Deramo for the 2026 Primary | By Thomas Emerick")
+st.caption("Targeting model and insights for the Ward 1 2026 Democratic Primary | By Thomas Emerick")
 
 access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
 unlocked = access_code == "floront"
