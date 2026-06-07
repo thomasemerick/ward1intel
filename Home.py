@@ -20,7 +20,7 @@ unlocked = access_code == "floront"
 
 if unlocked:
     st.markdown("""
-    **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Miguel Trindade Deramo is uniquely positioned to gain late and pull ahead of the field in RCV. 
+    **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Jackie Reyes Yanes is uniquely positioned to gain late and pull ahead of the field in RCV. 
     """)
 
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
@@ -59,15 +59,15 @@ if unlocked:
             ],
             "Raj %": [42, 43, 45, 51],
             "Brown %": [25, 26, 29, 49],
-            "Trindade Deramo %": [16, 17, 20, 0],
+            "Reyes Yanes %": [16, 17, 20, 0],
             "Reyes_Yanes %": [9, 10, 0, 0],
             "Lynch %": [8, 0, 0, 0],
             "Exhausted %": [0, 4, 6, 0],
             "Notes": [
                 "Raj leads by 17pts among decided, but 54% still undecided",
                 "Most Lynch voters exhaust, wasted votes per GGWash simulation",
-                "Projected: Reyes Yanes transfers mostly to Brown and Trindade Deramo",
-                "If Trindade Deramo eliminated in R3: Brown needs almost all Trindade Deramo transfers to beat Raj",
+                "Projected: Reyes Yanes transfers mostly to Brown and Reyes Yanes",
+                "If Reyes Yanes eliminated in R3: Brown needs almost all Reyes Yanes transfers to beat Raj",
             ],
         })
 
@@ -75,7 +75,7 @@ if unlocked:
             column_config={
                 "Raj %": st.column_config.NumberColumn(format="%d%%"),
                 "Brown %": st.column_config.NumberColumn(format="%d%%"),
-                "Trindade Deramo %": st.column_config.NumberColumn(format="%d%%"),
+                "Reyes Yanes %": st.column_config.NumberColumn(format="%d%%"),
                 "Reyes_Yanes %": st.column_config.NumberColumn("Reyes Yanes %", format="%d%%"),
                 "Lynch %": st.column_config.NumberColumn(format="%d%%"),
                 "Exhausted %": st.column_config.NumberColumn(format="%d%%"),
@@ -86,29 +86,29 @@ if unlocked:
         #### All likely voters including undecideds (est.):
         - 🔵 Raj: 18%
         - 🟡 Brown: 13%  
-        - 🟢 Trindade Deramo: 7%
+        - 🟢 Reyes Yanes: 7%
         - 🟠 Reyes Yanes: 4%
         - ⚪ Lynch: 3%
         - ❓ Undecided: 55%
         """)
         st.markdown("""
-        **What Trindade Deramo stands to gain:**
-        - If 75% of Lynch's ~720 votes transfer to Trindade Deramo → **+540 votes**
-        - If 75% of Reyes Yanes' ~810 votes transfer to Trindade Deramo → **+608 votes**
+        **What Reyes Yanes stands to gain:**
+        - If 75% of Lynch's ~720 votes transfer to Reyes Yanes → **+540 votes**
+        - If 75% of Reyes Yanes' ~810 votes transfer to Reyes Yanes → **+608 votes**
         - Combined upside: **~1,148 votes** to get in range with Brown in penultimate round
-        - Current gap to close: Trindade Deramo at 7% vs Brown at 13% among all likely voters
+        - Current gap to close: Reyes Yanes at 7% vs Brown at 13% among all likely voters
         - 1,148 transferred votes in a ~9,000 vote primary = **~5% swing** along with persuasion gains among undecideds
-        - Second choice on Brown's ballots then propels Trindade Deramo past Raj in final round
+        - Second choice on Brown's ballots then propels Reyes Yanes past Raj in final round
         """)
 
         st.info("""
         **🗳️ Historical Precedent: The Kathryn Garcia Playbook (NYC 2021)**
 
-        In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NYC race with Adams -> Raj, Wiley -> Brown, and Garcia -> Trindade Deramo. 
+        In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NYC race with Adams -> Raj, Wiley -> Brown, and Garcia -> Reyes Yanes. 
                 
-        After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates. For Trindade Deramo, making inroads with minor candidates' voters as their second choice could produce an even bigger additional boost for a late-surging candidate here in the 2026 DC Ward 1 primary than it did in the 2021 NYC mayoral primary.
+        After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates. For Reyes Yanes, making inroads with minor candidates' voters as their second choice could produce an even bigger additional boost for a late-surging candidate here in the 2026 DC Ward 1 primary than it did in the 2021 NYC mayoral primary.
 
-        **In short:** Raj consolidates the very liberal base. Brown is strong with conservatives. The moderate and somewhat liberal lanes are genuinely contested and Trindade Deramo's best persuasion targets, and the most likely to be undecided. If Trindade Deramo can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
+        **In short:** Raj consolidates the very liberal base. Brown is strong with conservatives. The moderate and somewhat liberal lanes are genuinely contested and Reyes Yanes's best persuasion targets, and the most likely to be undecided. If Reyes Yanes can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
         """)
 
         st.divider()
@@ -117,7 +117,7 @@ if unlocked:
 
         # Lynch Transfer Universe
         st.subheader("🔄 Lynch Voter RCV Conversion")
-        st.caption("8% of decided votes likely exhausting. These voters are ideologically amenable enough to rank Trindade Deramo No.2.")
+        st.caption("8% of decided votes likely exhausting. These voters are ideologically amenable enough to rank Reyes Yanes No.2.")
 
         lynch_universe = pd.DataFrame({
             "Precinct": [23, 24, 35, 37, 40],
@@ -137,11 +137,11 @@ if unlocked:
                 "Anti-establishment voters who don't trust other candidates",
             ],
             "Deramo_Pitch_As_2nd": [
-                "'Lynch and Miguel agree on crime and jobs, rank Miguel 2nd so your vote counts'",
-                "'Don't let your ballot exhaust — Lynch #1, Trindade Deramo #2 keeps Raj out'",
-                "'Lynch is anti-Nadeau, so is Miguel — rank both, block the Nadeau machine'",
-                "'Lynch and Miguel both want safe streets, rank Miguel 2nd'",
-                "'Lynch and Miguel both want a thriving Park View, rank Miguel 2nd'",
+                "'Lynch and Jackie agree on crime and jobs, rank Jackie 2nd so your vote counts'",
+                "'Don't let your ballot exhaust — Lynch #1, Reyes Yanes #2 keeps Raj out'",
+                "'Lynch is anti-Nadeau, so is Jackie — rank both, block the Nadeau machine'",
+                "'Lynch and Jackie both want safe streets, rank Jackie 2nd'",
+                "'Lynch and Jackie both want a thriving Park View, rank Jackie 2nd'",
             ],
             "RCV_Ask": [
                 "Lynch #1, Deramo #2, Brown #3",
@@ -160,7 +160,7 @@ if unlocked:
         ~720 votes going nowhere. In a race this tight, those votes can make the difference.
         A targeted RCV education push among Lynch supporters in Mt Pleasant and U Street
         and just explaining that ranking a 2nd choice doesn't hurt their #1
-        could be the difference between Trindade Deramo surviving Round 2 or not.
+        could be the difference between Reyes Yanes surviving Round 2 or not.
         **This is a high-leverage canvassing play in the race.**
         """)
 
@@ -168,7 +168,7 @@ if unlocked:
 
         # Reyes Yanes Transfer Universe
         st.subheader("🤝 Reyes Yanes Voter 2nd Choice Courtship")
-        st.caption("Court don't compete — her voters are Trindade Deramo's best transfer pool after Brown")
+        st.caption("Court don't compete — her voters are Reyes Yanes's best transfer pool after Brown")
 
         reyes_yanes_universe = pd.DataFrame({
             "Precinct": [23, 24, 20, 25, 37],
@@ -188,25 +188,25 @@ if unlocked:
                 "Her business grant platform resonates strongly, don't outbid her",
             ],
             "Why_Her_Voters_Transfer_To_Deramo": [
-                "Both Latino — when she's eliminated, Trindade Deramo is the natural home",
-                "Pro-business, pro-safety — compatible with Trindade Deramo's platform",
+                "Both Latino — when she's eliminated, Reyes Yanes is the natural home",
+                "Pro-business, pro-safety — compatible with Reyes Yanes's platform",
                 "Neither is DSA, Raj is not a transfer destination for Reyes Yanes voters",
-                "Bowser-moderate — closer to Trindade Deramo/McDuffie than Raj/Lewis George",
+                "Bowser-moderate — closer to Reyes Yanes/McDuffie than Raj/Lewis George",
                 "Her voters already understand RCV, she ran bilingual RCV workshops",
             ],
             "Deramo_Pitch_As_2nd": [
-                "'Jackie has served this community 30 years and Miguel shares her values. Rank Jackie first, Miguel second.'",
+                "'Jackie has served this community 30 years and Jackie shares her values. Rank Jackie first, Jackie second.'",
                 "'Two Latino candidates, same Ward 1 values. Rank them 1-2 in either order.'",
-                "'Jackie built the Latino Affairs office. Miguel will carry that work forward.'",
-                "'Jackie's business grant idea and Miguel's corridor plan point the same direction.'",
-                "'Jackie and Miguel agree: 38 violent crimes in 30 days is unacceptable.'",
+                "'Jackie built the Latino Affairs office. Jackie will carry that work forward.'",
+                "'Jackie's business grant idea and Jackie's corridor plan point the same direction.'",
+                "'Jackie and Jackie agree: 38 violent crimes in 30 days is unacceptable.'",
             ],
             "RCV_Ask": [
-                "Reyes Yanes #1, Trindade Deramo #2 — or Trindade Deramo #1, Reyes Yanes #2",
+                "Reyes Yanes #1, Reyes Yanes #2 — or Reyes Yanes #1, Reyes Yanes #2",
                 "Either order, just leave Raj unranked",
-                "Reyes Yanes #1, Trindade Deramo #2, Brown #3",
-                "Reyes Yanes #1, Trindade Deramo #2",
-                "Reyes Yanes #1, Trindade Deramo #2 — crime + business frame",
+                "Reyes Yanes #1, Reyes Yanes #2, Brown #3",
+                "Reyes Yanes #1, Reyes Yanes #2",
+                "Reyes Yanes #1, Reyes Yanes #2 — crime + business frame",
             ],
             "Transfer_Value": [
                 "🔴 Critical", "🔴 Critical", "🟡 Medium", "🟡 Medium", "🟡 Medium"
@@ -223,11 +223,11 @@ if unlocked:
 
         *"We respect [Lynch/Jackie] and what they stand for. With ranked choice, you can
         show that support AND make sure your vote counts in every round.
-        Rank [Lynch/Jackie] first — and please consider ranking Miguel second.
+        Rank [Lynch/Jackie] first — and please consider ranking Jackie second.
         That way if your first choice doesn't make it to the final round,
         your vote still matters."*
 
-        **What we're really doing:** Quietly making sure those votes go to Trindade Deramo
+        **What we're really doing:** Quietly making sure those votes go to Reyes Yanes
         in early rounds rather than Brown or (worst case) Raj.
         Brown may be doing the same thing.
         Whoever wins this transfer battle could win the seat.
@@ -241,13 +241,13 @@ if unlocked:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
-            st.subheader("🔴 Issue-Based Targeting — Trindade Deramo's Argument to Edge the Field")
+            st.subheader("🔴 Issue-Based Targeting — Reyes Yanes's Argument to Edge the Field")
             st.markdown("""
             **Theory of the case on issues:**
             Raj has no meaningful public safety platform, no business development record,
             and no specific K-12 policy beyond teachers union alignment.
             Brown has a strong record but is tied to Nadeau's legacy.
-            Trindade Deramo's edge: he is the only candidate who explicitly names crime as foundational,
+            Reyes Yanes's edge: he is the only candidate who explicitly names crime as foundational,
             who has watched businesses close and made it a priority,
             and whose mother was a schoolteacher — giving him authentic K-12 credibility
             with parents.
@@ -278,11 +278,11 @@ if unlocked:
                     "Mixed income, crime a top complaint",
                 ],
                 "Deramo_Message": [
-                    "'Public safety is foundational' — Miguel will reestablish trust with MPD",
-                    "Miguel supported violence interruption funding as ANC chair",
-                    "Raj doesn't really differentiate MPD from ICE — Miguel listens to residents on crime concerns",
-                    "Miguel: 'safe streets are indispensable to a thriving economy'",
-                    "14th St businesses closing — Miguel ties crime as part of equation on school and economic health",
+                    "'Public safety is foundational' — Jackie will reestablish trust with MPD",
+                    "Jackie supported violence interruption funding as ANC chair",
+                    "Raj doesn't really differentiate MPD from ICE — Jackie listens to residents on crime concerns",
+                    "Jackie: 'safe streets are indispensable to a thriving economy'",
+                    "14th St businesses closing — Jackie ties crime as part of equation on school and economic health",
                 ],
                 "Raj_Vulnerability": [
                     "Her platform: replace police with social workers",
@@ -349,9 +349,9 @@ if unlocked:
                 "Deramo_Message": [
                     "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
                     "COVID closures hurt kids, need leaders who won't bow to union pressure over parent needs",
-                    "Miguel: education is foundational, his mother was a schoolteacher",
+                    "Jackie: education is foundational, his mother was a schoolteacher",
                     "Crime near schools is a parent issue, public safety IS a school issue",
-                    "Bilingual community — Trindade Deramo speaks Portuguese, values immigrant education",
+                    "Bilingual community — Reyes Yanes speaks Portuguese, values immigrant education",
                 ],
                 "Raj_Vulnerability": [
                     "Teachers union-aligned, no critique of school closure decisions",
@@ -368,7 +368,7 @@ if unlocked:
 
             # Universe 4: LGBTQ+ Issue
             st.subheader("🏳️‍🌈 Universe 4 — LGBTQ+ Voters (Issue + Safety Frame)")
-            st.caption("Miguel explicitly includes 'safety from discrimination' in his platform")
+            st.caption("Jackie explicitly includes 'safety from discrimination' in his platform")
 
             lgbtq_precincts = pd.DataFrame({
                 "Precinct": [137, 22, 25, 24, 39],
@@ -382,10 +382,10 @@ if unlocked:
                 ],
                 "Deramo_Message": [
                     "First Latino on DC Council, second LGBTQ+ — historic AND substantive",
-                    "Miguel hosted campaign events in neighborhood venues, shows up here",
+                    "Jackie hosted campaign events in neighborhood venues, shows up here",
                     "Safety platform explicitly includes 'safety from discrimination'",
                     "Record vs Raj: 5 years ANC work vs Raj's zero elected record",
-                    "Miguel ties LGBTQ+ safety to broader community safety",
+                    "Jackie ties LGBTQ+ safety to broader community safety",
                 ],
             })
 
@@ -395,7 +395,7 @@ if unlocked:
 
             # Universe 5: Anti-Nadeau
             st.subheader("📉 Universe 5 — Nadeau Underperformance Precincts")
-            st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Trindade Deramo")
+            st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Reyes Yanes")
 
             nadeau_precincts = pd.DataFrame({
                 "Precinct": [22, 39, 137, 25, 20],
@@ -409,9 +409,9 @@ if unlocked:
                 ],
                 "Deramo_Angle": [
                     "I've been your ANC commissioner actually fixing things block by block",
-                    "Miguel passed resolutions; Nadeau made promises — contrast the records",
-                    "ANC Home Rule Caucus was Miguel's work, not the council's",
-                    "Miguel opposes same bad developers Nadeau enabled",
+                    "Jackie passed resolutions; Nadeau made promises — contrast the records",
+                    "ANC Home Rule Caucus was Jackie's work, not the council's",
+                    "Jackie opposes same bad developers Nadeau enabled",
                     "Fresh start: 44 years of same leadership, time for change",
                 ],
                 "Poll_Data": [
@@ -432,10 +432,10 @@ if unlocked:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
-            st.subheader("🧬 Identity-Based Targeting — Trindade Deramo's Edge")
+            st.subheader("🧬 Identity-Based Targeting — Reyes Yanes's Edge")
             st.markdown("""
             **Theory of the case on identity:**
-            Trindade Deramo is a gay Latino candidate in a field with a Black woman (Brown),
+            Reyes Yanes is a gay Latino candidate in a field with a Black woman (Brown),
             an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
             self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
             lines in ways that create non-obvious opportunities.
@@ -446,8 +446,8 @@ if unlocked:
             - Former State Dept / DHS background → moderate and conservative Dems who want competence
             - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
 
-            **Trindade Deramo's identity vulnerabilities:**
-            - Black voters (23% of electorate) → Brown dominates with Trindade Deramo at 1%
+            **Reyes Yanes's identity vulnerabilities:**
+            - Black voters (23% of electorate) → Brown dominates with Reyes Yanes at 1%
             - College-educated under 45 women → Raj's core, largely locked
             """)
 
@@ -616,8 +616,8 @@ if unlocked:
                 "Deramo_Edge": [
                     "2nd out LGBTQ+ on DC Council, first Latino — historic",
                     "Record vs Raj: 5 years ANC vs zero elected record",
-                    "Safety from discrimination explicitly in Miguel's platform",
-                    "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Miguel down stretch)",
+                    "Safety from discrimination explicitly in Jackie's platform",
+                    "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Jackie down stretch)",
                     "Cross-universe: LGBTQ+ + crime + business all align here",
                 ],
                 "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
@@ -725,7 +725,7 @@ if unlocked:
                     "Homeowner investment angle: business closures hurt property values",
                     "Schools + crime — closures hurt kids, need pragmatism not marching orders",
                     "Former State Dept / DHS — competence credential resonates",
-                    "12 years of Nadeau, businesses still closing — Miguel = change",
+                    "12 years of Nadeau, businesses still closing — Jackie = change",
                 ],
                 "RCV_Strategy": [
                     "If Brown voter: Brown #1, Deramo #2, Raj unranked",
@@ -746,7 +746,7 @@ if unlocked:
         else:
             st.subheader("🎯 Ward 1 Targeting Model")
             st.markdown("""
-            **This is a data-driven canvassing model for Miguel Trindade Deramo — June 16, 2026 primary.**
+            **This is a data-driven canvassing model for Jackie Reyes Yanes — June 16, 2026 primary.**
 
             Every precinct scored across 9 validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
             The matrix below tells you exactly where to knock doors and why.
@@ -866,14 +866,14 @@ if unlocked:
                 Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
                 0% among conservatives, and has no small business or public safety record.
                 Brown is strong but Nadeau's endorsement is a liability among the exact voters
-                Trindade Deramo needs. Miguel wins by being the only candidate who takes seriously the voters Raj ignores and Brown can't fully reach: parents, small business owners, crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity, and the Latino community that sees two of their own in the race.
+                Reyes Yanes needs. Jackie wins by being the only candidate who takes seriously the voters Raj ignores and Brown can't fully reach: parents, small business owners, crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity, and the Latino community that sees two of their own in the race.
 
                 **The RCV math that makes it possible:**
                 - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
-                - Lynch + Reyes Yanes = voter transfers to help Trindade Deramo advance to final round
+                - Lynch + Reyes Yanes = voter transfers to help Reyes Yanes advance to final round
                 - Brown's Nadeau endorsement is a net negative among moderates and men over 45
                 - Raj's DSA brand is net negative among men, moderates, and conservatives
-                - Doors knocked in Tier 1 districts carry outsized value for Miguel
+                - Doors knocked in Tier 1 districts carry outsized value for Jackie
 
                 """)
 
@@ -881,7 +881,7 @@ if unlocked:
             st.success("""
                 **Path to Victory Plan in One Paragraph:**
 
-                Precinct 39 (Mount Pleasant/Columbia Heights) is Trindade Deramo's #1 target — 8 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and non-DSA universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper: Largest registered Dem pool in the ward at 3,962 with strong signals from demos of Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown). Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts reaches voters who are persuadable on 4+ dimensions simultaneously, making for some of the most critical canvassing in the ward.
+                Precinct 39 (Mount Pleasant/Columbia Heights) is Reyes Yanes's #1 target — 8 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and non-DSA universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper: Largest registered Dem pool in the ward at 3,962 with strong signals from demos of Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown). Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts reaches voters who are persuadable on 4+ dimensions simultaneously, making for some of the most critical canvassing in the ward.
                 """)
 
 
