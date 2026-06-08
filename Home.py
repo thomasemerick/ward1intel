@@ -19,22 +19,19 @@ access_code = st.text_input("🔒 Enter access code to view full intelligence:",
 unlocked = access_code == "floront"
 
 if unlocked:
-    st.markdown("""
-    **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Jackie Reyes Yanes is uniquely positioned to gain late and pull ahead of the field in RCV. 
-    """)
 
     tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-        "♻️ Minor Candidate Transfers",
+        "♻️ RCV Poll",
         "🔴 Issue Universes",
         "🧬 Identity Universes",
         "🎯 Targeting Model",
         "🗺️ Precinct Heatmap",
         "📊 Sortable Data",
-        "📋 Candidate Survey"
+        "📋 WaPo Survey"
     ])
 
     # ══════════════════════════════════════════════════════════
-    # TAB 1 — MINOR CANDIDATE TRANSFER STRATEGY
+    # TAB 1 — PPP POLL
     # ══════════════════════════════════════════════════════════
 
     with tab1:
@@ -217,22 +214,78 @@ if unlocked:
         st.dataframe(reyes_yanes_universe, use_container_width=True, hide_index=True
             )
 
-        st.info("""
-        **The Low-Key Play for both Lynch and Reyes Yanes voters:**
 
-        Never criticize or compete against their candidate. The ask is entirely:
+        st.divider()
 
-        *"We respect [Lynch/Jackie] and what they stand for. With ranked choice, you can
-        show that support AND make sure your vote counts in every round.
-        Rank [Lynch/Jackie] first — and please consider ranking Jackie second.
-        That way if your first choice doesn't make it to the final round,
-        your vote still matters."*
+            # Identity crosstabs
+            st.markdown("#### First-Choice Vote Share by Demographic Group")
+            st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
 
-        **What we're really doing:** Quietly making sure those votes go to Reyes Yanes
-        in early rounds rather than Brown or (worst case) Raj.
-        Brown may be doing the same thing.
-        Whoever wins this transfer battle could win the seat.
-        """)
+            identity_matrix = pd.DataFrame({
+                "Demographic Group": [
+                    "White voters",
+                    "Black / African-American voters",
+                    "Hispanic / Latino voters",
+                    "Other race voters",
+                    "18-45 years old",
+                    "46-65 years old",
+                    "65+ years old",
+                    "Women",
+                    "Men",
+                    "Non-binary",
+                    "Very liberal",
+                    "Somewhat liberal",
+                    "Moderate",
+                    "Conservative",
+                    "No college degree",
+                    "4-year college degree",
+                    "Post-graduate degree",
+                    "White moderate voters (est.)",
+                    "White conservative voters",
+                ],
+                "Deramo %": [7, 1, 20, 11, 9, 11, 0, 6, 9, 0, 8, 5, 9, 0, 6, 4, 10, 15, 0],
+                "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
+                "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
+                "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
+                "Deramo_Opportunity": [
+                    "🟡 Medium — gap closeable",
+                    "🔴 Hard — Brown dominates",
+                    "✅ High — tied with Brown at 20%, Raj only 9%",
+                    "🟡 Medium — tied with Raj at 20%",
+                    "🔴 Hard — Raj dominates",
+                    "✅ Soft target — competitive",
+                    "⚠️ Problem — Brown 21%, Deramo 0%",
+                    "🔴 Hard — women break Brown/Raj",
+                    "✅ Advantage — Deramo 3 pts stronger",
+                    "⚠️ Problem — Raj dominates",
+                    "🔴 Hard — Raj at 33%",
+                    "🟡 Medium — room to grow",
+                    "✅ Key target — Raj only 1%",
+                    "✅ Sleeper — Brown leads but Raj irrelevant",
+                    "✅ Underrated — Raj at 0%",
+                    "🔴 Hard — Raj and grad-degree voters aligned",
+                    "🟡 Medium — three-way split",
+                    "✅ Key target — Raj near zero",
+                    "⚠️ Brown dominates — RCV transfer play only",
+                ],
+            })
+
+            identity_matrix["Deramo_vs_Raj"] = identity_matrix["Deramo %"] - identity_matrix["Raj %"]
+
+            st.dataframe(
+                identity_matrix,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Deramo %": st.column_config.ProgressColumn("Deramo %", min_value=0, max_value=40, format="%d%%"),
+                    "Brown %": st.column_config.ProgressColumn("Brown %", min_value=0, max_value=40, format="%d%%"),
+                    "Raj %": st.column_config.ProgressColumn("Raj %", min_value=0, max_value=40, format="%d%%"),
+                    "Share_of_Ward1_Dems": st.column_config.NumberColumn("% of Electorate", format="%d%%"),
+                    "Deramo_vs_Raj": st.column_config.NumberColumn("vs Raj", format="%+d pts"),
+                }
+            )
+
+            st.divider()
 
 
     # ══════════════════════════════════════════════════════════
