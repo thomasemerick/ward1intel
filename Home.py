@@ -1038,7 +1038,7 @@ if unlocked:
             st.markdown("#### 🏘️ Economy & Housing")
             econ_rows = [
                 ["Tax Policy",
-                "Targeted tax relief, push for efficient use of revenue",
+                "Targeted relief and incentives, stronger spending oversight",
                 "Top 1% and billionaires tax, professional athlete tax",
                 "Higher capital gains tax, stronger Business Activity Tax",
                 "Higher inheritance tax, stronger Business Activity Tax",
