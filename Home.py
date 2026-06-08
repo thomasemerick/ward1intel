@@ -23,13 +23,14 @@ if unlocked:
     **The Argument:** Aparna Raj has a solidified base but limited ceiling, while Jackie Reyes Yanes is uniquely positioned to gain late and pull ahead of the field in RCV. 
     """)
 
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "♻️ Minor Candidate Transfers",
         "🔴 Issue Universes",
         "🧬 Identity Universes",
         "🎯 Targeting Model",
         "🗺️ Precinct Heatmap",
-        "📊 Sortable Data"
+        "📊 Sortable Data",
+        "📋 Candidate Survey"
     ])
 
     # ══════════════════════════════════════════════════════════
@@ -1005,7 +1006,7 @@ if unlocked:
 
 
             # ══════════════════════════════════════════════════════════
-    # TAB 7 — CANDIDATE SURVEY
+    # TAB 7 — WAPO CANDIDATE SURVEY
     # ══════════════════════════════════════════════════════════
     with tab7:
         if not unlocked:
