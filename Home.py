@@ -1013,7 +1013,7 @@ if unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
             st.subheader("📋 Washington Post Candidate Survey")
-            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are 10-word summaries.")
+            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are concise summaries.")
 
             candidates = ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"]
 
