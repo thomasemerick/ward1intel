@@ -1110,7 +1110,7 @@ if unlocked:
                     ],
                 })
                 st.dataframe(econ, use_container_width=True, hide_index=True,
-                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
+                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="small", max_chars=40) for c in candidates}})
 
             with st.expander("🚔 Public Safety", expanded=True):
                 safety = pd.DataFrame({
@@ -1147,7 +1147,7 @@ if unlocked:
                     ],
                 })
                 st.dataframe(safety, use_container_width=True, hide_index=True,
-                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
+                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="small", max_chars=40) for c in candidates}})
 
             with st.expander("🏫 Social Policy", expanded=True):
                 social = pd.DataFrame({
@@ -1174,4 +1174,4 @@ if unlocked:
                     ],
                 })
                 st.dataframe(social, use_container_width=True, hide_index=True,
-                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
+                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="small", max_chars=40) for c in candidates}})
