@@ -1073,18 +1073,105 @@ if unlocked:
                 ],
             })
 
-            st.dataframe(
-                survey,
-                use_container_width=True,
-                hide_index=True,
-                column_config={
-                    "Candidate": st.column_config.TextColumn("Candidate", width="medium"),
-                    "Curfew Response": st.column_config.TextColumn("Curfew Detail", width="large"),
-                    "Police Response": st.column_config.TextColumn("Police Detail", width="large"),
-                    "Tax Policy": st.column_config.TextColumn("Tax Policy", width="large"),
-                    "DC Economy": st.column_config.TextColumn("DC Economy", width="large"),
-                    "Econ Inequality": st.column_config.TextColumn("Econ Inequality", width="large"),
-                    "Schools": st.column_config.TextColumn("Schools", width="large"),
-                    "Trump/Congress": st.column_config.TextColumn("Trump/Congress", width="large"),
-                }
-            )
+            candidates = ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"]
+
+            with st.expander("🏘️ Economy & Housing", expanded=True):
+                econ = pd.DataFrame({
+                    "Issue": ["Tax Policy", "DC Economy", "Econ Inequality", "Rent Stabilization", "Congestion Pricing", "Robotaxis"],
+                    "Jackie Reyes Yanes": [
+                        "Targeted relief, accountability for smart gov spending",
+                        "Pivot from fed-reliant economy to local small business revival",
+                        "Help local businesses avoid displacement and hire local workforce",
+                        "✅ Yes", "❌ No", "❌ No",
+                    ],
+                    "Terry Lynch": [
+                        "Top 1% and billionaires tax, professional athlete tax",
+                        "Introduce program to sell vacant properties at market value",
+                        "Additional top 1% or billionaires tax to fund education programs",
+                        "✅ Yes", "✅ Yes", "✅ Yes",
+                    ],
+                    "Aparna Raj": [
+                        "Higher capital gains tax, stronger Business Activity Tax",
+                        "Green New Deal for DC and creating social housing at scale",
+                        "Free child care for all thru stronger Business Activity Tax",
+                        "✅ Yes", "✅ Yes", "❌ No",
+                    ],
+                    "Rashida Brown": [
+                        "Higher inheritance tax, stronger Business Activity Tax",
+                        "Reskill workforce for health care, tech, and AI thru programs",
+                        "Free child care for all and higher pay for early childhood educators",
+                        "✅ Yes", "✅ Yes", "❌ No",
+                    ],
+                    "Miguel Trindade Deramo": [
+                        "Taxes to disincentivize empty lots, no sales tax increase",
+                        "Incentivize business and investment, bring back streateries",
+                        "Housing costs thru zoning, investment, supply of market and subsidized",
+                        "✅ Yes", "✅ Yes", "❌ No",
+                    ],
+                })
+                st.dataframe(econ, use_container_width=True, hide_index=True,
+                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
+
+            with st.expander("🚔 Public Safety", expanded=True):
+                safety = pd.DataFrame({
+                    "Issue": ["Teen Curfew", "Curfew Detail", "Police Level", "Police Detail"],
+                    "Jackie Reyes Yanes": [
+                        "✅ Yes",
+                        "Temporary, targeted solution while ramping up rec and workforce programs",
+                        "Not enough",
+                        "Community policing and public services",
+                    ],
+                    "Terry Lynch": [
+                        "✅ Yes",
+                        "Curfew should be one of many tools including youth athletics",
+                        "Right amount",
+                        "Community policing and public services",
+                    ],
+                    "Aparna Raj": [
+                        "❌ No",
+                        "Teen curfews don't work, would only get youths attacked by federal police or ICE",
+                        "Right amount",
+                        "Divest from overtime payment to fund non-public safety initiatives",
+                    ],
+                    "Rashida Brown": [
+                        "❌ No",
+                        "Advisory boards, mental health services, safe spaces, and year-round employment",
+                        "Right amount",
+                        "Community policing and public services",
+                    ],
+                    "Miguel Trindade Deramo": [
+                        "❌ No",
+                        "Curfew not the right solution, instead invest in violence interruption",
+                        "Right amount",
+                        "Accountability for overtime payment and public services",
+                    ],
+                })
+                st.dataframe(safety, use_container_width=True, hide_index=True,
+                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
+
+            with st.expander("🏫 Social Policy", expanded=True):
+                social = pd.DataFrame({
+                    "Issue": ["Schools", "Trump/Congress"],
+                    "Jackie Reyes Yanes": [
+                        "Stronger pipelines for local residents to enter education workforce",
+                        "Standing firm when necessary",
+                    ],
+                    "Terry Lynch": [
+                        "Youth engagement after school hours through arts, sports, and clubs",
+                        "Forge alliances with DMV groups",
+                    ],
+                    "Aparna Raj": [
+                        "Democratize by consolidating power within board of education",
+                        "Take the fight nationwide",
+                    ],
+                    "Rashida Brown": [
+                        "Increase teacher pay, decrease class sizes",
+                        "Work strategically with mayor",
+                    ],
+                    "Miguel Trindade Deramo": [
+                        "Leverage Dept of Health and Human Services to address truancy",
+                        "Scale up DNC Home Rule Caucus",
+                    ],
+                })
+                st.dataframe(social, use_container_width=True, hide_index=True,
+                    column_config={c: st.column_config.TextColumn(c, width="large") for c in candidates})
