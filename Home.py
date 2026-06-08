@@ -1044,7 +1044,7 @@ if unlocked:
                 "Higher inheritance tax, stronger Business Activity Tax",
                 "Taxes to disincentivize empty lots, no sales tax increase"],
                 ["DC Economy",
-                "Pivot from fed-reliant economy to local small business revival",
+                "Pivot from fed-reliant economy toward local small business revival",
                 "Introduce program to sell vacant properties at market value",
                 "Green New Deal and creating social housing at scale",
                 "Reskill workforce for health care, tech, and AI thru programs",
