@@ -963,112 +963,134 @@ if unlocked:
                 # ══════════════════════════════════════════════════════════
     # TAB 6 — SORTABLE DATA
     # ══════════════════════════════════════════════════════════
-    with tab6:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("📊 Sortable Data")
-            st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
+        with tab6:
+            if not unlocked:
+                st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+            else:
+                st.subheader("📊 Sortable Data")
+                st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
 
-            underlying = pd.read_csv('ward1_underlying.csv')
-            underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
+                underlying = pd.read_csv('ward1_underlying.csv')
+                underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
 
-            cols = ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015'] + [c for c in underlying.columns if c not in ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015']]
-            underlying = underlying[cols]
+                cols = ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015'] + [c for c in underlying.columns if c not in ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015']]
+                underlying = underlying[cols]
 
-            st.dataframe(
-                underlying,
-                use_container_width=True,
-                hide_index=True,
-                column_config={
-                    "Registered_Dems": st.column_config.ProgressColumn(
-                    "Registered Dems", min_value=0, max_value=4500, format="%d"
-                    ),
-                    "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
-                    "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
-                    "Czapary_2022": st.column_config.NumberColumn("Czapary Votes", format="%d"),
-                    "Harris_2022": st.column_config.NumberColumn("Harris Votes", format="%d"),
-                    "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
-                    "Black_Pct": st.column_config.NumberColumn("Black %", format="%.1f%%"),
-                    "White_Pct": st.column_config.NumberColumn("White %", format="%.1f%%"),
-                    "Asian_Pct": st.column_config.NumberColumn("Asian %", format="%.1f%%"),
-                    "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
-                    "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
-                    "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
-                    "Median_Age": st.column_config.NumberColumn("Median Age", format="%.1f"),
-                    "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
-                    "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
-                    "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
-                    "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
-                }
-            )
-            st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
+                st.dataframe(
+                    underlying,
+                    use_container_width=True,
+                    hide_index=True,
+                    column_config={
+                        "Registered_Dems": st.column_config.ProgressColumn(
+                        "Registered Dems", min_value=0, max_value=4500, format="%d"
+                        ),
+                        "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
+                        "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
+                        "Czapary_2022": st.column_config.NumberColumn("Czapary Votes", format="%d"),
+                        "Harris_2022": st.column_config.NumberColumn("Harris Votes", format="%d"),
+                        "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
+                        "Black_Pct": st.column_config.NumberColumn("Black %", format="%.1f%%"),
+                        "White_Pct": st.column_config.NumberColumn("White %", format="%.1f%%"),
+                        "Asian_Pct": st.column_config.NumberColumn("Asian %", format="%.1f%%"),
+                        "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
+                        "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
+                        "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
+                        "Median_Age": st.column_config.NumberColumn("Median Age", format="%.1f"),
+                        "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
+                        "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
+                        "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
+                        "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
+                    }
+                )
+                st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
 
 
-            # ══════════════════════════════════════════════════════════
-    # TAB 7 — WAPO CANDIDATE SURVEY
-    # ══════════════════════════════════════════════════════════
-    with tab7:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("📋 Washington Post Candidate Survey")
-            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are 10-word summaries.")
-
-            survey = pd.DataFrame({
-                "Candidate": ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"],
-                "Teen Curfew": ["✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-                "Curfew Response": [
+                # ══════════════════════════════════════════════════════════
+        # TAB 7 — WAPO CANDIDATE SURVEY
+        # ══════════════════════════════════════════════════════════
+        survey = pd.DataFrame({
+                "Question": [
+                    "Teen Curfew",
+                    "Curfew Detail",
+                    "Congestion Pricing",
+                    "Rent Stabilization",
+                    "Robotaxis",
+                    "Police Level",
+                    "Police Detail",
+                    "Tax Policy",
+                    "DC Economy",
+                    "Econ Inequality",
+                    "Schools",
+                    "Trump/Congress",
+                ],
+                "Jackie Reyes Yanes": [
+                    "✅ Yes",
                     "Temporary, targeted solution while ramping up rec and workforce programs",
-                    "Curfew should be one of many tools including youth athletics",
-                    "Teen curfews don't work, would only get youths attacked by federal police or ICE",
-                    "Advisory boards, mental health services, safe spaces, and year-round employment",
-                    "Curfew not the right solution, instead invest in violence interruption",
-                ],
-                "Congestion Pricing": ["❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                "Rent Stabilization": ["✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                "Robotaxis": ["❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-                "Police Level": ["Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
-                "Police Response": [
+                    "❌ No",
+                    "✅ Yes",
+                    "❌ No",
+                    "Not enough",
                     "Community policing and public services",
-                    "Community policing and public services",
-                    "Divest from overtime payment to fund non-public safety initiatives",
-                    "Community policing and public services",
-                    "Accountability for overtime payment and public services",
-                ],
-                "Tax Policy": [
                     "Targeted relief, accountability for smart gov spending",
-                    "Top 1% and billionaires tax, professional athlete tax",
-                    "Higher capital gains tax, stronger Business Activity Tax",
-                    "Higher inheritance tax, stronger Business Activity Tax",
-                    "Taxes to disincentivize empty lots, no sales tax increase",
-                ],
-                "DC Economy": [
                     "Pivot from fed-reliant economy to local small business revival",
-                    "Introduce program to sell vacant properties at market value",
-                    "Green New Deal for DC and creating social housing at scale",
-                    "Reskill workforce for health care, tech, and AI thru programs",
-                    "Incentivize business and investment, bring back streateries",
-                ],
-                "Econ Inequality": [
                     "Help local businesses avoid displacement and hire local workforce",
-                    "Additional top 1% or billionaires tax to fund education programs",
-                    "Free child care for all thru stronger Business Activity Tax",
-                    "Free child care for all and higher pay for early childhood educators",
-                    "Housing costs thru zoning, investment, supply of market and subsidized",
-                ],
-                "Schools": [
                     "Stronger pipelines for local residents to enter education workforce",
-                    "Youth engagement after school hours through arts, sports, and clubs",
-                    "Democratize by consolidating power within board of education",
-                    "Increase teacher pay, decrease class sizes",
-                    "Leverage Dept of Health and Human Services to address truancy",
-                ],
-                "Trump/Congress": [
                     "Standing firm when necessary",
+                ],
+                "Terry Lynch": [
+                    "✅ Yes",
+                    "Curfew should be one of many tools including youth athletics",
+                    "✅ Yes",
+                    "✅ Yes",
+                    "✅ Yes",
+                    "Right amount",
+                    "Community policing and public services",
+                    "Top 1% and billionaires tax, professional athlete tax",
+                    "Introduce program to sell vacant properties at market value",
+                    "Additional top 1% or billionaires tax to fund education programs",
+                    "Youth engagement after school hours through arts, sports, and clubs",
                     "Forge alliances with DMV groups",
+                ],
+                "Aparna Raj": [
+                    "❌ No",
+                    "Teen curfews don't work, would only get youths attacked by federal police or ICE",
+                    "✅ Yes",
+                    "✅ Yes",
+                    "❌ No",
+                    "Right amount",
+                    "Divest from overtime payment to fund non-public safety initiatives",
+                    "Higher capital gains tax, stronger Business Activity Tax",
+                    "Green New Deal for DC and creating social housing at scale",
+                    "Free child care for all thru stronger Business Activity Tax",
+                    "Democratize by consolidating power within board of education",
                     "Take the fight nationwide",
+                ],
+                "Rashida Brown": [
+                    "❌ No",
+                    "Advisory boards, mental health services, safe spaces, and year-round employment",
+                    "✅ Yes",
+                    "✅ Yes",
+                    "❌ No",
+                    "Right amount",
+                    "Community policing and public services",
+                    "Higher inheritance tax, stronger Business Activity Tax",
+                    "Reskill workforce for health care, tech, and AI thru programs",
+                    "Free child care for all and higher pay for early childhood educators",
+                    "Increase teacher pay, decrease class sizes",
                     "Work strategically with mayor",
+                ],
+                "Miguel Trindade Deramo": [
+                    "❌ No",
+                    "Curfew not the right solution, instead invest in violence interruption",
+                    "✅ Yes",
+                    "✅ Yes",
+                    "❌ No",
+                    "Right amount",
+                    "Accountability for overtime payment and public services",
+                    "Taxes to disincentivize empty lots, no sales tax increase",
+                    "Incentivize business and investment, bring back streateries",
+                    "Housing costs thru zoning, investment, supply of market and subsidized",
+                    "Leverage Dept of Health and Human Services to address truancy",
                     "Scale up DNC Home Rule Caucus",
                 ],
             })
@@ -1078,13 +1100,11 @@ if unlocked:
                 use_container_width=True,
                 hide_index=True,
                 column_config={
-                    "Candidate": st.column_config.TextColumn("Candidate", width="medium"),
-                    "Curfew Response": st.column_config.TextColumn("Curfew Detail", width="large"),
-                    "Police Response": st.column_config.TextColumn("Police Detail", width="large"),
-                    "Tax Policy": st.column_config.TextColumn("Tax Policy", width="large"),
-                    "DC Economy": st.column_config.TextColumn("DC Economy", width="large"),
-                    "Econ Inequality": st.column_config.TextColumn("Econ Inequality", width="large"),
-                    "Schools": st.column_config.TextColumn("Schools", width="large"),
-                    "Trump/Congress": st.column_config.TextColumn("Trump/Congress", width="large"),
+                    "Question": st.column_config.TextColumn("Question", width="medium"),
+                    "Jackie Reyes Yanes": st.column_config.TextColumn("Jackie Reyes Yanes", width="large"),
+                    "Terry Lynch": st.column_config.TextColumn("Terry Lynch", width="large"),
+                    "Aparna Raj": st.column_config.TextColumn("Aparna Raj", width="large"),
+                    "Rashida Brown": st.column_config.TextColumn("Rashida Brown", width="large"),
+                    "Miguel Trindade Deramo": st.column_config.TextColumn("Miguel Trindade Deramo", width="large"),
                 }
             )
