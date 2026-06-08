@@ -963,52 +963,59 @@ if unlocked:
                 # ══════════════════════════════════════════════════════════
     # TAB 6 — SORTABLE DATA
     # ══════════════════════════════════════════════════════════
-        with tab6:
-            if not unlocked:
-                st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-            else:
-                st.subheader("📊 Sortable Data")
-                st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
+    with tab6:
+        if not unlocked:
+            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        else:
+            st.subheader("📊 Sortable Data")
+            st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
 
-                underlying = pd.read_csv('ward1_underlying.csv')
-                underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
+            underlying = pd.read_csv('ward1_underlying.csv')
+            underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
 
-                cols = ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015'] + [c for c in underlying.columns if c not in ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015']]
-                underlying = underlying[cols]
+            cols = ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015'] + [c for c in underlying.columns if c not in ['Precinct', 'Neighborhood', 'Registered_Dems', 'Biz_Closed_Since2015']]
+            underlying = underlying[cols]
 
-                st.dataframe(
-                    underlying,
-                    use_container_width=True,
-                    hide_index=True,
-                    column_config={
-                        "Registered_Dems": st.column_config.ProgressColumn(
-                        "Registered Dems", min_value=0, max_value=4500, format="%d"
-                        ),
-                        "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
-                        "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
-                        "Czapary_2022": st.column_config.NumberColumn("Czapary Votes", format="%d"),
-                        "Harris_2022": st.column_config.NumberColumn("Harris Votes", format="%d"),
-                        "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
-                        "Black_Pct": st.column_config.NumberColumn("Black %", format="%.1f%%"),
-                        "White_Pct": st.column_config.NumberColumn("White %", format="%.1f%%"),
-                        "Asian_Pct": st.column_config.NumberColumn("Asian %", format="%.1f%%"),
-                        "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
-                        "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
-                        "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
-                        "Median_Age": st.column_config.NumberColumn("Median Age", format="%.1f"),
-                        "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
-                        "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
-                        "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
-                        "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
-                    }
-                )
-                st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
+            st.dataframe(
+                underlying,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Registered_Dems": st.column_config.ProgressColumn(
+                    "Registered Dems", min_value=0, max_value=4500, format="%d"
+                    ),
+                    "Biz_Closed_Since2015": st.column_config.NumberColumn("Biz Closure", format="%d"),                
+                    "Anti_Nadeau_Pct": st.column_config.NumberColumn("Anti-Nadeau %", format="%.1f%%"),
+                    "Czapary_2022": st.column_config.NumberColumn("Czapary Votes", format="%d"),
+                    "Harris_2022": st.column_config.NumberColumn("Harris Votes", format="%d"),
+                    "Hispanic_Pct": st.column_config.NumberColumn("Hispanic %", format="%.1f%%"),
+                    "Black_Pct": st.column_config.NumberColumn("Black %", format="%.1f%%"),
+                    "White_Pct": st.column_config.NumberColumn("White %", format="%.1f%%"),
+                    "Asian_Pct": st.column_config.NumberColumn("Asian %", format="%.1f%%"),
+                    "Asian_Other_Pct": st.column_config.NumberColumn("Asian+Other %", format="%.1f%%"),
+                    "Minrty_NoAlign_Pct": st.column_config.NumberColumn("Minrty_NoAlign %", format="%.1f%%"),
+                    "Postgrad_Pct": st.column_config.NumberColumn("Postgrad %", format="%.1f%%"),
+                    "Median_Age": st.column_config.NumberColumn("Median Age", format="%.1f"),
+                    "Under18_Pct": st.column_config.NumberColumn("Under 18 %", format="%.1f%%"),
+                    "White_46plus_Pct": st.column_config.NumberColumn("White 46+ %", format="%.1f%%"),
+                    "Homeowner_Pct": st.column_config.NumberColumn("Homeowner %", format="%.1f%%"),
+                    "Not_Leftist_Score": st.column_config.NumberColumn("Not_Leftist Score", format="%.1f"),
+                }
+            )
+            st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
 
 
-                # ══════════════════════════════════════════════════════════
-        # TAB 7 — WAPO CANDIDATE SURVEY
-        # ══════════════════════════════════════════════════════════
-        survey = pd.DataFrame({
+            # ══════════════════════════════════════════════════════════
+    # TAB 7 — WAPO CANDIDATE SURVEY
+    # ══════════════════════════════════════════════════════════
+    with tab7:
+        if not unlocked:
+            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        else:
+            st.subheader("📋 Washington Post Candidate Survey")
+            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are 10-word summaries.")
+
+            survey = pd.DataFrame({
                 "Question": [
                     "Teen Curfew",
                     "Curfew Detail",
