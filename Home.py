@@ -1054,7 +1054,7 @@ if unlocked:
                 "Additional top 1% or billionaires tax to fund education programs",
                 "Free child care for all thru stronger Business Activity Tax",
                 "Free child care for all and higher pay for early childhood educators",
-                "Housing costs thru zoning, investment, supply of market and subsidized"],
+                "Housing costs thru zoning, investment, supply market and subsidized"],
                 ["Rent Stabilization", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
                 ["Congestion Pricing", "❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
                 ["Robotaxis", "❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
