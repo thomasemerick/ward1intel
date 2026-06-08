@@ -126,30 +126,7 @@ if unlocked:
             "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
             "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
             "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
-            "Deramo_Opportunity": [
-                "🟡 Medium — gap closeable",
-                "🔴 Hard — Brown dominates",
-                "✅ High — tied with Brown at 20%, Raj only 9%",
-                "🟡 Medium — tied with Raj at 20%",
-                "🔴 Hard — Raj dominates",
-                "✅ Soft target — competitive",
-                "⚠️ Problem — Brown 21%, Deramo 0%",
-                "🔴 Hard — women break Brown/Raj",
-                "✅ Advantage — Deramo 3 pts stronger",
-                "⚠️ Problem — Raj dominates",
-                "🔴 Hard — Raj at 33%",
-                "🟡 Medium — room to grow",
-                "✅ Key target — Raj only 1%",
-                "✅ Sleeper — Brown leads but Raj irrelevant",
-                "✅ Underrated — Raj at 0%",
-                "🔴 Hard — Raj and grad-degree voters aligned",
-                "🟡 Medium — three-way split",
-                "✅ Key target — Raj near zero",
-                "⚠️ Brown dominates — RCV transfer play only",
-            ],
         })
-
-        identity_matrix["Deramo_vs_Raj"] = identity_matrix["Deramo %"] - identity_matrix["Raj %"]
 
         st.dataframe(
             identity_matrix,
