@@ -21,7 +21,7 @@ unlocked = access_code == "floront"
 if unlocked:
 
     tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-        "♻️ RCV Poll",
+        "♻️ RCV Sim",
         "🔴 Issue Universes",
         "🧬 Identity Universes",
         "🎯 Targeting Model",
@@ -31,20 +31,14 @@ if unlocked:
     ])
 
     # ══════════════════════════════════════════════════════════
-    # TAB 1 — PPP POLL
+    # TAB 1 — RCV SIM
     # ══════════════════════════════════════════════════════════
 
     with tab1:
-        st.subheader("♻️ Lynch & Reyes Yanes — The Transfer Game")
+        st.subheader("♻️ Results From Polling in Late March")
         st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
-        st.markdown("""
-        **From the PPP poll — projected to full Ward 1 Dem primary electorate (projecting ~9,000 ballots):**
-        - **Lynch:** 8% → ~720 actual votes
-        - **Reyes Yanes:** 9% → ~810 actual votes
-        - **Combined:** ~1,530 votes eliminated in rounds 1-2 — roughly **17% of all ballots cast**
-        """)
-
+       
 
         st.markdown("#### RCV Simulation Among Decided Voters")
             # RCV Simulation
@@ -89,132 +83,17 @@ if unlocked:
         - ⚪ Lynch: 3%
         - ❓ Undecided: 55%
         """)
-        st.markdown("""
-        **What Reyes Yanes stands to gain:**
-        - If 75% of Lynch's ~720 votes transfer to Reyes Yanes → **+540 votes**
-        - If 75% of Reyes Yanes' ~810 votes transfer to Reyes Yanes → **+608 votes**
-        - Combined upside: **~1,148 votes** to get in range with Brown in penultimate round
-        - Current gap to close: Reyes Yanes at 7% vs Brown at 13% among all likely voters
-        - 1,148 transferred votes in a ~9,000 vote primary = **~5% swing** along with persuasion gains among undecideds
-        - Second choice on Brown's ballots then propels Reyes Yanes past Raj in final round
-        """)
-
+        
         st.info("""
-        **🗳️ Historical Precedent: The Kathryn Garcia Playbook (NYC 2021)**
+        **🗳️ RCV Flashback: The Kathryn Garcia Playbook (NYC 2021)**
 
-        In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable. This Ward 1 race would be the inverse in terms of political spectrum for the Adams/Wiley dynamic, but does map to the polling position three weeks out of that NYC race with Adams -> Raj, Wiley -> Brown, and Garcia -> Reyes Yanes. 
+        In the June 2021 NYC Democratic mayoral primary, Kathryn Garcia trailed Eric Adams by ~100,000 first-choice votes. She won the somewhat liberal lane while Maya Wiley locked up the hard left and Adams owned moderate/conservative Democrats. But Garcia's ideological compatability on key issues with other candidates made her the consensus second and third choice across ideological lines. Wiley voters ranked her #2 at high rates, and moderate voters who couldn't stomach Adams found Garcia acceptable.
                 
-        After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates. For Reyes Yanes, making inroads with minor candidates' voters as their second choice could produce an even bigger additional boost for a late-surging candidate here in the 2026 DC Ward 1 primary than it did in the 2021 NYC mayoral primary.
+        After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates.
 
-        **In short:** Raj consolidates the very liberal base. Brown is strong with conservatives. The moderate and somewhat liberal lanes are genuinely contested and Reyes Yanes's best persuasion targets, and the most likely to be undecided. If Reyes Yanes can own that lane on first choice while harvesting RCV transfers from Lynch, Reyes Yanes, and Brown voters, the math closes fast in a ~9,000 ballot electorate.
         """)
 
-        st.divider()
-
-
-
-        # Lynch Transfer Universe
-        st.subheader("🔄 Lynch Voter RCV Conversion")
-        st.caption("8% of decided votes likely exhausting. These voters are ideologically amenable enough to rank Reyes Yanes No.2.")
-
-        lynch_universe = pd.DataFrame({
-            "Precinct": [23, 24, 35, 37, 40],
-            "Neighborhood": ["Columbia Heights", "Adams Morgan", "Adams Morgan", "Pleasant Plains", "Mount Pleasant"],
-            "Lynch_Voter_Profile": [
-                "Lynch is a Mt Pleasant resident — crime-frustrated, anti-Nadeau, pro-jobs",
-                "Mt Pleasant adjacent — moderate to conservative Dem, wants results",
-                "Long-tenure resident fed up with status quo, Nadeau fatigue",
-                "Watches carjackings and robberies, wants someone who names it",
-                "Business owner adjacent who's pro-economic development, anti-ideology",
-            ],
-            "Why_They_Exhaust": [
-                "Low political engagement, didn't understand RCV mechanics",
-                "Older voters less likely to rank multiple candidates",
-                "Anti-establishment voters who stopped at #1",
-                "Single-issue crime voters who didn't rank further",
-                "Anti-establishment voters who don't trust other candidates",
-            ],
-            "Deramo_Pitch_As_2nd": [
-                "'Lynch and Jackie agree on crime and jobs, rank Jackie 2nd so your vote counts'",
-                "'Don't let your ballot exhaust — Lynch #1, Reyes Yanes #2 keeps Raj out'",
-                "'Lynch is anti-Nadeau, so is Jackie — rank both, block the Nadeau machine'",
-                "'Lynch and Jackie both want safe streets, rank Jackie 2nd'",
-                "'Lynch and Jackie both want a thriving Park View, rank Jackie 2nd'",
-            ],
-            "RCV_Ask": [
-                "Lynch #1, Deramo #2, Brown #3",
-                "Lynch #1, Deramo #2",
-                "Lynch #1, Deramo #2 — anti-Nadeau frame",
-                "Lynch #1, Deramo #2 — crime frame",
-                "Lynch #1, Deramo #2 — jobs/business frame",
-            ],
-        })
-
-        st.dataframe(lynch_universe, use_container_width=True, hide_index=True)
-
-        st.error("""
-        **Lynch ballots in poll, most votes exhausting:**
-        Lynch voters didn't rank a second choice per the GGWash simulation.
-        ~720 votes going nowhere. In a race this tight, those votes can make the difference.
-        A targeted RCV education push among Lynch supporters in Mt Pleasant and U Street
-        and just explaining that ranking a 2nd choice doesn't hurt their #1
-        could be the difference between Reyes Yanes surviving Round 2 or not.
-        **This is a high-leverage canvassing play in the race.**
-        """)
-
-        st.divider()
-
-        # Reyes Yanes Transfer Universe
-        st.subheader("🤝 Reyes Yanes Voter 2nd Choice Courtship")
-        st.caption("Court don't compete — her voters are Reyes Yanes's best transfer pool after Brown")
-
-        reyes_yanes_universe = pd.DataFrame({
-            "Precinct": [23, 24, 20, 25, 37],
-            "Neighborhood": ["Columbia Heights", "Adams Morgan", "LeDroit Park", "Adams Morgan", "Pleasant Plains"],
-            "Why_Reyes_Yanes_Strong_Here": [
-                "Her home turf — arrived in DC 1990 via Mt Pleasant, deep community roots",
-                "Mt Pleasant adjacent — Salvadoran and Central American community anchor",
-                "Columbia Heights — Latino community, former Latino Affairs director",
-                "Columbia Heights — Latino families she served at Mayor's Office",
-                "Park View — Latino residents along Georgia Ave, business community ties",
-            ],
-            "Why_NOT_To_Compete_For_1st": [
-                "She owns this precinct, competing directly alienates the Latino community",
-                "Her 30+ year Mt Pleasant roots are tough to beat on first choice here",
-                "She has government service record with these families",
-                "She connected these residents to COVID vaccines and eviction relief",
-                "Her business grant platform resonates strongly, don't outbid her",
-            ],
-            "Why_Her_Voters_Transfer_To_Deramo": [
-                "Both Latino — when she's eliminated, Reyes Yanes is the natural home",
-                "Pro-business, pro-safety — compatible with Reyes Yanes's platform",
-                "Neither is DSA, Raj is not a transfer destination for Reyes Yanes voters",
-                "Bowser-moderate — closer to Reyes Yanes/McDuffie than Raj/Lewis George",
-                "Her voters already understand RCV, she ran bilingual RCV workshops",
-            ],
-            "Deramo_Pitch_As_2nd": [
-                "'Jackie has served this community 30 years and Jackie shares her values. Rank Jackie first, Jackie second.'",
-                "'Two Latino candidates, same Ward 1 values. Rank them 1-2 in either order.'",
-                "'Jackie built the Latino Affairs office. Jackie will carry that work forward.'",
-                "'Jackie's business grant idea and Jackie's corridor plan point the same direction.'",
-                "'Jackie and Jackie agree: 38 violent crimes in 30 days is unacceptable.'",
-            ],
-            "RCV_Ask": [
-                "Reyes Yanes #1, Reyes Yanes #2 — or Reyes Yanes #1, Reyes Yanes #2",
-                "Either order, just leave Raj unranked",
-                "Reyes Yanes #1, Reyes Yanes #2, Brown #3",
-                "Reyes Yanes #1, Reyes Yanes #2",
-                "Reyes Yanes #1, Reyes Yanes #2 — crime + business frame",
-            ],
-            "Transfer_Value": [
-                "🔴 Critical", "🔴 Critical", "🟡 Medium", "🟡 Medium", "🟡 Medium"
-            ],
-        })
-
-        st.dataframe(reyes_yanes_universe, use_container_width=True, hide_index=True
-            )
-
-
+    
         st.divider()
 
             # Identity crosstabs
