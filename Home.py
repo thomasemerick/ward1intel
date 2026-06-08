@@ -1069,7 +1069,7 @@ if unlocked:
                 ["Curfew Detail",
                 "Temporary, targeted solution while ramping up rec and workforce programs",
                 "Curfew should be one of many tools including youth athletics",
-                "Teen curfews don't work, would only get youths attacked by federal police or ICE",
+                "This will get the youth attacked by ICE, let the youth design programs instead",
                 "Advisory boards, mental health services, safe spaces, and year-round employment",
                 "Reactivate advisory council and invest in violence interruption programs"],
                 ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
