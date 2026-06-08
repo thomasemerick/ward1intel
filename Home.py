@@ -1067,7 +1067,7 @@ if unlocked:
             safety_rows = [
                 ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
                 ["Curfew Detail",
-                "Temporary, targeted solution while ramping up rec and workforce programs",
+                "Temporary, targeted solution while ramping up rec and work programs",
                 "Curfew should be one of many tools including youth athletics",
                 "Would trigger attacks on the DC youth population because of feds and ICE",
                 "Advisory boards, mental health services, safe spaces, and year-round employment",
