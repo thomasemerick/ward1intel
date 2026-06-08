@@ -1015,163 +1015,88 @@ if unlocked:
             st.subheader("📋 Washington Post Candidate Survey")
             st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are 10-word summaries.")
 
-            survey = pd.DataFrame({
-                "Candidate": ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"],
-                "Teen Curfew": ["✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-                "Curfew Response": [
-                    "Temporary, targeted solution while ramping up rec and workforce programs",
-                    "Curfew should be one of many tools including youth athletics",
-                    "Teen curfews don't work, would only get youths attacked by federal police or ICE",
-                    "Advisory boards, mental health services, safe spaces, and year-round employment",
-                    "Curfew not the right solution, instead invest in violence interruption",
-                ],
-                "Congestion Pricing": ["❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                "Rent Stabilization": ["✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                "Robotaxis": ["❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-                "Police Level": ["Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
-                "Police Response": [
-                    "Community policing and public services",
-                    "Community policing and public services",
-                    "Divest from overtime payment to fund non-public safety initiatives",
-                    "Community policing and public services",
-                    "Accountability for overtime payment and public services",
-                ],
-                "Tax Policy": [
-                    "Targeted relief, accountability for smart gov spending",
-                    "Top 1% and billionaires tax, professional athlete tax",
-                    "Higher capital gains tax, stronger Business Activity Tax",
-                    "Higher inheritance tax, stronger Business Activity Tax",
-                    "Taxes to disincentivize empty lots, no sales tax increase",
-                ],
-                "DC Economy": [
-                    "Pivot from fed-reliant economy to local small business revival",
-                    "Introduce program to sell vacant properties at market value",
-                    "Green New Deal for DC and creating social housing at scale",
-                    "Reskill workforce for health care, tech, and AI thru programs",
-                    "Incentivize business and investment, bring back streateries",
-                ],
-                "Econ Inequality": [
-                    "Help local businesses avoid displacement and hire local workforce",
-                    "Additional top 1% or billionaires tax to fund education programs",
-                    "Free child care for all thru stronger Business Activity Tax",
-                    "Free child care for all and higher pay for early childhood educators",
-                    "Housing costs thru zoning, investment, supply of market and subsidized",
-                ],
-                "Schools": [
-                    "Stronger pipelines for local residents to enter education workforce",
-                    "Youth engagement after school hours through arts, sports, and clubs",
-                    "Democratize by consolidating power within board of education",
-                    "Increase teacher pay, decrease class sizes",
-                    "Leverage Dept of Health and Human Services to address truancy",
-                ],
-                "Trump/Congress": [
-                    "Standing firm when necessary",
-                    "Forge alliances with DMV groups",
-                    "Take the fight nationwide",
-                    "Work strategically with mayor",
-                    "Scale up DNC Home Rule Caucus",
-                ],
-            })
-
             candidates = ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"]
 
-            with st.expander("🏘️ Economy & Housing", expanded=True):
-                econ = pd.DataFrame({
-                    "Issue": ["Tax Policy", "DC Economy", "Econ Inequality", "Rent Stabilization", "Congestion Pricing", "Robotaxis"],
-                    "Jackie Reyes Yanes": [
-                        "Targeted relief, accountability for smart gov spending",
-                        "Pivot from fed-reliant economy to local small business revival",
-                        "Help local businesses avoid displacement and hire local workforce",
-                        "✅ Yes", "❌ No", "❌ No",
-                    ],
-                    "Terry Lynch": [
-                        "Top 1% and billionaires tax, professional athlete tax",
-                        "Introduce program to sell vacant properties at market value",
-                        "Additional top 1% or billionaires tax to fund education programs",
-                        "✅ Yes", "✅ Yes", "✅ Yes",
-                    ],
-                    "Aparna Raj": [
-                        "Higher capital gains tax, stronger Business Activity Tax",
-                        "Green New Deal for DC and creating social housing at scale",
-                        "Free child care for all thru stronger Business Activity Tax",
-                        "✅ Yes", "✅ Yes", "❌ No",
-                    ],
-                    "Rashida Brown": [
-                        "Higher inheritance tax, stronger Business Activity Tax",
-                        "Reskill workforce for health care, tech, and AI thru programs",
-                        "Free child care for all and higher pay for early childhood educators",
-                        "✅ Yes", "✅ Yes", "❌ No",
-                    ],
-                    "Miguel Trindade Deramo": [
-                        "Taxes to disincentivize empty lots, no sales tax increase",
-                        "Incentivize business and investment, bring back streateries",
-                        "Housing costs thru zoning, investment, supply of market and subsidized",
-                        "✅ Yes", "✅ Yes", "❌ No",
-                    ],
-                })
-                st.dataframe(econ, use_container_width=True, hide_index=True,
-                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="medium", max_chars=40) for c in candidates}})
+            def candidate_table(rows, candidates):
+                html = '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:13px;">'
+                html += '<thead><tr>'
+                html += '<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;width:80px;font-weight:500;">Issue</th>'
+                for c in candidates:
+                    html += f'<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;font-weight:500;">{c}</th>'
+                html += '</tr></thead><tbody>'
+                for row in rows:
+                    html += '<tr>'
+                    for i, cell in enumerate(row):
+                        style = 'padding:6px 8px;border-bottom:0.5px solid #eee;vertical-align:top;'
+                        if i == 0:
+                            style += 'font-weight:500;width:80px;white-space:nowrap;'
+                        html += f'<td style="{style}">{cell}</td>'
+                    html += '</tr>'
+                html += '</tbody></table></div>'
+                return html
 
-            with st.expander("🚔 Public Safety", expanded=True):
-                safety = pd.DataFrame({
-                    "Issue": ["Teen Curfew", "Curfew Detail", "Police Level", "Police Detail"],
-                    "Jackie Reyes Yanes": [
-                        "✅ Yes",
-                        "Temporary, targeted solution while ramping up rec and workforce programs",
-                        "Not enough",
-                        "Community policing and public services",
-                    ],
-                    "Terry Lynch": [
-                        "✅ Yes",
-                        "Curfew should be one of many tools including youth athletics",
-                        "Right amount",
-                        "Community policing and public services",
-                    ],
-                    "Aparna Raj": [
-                        "❌ No",
-                        "Teen curfews don't work, would only get youths attacked by federal police or ICE",
-                        "Right amount",
-                        "Divest from overtime payment to fund non-public safety initiatives",
-                    ],
-                    "Rashida Brown": [
-                        "❌ No",
-                        "Advisory boards, mental health services, safe spaces, and year-round employment",
-                        "Right amount",
-                        "Community policing and public services",
-                    ],
-                    "Miguel Trindade Deramo": [
-                        "❌ No",
-                        "Curfew not the right solution, instead invest in violence interruption",
-                        "Right amount",
-                        "Accountability for overtime payment and public services",
-                    ],
-                })
-                st.dataframe(safety, use_container_width=True, hide_index=True,
-                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="medium", max_chars=40) for c in candidates}})
+            st.markdown("#### 🏘️ Economy & Housing")
+            econ_rows = [
+                ["Tax Policy",
+                "Targeted relief, accountability for smart gov spending",
+                "Top 1% and billionaires tax, professional athlete tax",
+                "Higher capital gains tax, stronger Business Activity Tax",
+                "Higher inheritance tax, stronger Business Activity Tax",
+                "Taxes to disincentivize empty lots, no sales tax increase"],
+                ["DC Economy",
+                "Pivot from fed-reliant economy to local small business revival",
+                "Introduce program to sell vacant properties at market value",
+                "Green New Deal for DC and creating social housing at scale",
+                "Reskill workforce for health care, tech, and AI thru programs",
+                "Incentivize business and investment, bring back streateries"],
+                ["Econ Inequality",
+                "Help local businesses avoid displacement and hire local workforce",
+                "Additional top 1% or billionaires tax to fund education programs",
+                "Free child care for all thru stronger Business Activity Tax",
+                "Free child care for all and higher pay for early childhood educators",
+                "Housing costs thru zoning, investment, supply of market and subsidized"],
+                ["Rent Stabilization", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                ["Congestion Pricing", "❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                ["Robotaxis", "❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+            ]
+            st.markdown(candidate_table(econ_rows, candidates), unsafe_allow_html=True)
 
-            with st.expander("🏫 Social Policy", expanded=True):
-                social = pd.DataFrame({
-                    "Issue": ["Schools", "Trump/Congress"],
-                    "Jackie Reyes Yanes": [
-                        "Stronger pipelines for local residents to enter education workforce",
-                        "Standing firm when necessary",
-                    ],
-                    "Terry Lynch": [
-                        "Youth engagement after school hours through arts, sports, and clubs",
-                        "Forge alliances with DMV groups",
-                    ],
-                    "Aparna Raj": [
-                        "Democratize by consolidating power within board of education",
-                        "Take the fight nationwide",
-                    ],
-                    "Rashida Brown": [
-                        "Increase teacher pay, decrease class sizes",
-                        "Work strategically with mayor",
-                    ],
-                    "Miguel Trindade Deramo": [
-                        "Leverage Dept of Health and Human Services to address truancy",
-                        "Scale up DNC Home Rule Caucus",
-                    ],
-                })
-                st.dataframe(social, use_container_width=True, hide_index=True,
-                    column_config={"Issue": st.column_config.TextColumn("Issue", width="small"), **{c: st.column_config.TextColumn(c, width="medium", max_chars=40) for c in candidates}})
+            st.divider()
+
+            st.markdown("#### 🚔 Public Safety")
+            safety_rows = [
+                ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+                ["Curfew Detail",
+                "Temporary, targeted solution while ramping up rec and workforce programs",
+                "Curfew should be one of many tools including youth athletics",
+                "Teen curfews don't work, would only get youths attacked by federal police or ICE",
+                "Advisory boards, mental health services, safe spaces, and year-round employment",
+                "Curfew not the right solution, instead invest in violence interruption"],
+                ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
+                ["Police Detail",
+                "Community policing and public services",
+                "Community policing and public services",
+                "Divest from overtime payment to fund non-public safety initiatives",
+                "Community policing and public services",
+                "Accountability for overtime payment and public services"],
+            ]
+            st.markdown(candidate_table(safety_rows, candidates), unsafe_allow_html=True)
+
+            st.divider()
+
+            st.markdown("#### 🏫 Social Policy")
+            social_rows = [
+                ["Schools",
+                "Stronger pipelines for local residents to enter education workforce",
+                "Youth engagement after school hours through arts, sports, and clubs",
+                "Democratize by consolidating power within board of education",
+                "Increase teacher pay, decrease class sizes",
+                "Leverage Dept of Health and Human Services to address truancy"],
+                ["Trump/Congress",
+                "Standing firm when necessary",
+                "Forge alliances with DMV groups",
+                "Take the fight nationwide",
+                "Work strategically with mayor",
+                "Scale up DNC Home Rule Caucus"],
+            ]
+            st.markdown(candidate_table(social_rows, candidates), unsafe_allow_html=True)
