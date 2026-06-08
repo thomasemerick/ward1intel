@@ -1002,3 +1002,88 @@ if unlocked:
                 }
             )
             st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
+
+
+            # ══════════════════════════════════════════════════════════
+# TAB 7 — CANDIDATE SURVEY
+# ══════════════════════════════════════════════════════════
+with tab7:
+    if not unlocked:
+        st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+    else:
+        st.subheader("📋 Washington Post Candidate Survey")
+        st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are 10-word summaries.")
+
+        survey = pd.DataFrame({
+            "Candidate": ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"],
+            "Teen Curfew": ["✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+            "Curfew Response": [
+                "Temporary, targeted solution while ramping up rec and workforce programs",
+                "Curfew should be one of many tools including youth athletics",
+                "Teen curfews don't work, would only get youths attacked by federal police or ICE",
+                "Advisory boards, mental health services, safe spaces, and year-round employment",
+                "Curfew not the right solution, instead invest in violence interruption",
+            ],
+            "Congestion Pricing": ["❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+            "Rent Stabilization": ["✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+            "Robotaxis": ["❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+            "Police Level": ["Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
+            "Police Response": [
+                "Community policing and public services",
+                "Community policing and public services",
+                "Divest from overtime payment to fund non-public safety initiatives",
+                "Community policing and public services",
+                "Accountability for overtime payment and public services",
+            ],
+            "Tax Policy": [
+                "Targeted relief, accountability for smart gov spending",
+                "Top 1% and billionaires tax, professional athlete tax",
+                "Higher capital gains tax, stronger Business Activity Tax",
+                "Higher inheritance tax, stronger Business Activity Tax",
+                "Taxes to disincentivize empty lots, no sales tax increase",
+            ],
+            "DC Economy": [
+                "Pivot from fed-reliant economy to local small business revival",
+                "Introduce program to sell vacant properties at market value",
+                "Green New Deal for DC and creating social housing at scale",
+                "Reskill workforce for health care, tech, and AI thru programs",
+                "Incentivize business and investment, bring back streateries",
+            ],
+            "Econ Inequality": [
+                "Help local businesses avoid displacement and hire local workforce",
+                "Additional top 1% or billionaires tax to fund education programs",
+                "Free child care for all thru stronger Business Activity Tax",
+                "Free child care for all and higher pay for early childhood educators",
+                "Housing costs thru zoning, investment, supply of market and subsidized",
+            ],
+            "Schools": [
+                "Stronger pipelines for local residents to enter education workforce",
+                "Youth engagement after school hours through arts, sports, and clubs",
+                "Democratize by consolidating power within board of education",
+                "Increase teacher pay, decrease class sizes",
+                "Leverage Dept of Health and Human Services to address truancy",
+            ],
+            "Trump/Congress": [
+                "Standing firm when necessary",
+                "Forge alliances with DMV groups",
+                "Take the fight nationwide",
+                "Work strategically with mayor",
+                "Scale up DNC Home Rule Caucus",
+            ],
+        })
+
+        st.dataframe(
+            survey,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Candidate": st.column_config.TextColumn("Candidate", width="medium"),
+                "Curfew Response": st.column_config.TextColumn("Curfew Detail", width="large"),
+                "Police Response": st.column_config.TextColumn("Police Detail", width="large"),
+                "Tax Policy": st.column_config.TextColumn("Tax Policy", width="large"),
+                "DC Economy": st.column_config.TextColumn("DC Economy", width="large"),
+                "Econ Inequality": st.column_config.TextColumn("Econ Inequality", width="large"),
+                "Schools": st.column_config.TextColumn("Schools", width="large"),
+                "Trump/Congress": st.column_config.TextColumn("Trump/Congress", width="large"),
+            }
+        )
