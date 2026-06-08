@@ -1069,7 +1069,7 @@ if unlocked:
                 ["Curfew Detail",
                 "Temporary, targeted solution while ramping up rec and work programs",
                 "Curfew should be one of many tools including youth athletics",
-                "Would trigger attacks due to ICE and fed presence, let DC youth design programs",
+                "Would trigger attacks due to ICE presence, instead let DC youth design programs",
                 "Advisory boards, mental health services, safe spaces, and year-round employment",
                 "Reactivate advisory council and invest in violence interruption programs",],
                 ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
