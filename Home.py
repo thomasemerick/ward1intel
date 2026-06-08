@@ -1046,7 +1046,7 @@ if unlocked:
                 ["DC Economy",
                 "Pivot from fed-reliant economy toward local small business revival",
                 "Introduce program to sell vacant properties at market value",
-                "Green New Deal and creating social housing at scale",
+                "Green New Deal for DC and social housing at scale",
                 "Reskill workforce for health care, tech, and AI thru programs",
                 "Incentivize business and investment, bring back streateries"],
                 ["Econ Inequality",
