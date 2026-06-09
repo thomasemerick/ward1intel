@@ -215,7 +215,7 @@ if unlocked:
         
 
             st.subheader("🎯 Combined Issue + Identity Priority Matrix")
-            st.caption("Every precinct scored across all 9 universes — 4 issue + 4 identity + LGBTQ+ as both")
+            st.caption("Every precinct scored across all 9 universes — 4 issue + 4 identity")
 
 
 
@@ -230,7 +230,7 @@ if unlocked:
             scored['Reg_Dems'] = scored['Precinct'].map(reg_dems)
             scored['Untapped'] = scored['Precinct'].map(untapped)
 
-            dot_cols = ['Crime_Dot','Business_Dot','Schools_Dot','LGBTQ_Dot',
+            dot_cols = ['Crime_Dot','Business_Dot','Schools_Dot',
                         'Anti_Nadeau_Dot','Hispanic_Dot','White_46plus_Dot',
                         'Not_Leftist_Dot','Minrty_NoAlign_Dot']
             for c in dot_cols:
@@ -256,7 +256,7 @@ if unlocked:
                 else: return f"  #{i+1}"
 
             display_cols = ['Precinct','Neighborhood','Crime_Dot','Business_Dot',
-                            'Schools_Dot','LGBTQ_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
+                            'Schools_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
                             'White_46plus_Dot','Not_Leftist_Dot','Minrty_NoAlign_Dot',
                             'Reg_Dems']
 
@@ -264,7 +264,6 @@ if unlocked:
                 'Crime_Dot': 'Crime',
                 'Business_Dot': 'Business',
                 'Schools_Dot': 'Schools',
-                'LGBTQ_Dot': 'LGBTQ',
                 'Anti_Nadeau_Dot': 'Anti_Nadeau',
                 'Hispanic_Dot': 'Hispanic',
                 'White_46plus_Dot': 'White_46+',
@@ -300,7 +299,6 @@ if unlocked:
     | **Crime** | MPD incident data 2020–2026 | Top 5 precincts by weighted crime density (homicide x2, all others x1) |
     | **Business** | DC DLCP business licenses started Jan 1 2015-June 1 2026 | 200+ closures or more than .06 closures per registered Democrat |
     | **Schools** | Census B09001 (2023 ACS) | Under-18 population in top tier by precinct |
-    | **LGBTQ** | Venue geography + residential research | Known LGBTQ venue concentration and residential density |
     | **Anti_Nadeau** | 2022 DCBOE primary results | High non-Nadeau vote rate, weighted: Czapary x2, Harris x1 |
     | **Hispanic** | Census B03003 (2023 ACS) | Hispanic/Latino population ≥ 22% |
     | **White_46+** | Census B01001A (2023 ACS) | White population 45+ in top tier by precinct |
@@ -328,26 +326,22 @@ if unlocked:
                                 "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
                                 "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
                                 "Columbia Heights", "Park View", "U Street"],
-                "Ward Area": ["Southeast", "South Central", "South Central", "Southwest", "Southwest",
-                            "West", "Central", "East", "Northeast",
-                            "North", "North", "North",
-                            "Northeast", "Northeast", "Southeast"],
-                "One_Phrase": [
-                    "Howard-adjacent transitional block, mixed tenure, smallest Dem pool in ward",
-                    "Restaurants, bars, and residential; heart of U Street corridor",
-                    "Latino commercial corridor, Columbia Heights Metro hub",
-                    "Dense renters, East side 18th St, Pitchers/ALOHO side",
-                    "Rowhouse renters, West side 18th St + Columbia Rd bars/dining",
-                    "Upper Adams Morgan, longer-tenure homeowners, Rock Creek edge",
-                    "Largest Dem pool in ward, 14th St transit crossroads",
-                    "Working-class corridor, crime-focused voters",
-                    "Transitional rowhouse blocks, family-heavy Park View",
-                    "#1 target — multi-issue powerhouse, Mt Pleasant meets Col Hts",
-                    "Latino Mount Pleasant, Rock Creek Park edge, family density",
-                    "High Hispanic density, working-class families, north Col Hts",
-                    "Compact dense blocks, Metro-adjacent, smaller north Col Hts",
-                    "Quieter rowhouses, Park View proper, Georgia Ave corridor",
-                    "Residential U Street both sides, smaller but high LGBTQ signal",
+                "Visual Markers": [
+                    "Howard Playground, LeDroit Park",
+                    "Lincoln Theater, U Street bars",
+                    "Malcolm X Park, Cardozo Campus",
+                    "Madam's Organ, Marie Reed Campus",
+                    "Duplex, Kalorama Park",
+                    "Columbia Rd Safeway, Lanier Hts",
+                    "Columbia Hts Metro+Community Ctr",
+                    "Howard University, 930 Club",
+                    "Bruce Monroe Park, Midlands",
+                    "Mt Pleasant bars, Co Hts Target",
+                    "Argyle Market, Bancroft Campus",
+                    "Park Rd Safeway, Thip Khao",
+                    "Mi Casita Bakery/Deli, The Coupe",
+                    "Afro Lounge, Looking Glass Lounge",
+                    "Nellie's Sports Bar, All Souls",
                 ],
                 "Boundaries": [
                     "4th to 1st; Rhode Island to Michigan",
