@@ -41,12 +41,12 @@ if unlocked:
         """)         
         st.markdown("""
         #### All likely voters including undecideds (est.):
+        - ❓ Undecided: 55%
         - 🔵 Raj: 18%
         - 🟡 Brown: 13%  
         - 🟢 Trindade Deramo: 7%
         - 🟠 Reyes Yanes: 4%
         - ⚪ Lynch: 3%
-        - ❓ Undecided: 55%
         """)
 
         st.markdown("#### RCV Simulation Among Decided Voters")
