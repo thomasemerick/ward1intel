@@ -12,8 +12,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🗳️ DC Ward 1 Campaign Intel")
-st.caption("Targeting model and insights for the Ward 1 2026 Democratic Primary | By Thomas Emerick")
+st.title("🗳️ DC Ward 1 Democratic Primary Intel")
+st.caption("Data and reporting on the June 16 primary and aftermath | By Thomas Emerick")
 
 access_code = st.text_input("🔒 Enter access code to view full intelligence:", type="password", key="main_access")
 unlocked = access_code == "floront"
@@ -37,7 +37,7 @@ if unlocked:
 
         st.markdown("""
                     
-        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll of the race, which was fielded back in March. Each campaign has been very active with staff and sign game around Ward 1 with 55% of voters undecided entering the stretch run.
+        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll fielded back in March. Each campaign has been very active with staff and sign game around Ward 1 with 55% of voters undecided entering the stretch run.
         """)         
         st.markdown("""
         #### All likely voters including undecideds (est.):
@@ -255,9 +255,7 @@ if unlocked:
                 elif i < 11: return f"🥉 #{i+1}"
                 else: return f"  #{i+1}"
 
-            scored['Final_Priority'] = [medal(i) for i in range(len(scored))]
-
-            display_cols = ['Final_Priority','Precinct','Neighborhood','Crime_Dot','Business_Dot',
+            display_cols = ['Precinct','Neighborhood','Crime_Dot','Business_Dot',
                             'Schools_Dot','LGBTQ_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
                             'White_46plus_Dot','Not_Leftist_Dot','Minrty_NoAlign_Dot',
                             'Reg_Dems']
@@ -310,7 +308,6 @@ if unlocked:
     | **Minrty_NoAlign** | Census B03002 (2023 ACS) | Hispanic + Asian + Other non-white non-Black population in top tier |
     | **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
             """, unsafe_allow_html=True)
-            st.caption("Final Priority Score = 60% red dot count + 35% registered Dems + 5% untapped voters (2024 non-voters). All scores normalized within Ward 1 only. PPP poll data helped to validate which metrics to use as proxies in Ward 1.")
             
 
 
