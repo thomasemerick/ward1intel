@@ -22,13 +22,12 @@ if unlocked:
 
     tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "♻️ RCV Sim",
-        "🔴 Issue Universes",
-        "🧬 Identity Universes",
+        "📋 WaPo Survey"
         "🎯 Targeting Model",
         "🗺️ Precinct Heatmap",
         "📊 Sortable Data",
-        "📋 WaPo Survey"
     ])
+
 
     # ══════════════════════════════════════════════════════════
     # TAB 1 — RCV SIM
@@ -88,7 +87,6 @@ if unlocked:
         """)
 
     
-        st.divider()
 
             # Identity crosstabs
         st.markdown("#### First-Choice Vote Share by Demographic Group")
@@ -135,514 +133,105 @@ if unlocked:
             }
         )
 
-        st.divider()
 
-
+            # ══════════════════════════════════════════════════════════
+    # TAB 2 — WAPO CANDIDATE SURVEY
     # ══════════════════════════════════════════════════════════
-    # TAB 2 — ISSUE UNIVERSES
-    # ══════════════════════════════════════════════════════════
-    with tab2:
+    with tab7:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
-            st.subheader("🔴 Issue-Based Targeting — Reyes Yanes's Argument to Edge the Field")
-            st.markdown("""
-            **Theory of the case on issues:**
-            Raj has no meaningful public safety platform, no business development record,
-            and no specific K-12 policy beyond teachers union alignment.
-            Brown has a strong record but is tied to Nadeau's legacy.
-            Reyes Yanes's edge: she is the only candidate who explicitly names crime as foundational,
-            who has watched businesses close and made it a priority,
-            and whose mother was a schoolteacher — giving him authentic K-12 credibility
-            with parents.
+            st.subheader("📋 Washington Post Candidate Survey")
+            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are concise summaries to adjust for candidates listing myriad proposals for each issue when in governing reality you eventually have to prioritize.")
 
-            
-            """)
+            candidates = ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"]
 
-            st.markdown("""**The three issues where Raj is most vulnerable:**
-            - 🚔 **Crime:** "Reform doesn't work. We have to defund the police" - her own words
-            - 🏪 **Business:** Zero commercial corridor platform
-            - 🏫 **Schools:** Teachers union-aligned, but lingering taste from longer closures than other cities
-                    
-            """)
-            st.divider()
+            def candidate_table(rows, candidates):
+                html = '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:13px;">'
+                html += '<thead><tr>'
+                html += '<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;width:80px;font-weight:500;">Issue</th>'
+                for c in candidates:
+                    html += f'<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;font-weight:500;">{c}</th>'
+                html += '</tr></thead><tbody>'
+                for row in rows:
+                    html += '<tr>'
+                    for i, cell in enumerate(row):
+                        style = 'padding:6px 8px;border-bottom:0.5px solid #eee;vertical-align:top;'
+                        if i == 0:
+                            style += 'font-weight:500;width:80px;white-space:nowrap;'
+                        html += f'<td style="{style}">{cell}</td>'
+                    html += '</tr>'
+                html += '</tbody></table></div>'
+                return html
 
-            # Universe 1: Crime
-            st.subheader("🔴 Universe 1 — High Crime / Public Safety Voters")
-            st.caption("Target: Residents who feel unsafe and want a candidate who takes crime seriously")
-
-            crime_precincts = pd.DataFrame({
-                "Precinct": [40, 39, 137, 22, 37],
-                "Neighborhood": ["Mount Pleasant", "Mount Pleasant/Co Hts", "U Street", "U Street", "Pleasant Plains"],
-                "Why_Target": [
-                    "High foot traffic corridor, late-night incidents",
-                    "Bar district, assault/robbery concentration",
-                    "U St nightlife corridor, visible disorder complaints",
-                    "14th St corridor, property crime, auto theft",
-                    "Mixed income, crime a top complaint",
-                ],
-                "Deramo_Message": [
-                    "'Public safety is foundational' — Jackie will reestablish trust with MPD",
-                    "Jackie supported violence interruption funding as ANC chair",
-                    "Raj doesn't really differentiate MPD from ICE — Jackie listens to residents on crime concerns",
-                    "Jackie: 'safe streets are indispensable to a thriving economy'",
-                    "14th St businesses closing — Jackie ties crime as part of equation on school and economic health",
-                ],
-                "Raj_Vulnerability": [
-                    "Her platform: replace police with social workers",
-                    "Her platform: 'not a police officer' for crisis response",
-                    "MPD = ICE in her framing",
-                    "No acknowledgment that crime affects small business",
-                    "Zero business development platform",
-                ],
-            })
-
-            st.dataframe(crime_precincts, use_container_width=True, hide_index=True)
+            st.markdown("#### 🏘️ Economy & Housing")
+            econ_rows = [
+                ["Tax Policy",
+                "Targeted relief and incentives, stronger spending oversight",
+                "Top 1% and billionaires tax, professional athlete tax",
+                "Higher capital gains tax, stronger Business Activity Tax",
+                "Higher inheritance tax, stronger Business Activity Tax",
+                "Taxes to disincentivize empty lots, no sales tax increase"],
+                ["DC Economy",
+                "Pivot from fed-reliant economy toward local small business revival",
+                "Introduce program to sell vacant properties at market value",
+                "Green New Deal for DC and social housing at scale",
+                "Reskill workforce for health care, tech, and AI thru programs",
+                "Incentivize business and investment, bring back streateries"],
+                ["Econ Inequality",
+                "Help local businesses avoid displacement and hire local workforce",
+                "Additional top 1% or billionaires tax to fund education programs",
+                "Free child care for all thru stronger Business Activity Tax",
+                "Free child care for all and higher pay for early childhood educators",
+                "Housing costs thru zoning, investment, supply market and subsidized"],
+                ["Rent Stabilization", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                ["Congestion Pricing", "❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                ["Robotaxis", "❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+            ]
+            st.markdown(candidate_table(econ_rows, candidates), unsafe_allow_html=True)
 
             st.divider()
 
-            # Universe 2: Business
-            st.subheader("🏪 Universe 2 — Business Corridor Decay Voters")
-            st.caption("Target: Residents who've watched neighborhood businesses close")
-
-            business_precincts = pd.DataFrame({
-                "Precinct": [137, 22, 25, 24, 39],
-                "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mt Pleasant/Co Hts"],
-                "Corridor": ["U Street NW", "U Street NW", "18th Street NW", "14th Street NW", "14th Street NW"],
-                "Business_Vulnerability": [
-                    "U St nightlife corridor losing anchor tenants post-pandemic",
-                    "Late-night corridor, closures accelerating since federal occupation",
-                    "18th St seeing turnover, longtime bars and restaurants closing",
-                    "14th St mid-range dining and retail hollowing out",
-                    "Columbia Heights Plaza area, chain replacement of local business",
-                ],
-                "Deramo_Quote": [
-                    "'I am watching long-time businesses close... the corner restaurant where you don't break the bank'",
-                    "Same — explicitly names late-night food options as Ward 1 lifeblood",
-                    "Hosted campaign event AT a local bar (Grand Duchess) — shows up",
-                    "Ties business closure directly to federal occupation economic impact",
-                    "Calls for YES to local businesses as Councilmember",
-                ],
-                "Raj_Gap": [
-                    "No small business platform section",
-                    "No mention of U Street corridor health",
-                    "Economic platform = unions and wages only",
-                    "No commercial corridor policy",
-                    "Zero local business record",
-                ],
-            })
-
-            st.dataframe(business_precincts, use_container_width=True, hide_index=True)
+            st.markdown("#### 🚔 Public Safety")
+            safety_rows = [
+                ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
+                ["Curfew Detail",
+                "Temporary, targeted solution while ramping up rec and work programs",
+                "Curfew should be one of many tools including youth athletics",
+                "DC youth would face attacks due to presence of ICE, let the youth design programs",
+                "Advisory boards, mental health services, safe spaces, and year-round employment",
+                "Reactivate advisory council and invest in violence interruption programs",],
+                ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
+                ["Police Detail",
+                "Community policing and public services",
+                "Community policing and public services",
+                "Divest from overtime payment to fund other services",
+                "Community policing and public services",
+                "Accountability for overtime payment and public services"],
+            ]
+            st.markdown(candidate_table(safety_rows, candidates), unsafe_allow_html=True)
 
             st.divider()
 
-            # Universe 3: Schools
-            st.subheader("🏫 Universe 3 — Parents with Children in DC Schools")
-            st.caption("Target: Households with school-age children. Crime + fiscal responsibility to have revenue for investing in public schools.")
-
-            school_precincts = pd.DataFrame({
-                "Precinct": [41, 38, 39, 42, 43],
-                "Neighborhood": ["Columbia Heights", "Park View", "Mount Pleasant/Co Hts", "Columbia Heights", "Park View"],
-                "Nearby_School": [
-                    "20.0% Under 18",
-                    "19.9% Under 18",
-                    "18.2% Under 18%",
-                    "16.8% Under 18",
-                    "15.5% Under 18",
-                ],
-                "Deramo_Message": [
-                    "Schools need safe streets AND tax base — both require pro-business, pro-safety leadership",
-                    "COVID closures hurt kids, need leaders who won't bow to union pressure over parent needs",
-                    "Jackie: education is foundational, his mother was a schoolteacher",
-                    "Crime near schools is a parent issue, public safety IS a school issue",
-                    "Bilingual community — Reyes Yanes speaks Portuguese, values immigrant education",
-                ],
-                "Raj_Vulnerability": [
-                    "Teachers union-aligned, no critique of school closure decisions",
-                    "DSA-backed; teachers unions are her base, not parents (see Brandon Johnson in Chicago)",
-                    "No specific K-12 record or parent-facing safety platform",
-                    "Safety platform explicitly avoids police response, parents feel this",
-                    "No school-adjacent crime policy",
-                ],
-            })
-
-            st.dataframe(school_precincts, use_container_width=True, hide_index=True)
-
-            st.divider()
-
-            # Universe 4: LGBTQ+ Issue
-            st.subheader("🏳️‍🌈 Universe 4 — LGBTQ+ Voters (Issue + Safety Frame)")
-            st.caption("Jackie explicitly includes 'safety from discrimination' in his platform")
-
-            lgbtq_precincts = pd.DataFrame({
-                "Precinct": [137, 22, 25, 24, 39],
-                "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mount Pleasant/Co Hts"],
-                "LGBTQ_Context": [
-                    "Historic Black LGBTQ+ corridor, Shaw/U St anchors",
-                    "U Street nightlife, queer bars and venues concentrated here",
-                    "Adams Morgan — diverse LGBTQ+ community, long-established",
-                    "Adams Morgan — younger queer renters, high transplant population",
-                    "Growing LGBTQ+ residential presence",
-                ],
-                "Deramo_Message": [
-                    "First Latino on DC Council, second LGBTQ+ — historic AND substantive",
-                    "Jackie hosted campaign events in neighborhood venues, shows up here",
-                    "Safety platform explicitly includes 'safety from discrimination'",
-                    "Record vs Raj: 5 years ANC work vs Raj's zero elected record",
-                    "Jackie ties LGBTQ+ safety to broader community safety",
-                ],
-            })
-
-            st.dataframe(lgbtq_precincts, use_container_width=True, hide_index=True)
-
-            st.divider()
-
-            # Universe 5: Anti-Nadeau
-            st.subheader("📉 Universe 5 — Nadeau Underperformance Precincts")
-            st.caption("23% of Ward 1 voters less likely to vote for Nadeau-endorsed candidates, the DSA skeptics among them could open their mind to Reyes Yanes")
-
-            nadeau_precincts = pd.DataFrame({
-                "Precinct": [22, 39, 137, 25, 20],
-                "Neighborhood": ["U Street", "Mount Pleasant", "Mount Pleasant", "Adams Morgan", "LeDroit Park"],
-                "Nadeau_Weakness": [
-                    "14th St corridor business closures happened on her watch — 12 years, limited action",
-                    "Columbia Heights Plaza blight, longstanding constituent frustration",
-                    "U Street safety complaints went unaddressed for years under Nadeau",
-                    "Housing affordability worsened dramatically during her tenure",
-                    "Small precinct, high symbolic value in anti-establishment framing",
-                ],
-                "Deramo_Angle": [
-                    "I've been your ANC commissioner actually fixing things block by block",
-                    "Jackie passed resolutions; Nadeau made promises — contrast the records",
-                    "ANC Home Rule Caucus was Jackie's work, not the council's",
-                    "Jackie opposes same bad developers Nadeau enabled",
-                    "Fresh start: 44 years of same leadership, time for change",
-                ],
-                "Poll_Data": [
-                    "23% of W1 voters less likely to vote Nadeau-endorsed",
-                    "Nadeau endorsement net negative among men (-26% vs +12%)",
-                    "Nadeau less likely among moderates (29% vs 10%)",
-                    "Among 46-65: 29% less likely with Nadeau endorsement",
-                    "Anti-establishment voters: Brown's biggest liability is Nadeau's blessing",
-                ],
-            })
-
-            st.dataframe(nadeau_precincts, use_container_width=True, hide_index=True)
+            st.markdown("#### 🏫 Social Policy")
+            social_rows = [
+                ["Schools",
+                "Stronger pipelines for local residents to enter education workforce",
+                "Youth engagement after school hours through arts, sports, and clubs",
+                "Democratize by consolidating power within board of education",
+                "Increase teacher pay, decrease class sizes",
+                "Leverage Dept of Health and Human Services to address truancy"],
+                ["Trump/Congress",
+                "Standing firm when necessary",
+                "Forge alliances with DMV groups",
+                "Take the fight nationwide",
+                "Work strategically with mayor",
+                "Scale up DNC Home Rule Caucus"],
+            ]
+            st.markdown(candidate_table(social_rows, candidates), unsafe_allow_html=True)
 
     # ══════════════════════════════════════════════════════════
-    # TAB 3 — IDENTITY UNIVERSES
-    # ══════════════════════════════════════════════════════════
-    with tab3:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("🧬 Identity-Based Targeting — Reyes Yanes's Edge")
-            st.markdown("""
-            **Theory of the case on identity:**
-            Reyes Yanes is a gay Latino candidate in a field with a Black woman (Brown),
-            an Indian DSA candidate (Raj), a Salvadoran woman (Reyes Yanes), and a white
-            self-identified civic gadfly (Lynch). The standard progressive coalition fractures along identity
-            lines in ways that create non-obvious opportunities.
-
-            **Deramo's identity advantages:**
-            - Only gay man in the race → LGBTQ+ community, gay male voters specifically
-            - Only candidate with Brazilian/Latino heritage still in serious contention → Latino & Hispanic voters
-            - Former State Dept / DHS background → moderate and conservative Dems who want competence
-            - ANC chairman with 5-year record → white 46+ homeowners who want results not ideology
-
-            **Reyes Yanes's identity vulnerabilities:**
-            - Black voters (23% of electorate) → Brown dominates with Reyes Yanes at 1%
-            - College-educated under 45 women → Raj's core, largely locked
-            """)
-
-            st.divider()
-
-            # Identity crosstabs
-            st.markdown("#### First-Choice Vote Share by Demographic Group")
-            st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
-
-            identity_matrix = pd.DataFrame({
-                "Demographic Group": [
-                    "White voters",
-                    "Black / African-American voters",
-                    "Hispanic / Latino voters",
-                    "Other race voters",
-                    "18-45 years old",
-                    "46-65 years old",
-                    "65+ years old",
-                    "Women",
-                    "Men",
-                    "Non-binary",
-                    "Very liberal",
-                    "Somewhat liberal",
-                    "Moderate",
-                    "Conservative",
-                    "No college degree",
-                    "4-year college degree",
-                    "Post-graduate degree",
-                    "White moderate voters (est.)",
-                    "White conservative voters",
-                ],
-                "Deramo %": [7, 1, 20, 11, 9, 11, 0, 6, 9, 0, 8, 5, 9, 0, 6, 4, 10, 15, 0],
-                "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
-                "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
-                "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
-                "Deramo_Opportunity": [
-                    "🟡 Medium — gap closeable",
-                    "🔴 Hard — Brown dominates",
-                    "✅ High — tied with Brown at 20%, Raj only 9%",
-                    "🟡 Medium — tied with Raj at 20%",
-                    "🔴 Hard — Raj dominates",
-                    "✅ Soft target — competitive",
-                    "⚠️ Problem — Brown 21%, Deramo 0%",
-                    "🔴 Hard — women break Brown/Raj",
-                    "✅ Advantage — Deramo 3 pts stronger",
-                    "⚠️ Problem — Raj dominates",
-                    "🔴 Hard — Raj at 33%",
-                    "🟡 Medium — room to grow",
-                    "✅ Key target — Raj only 1%",
-                    "✅ Sleeper — Brown leads but Raj irrelevant",
-                    "✅ Underrated — Raj at 0%",
-                    "🔴 Hard — Raj and grad-degree voters aligned",
-                    "🟡 Medium — three-way split",
-                    "✅ Key target — Raj near zero",
-                    "⚠️ Brown dominates — RCV transfer play only",
-                ],
-            })
-
-            identity_matrix["Deramo_vs_Raj"] = identity_matrix["Deramo %"] - identity_matrix["Raj %"]
-
-            st.dataframe(
-                identity_matrix,
-                use_container_width=True,
-                hide_index=True,
-                column_config={
-                    "Deramo %": st.column_config.ProgressColumn("Deramo %", min_value=0, max_value=40, format="%d%%"),
-                    "Brown %": st.column_config.ProgressColumn("Brown %", min_value=0, max_value=40, format="%d%%"),
-                    "Raj %": st.column_config.ProgressColumn("Raj %", min_value=0, max_value=40, format="%d%%"),
-                    "Share_of_Ward1_Dems": st.column_config.NumberColumn("% of Electorate", format="%d%%"),
-                    "Deramo_vs_Raj": st.column_config.NumberColumn("vs Raj", format="%+d pts"),
-                }
-            )
-
-            st.divider()
-
-            col1, col2 = st.columns(2)
-            with col1:
-                st.success("""
-                **✅ Press Hard — Deramo's Strongest Groups**
-
-                **Hispanic/Latino (8% of electorate)**
-                Deramo 20%, Brown 20%, Raj 9%
-                Only Latino still in serious contention after Reyes Yanes
-                First Latino on DC Council if elected
-
-                **Men (42% of electorate)**
-                Deramo 9%, Brown 7%, Raj 19%
-                Moderate men are the target — DSA net negative among men
-
-                **Moderates (22% of electorate)**
-                Deramo 9%, Brown 24%, Raj 1%
-                Raj is essentially gone — Deramo + Brown own this lane
-
-                **Whites 46+ (sleeper)**
-                46-65: Deramo 11%, Brown 10%, Raj 13% — genuinely competitive
-                Columbia Heights/Adams Morgan homeowners: safety, schools, business
-
-                **No college degree (24% of electorate)**
-                Brown 33%, Deramo 6%, Raj 0%
-                Raj has zero ceiling — Deramo's upside is real
-                """)
-
-            with col2:
-                st.error("""
-                **🔴 Manage, Don't Chase — Problem Groups**
-
-                **Black voters (23% of electorate)**
-                Deramo 1%, Brown 15%, Raj 2%
-                Brown dominates — ceiling is ~5-8% even with perfect execution
-                RCV angle: get Black Brown voters to rank Deramo 2nd per candidate pact
-
-                **Young voters 18-45 (45% of electorate)**
-                Raj 29%, Brown 10%, Deramo 9%
-                Raj's strongest group — don't chase, be selective
-                Young moderates, young Hispanics, young LGBTQ+ men are reachable
-
-                **Women (56% of electorate)**
-                Brown 17%, Raj 17%, Deramo 6%
-                Focus on women 45+, mothers with school-age kids
-                Hispanic and Latina women as 1st and 2nd choice targets
-
-                **Post-grad degree (35% of electorate)**
-                Raj 26%, Brown 9%, Deramo 10%
-                Raj's educational stronghold — difficult but not impossible terrain
-                """)
-
-            st.divider()
-
-            # Identity universes
-            st.subheader("🗺️ Identity Universe Tables")
-
-            st.markdown("#### 🌎 Identity Universe 1 — Hispanic/Latino Max Turnout")
-            identity_universe_1 = pd.DataFrame({
-                "Precinct": [39, 40, 23, 24, 25],
-                "Neighborhood": ["Mount Pleasant/Columbia Heights", "Mount Pleasant", "Columbia Heights", "Adams Morgan", "Adams Morgan"],
-                "Why_Target": [
-                    "Heart of DC's Salvadoran community — highest Hispanic concentration in Ward 1",
-                    "Historic Latino residential anchor since 1980s",
-                    "Large Latino/Hispanic population, community anchors on 14th St",
-                    "Latino/Hispanic family density, longtime residents",
-                    "Latino/Hispanic renters and homeowners mixed",
-                ],
-                "Deramo_Edge": [
-                    "Only Latino w/ double digits in PPP poll, first Latino on DC Council if elected",
-                    "Speaks Portuguese, Brazilian heritage resonates with Latino voters",
-                    "Tied with Brown at 20% among Hispanics, Raj only 9%",
-                    "Business platform resonates with Latino small business owners",
-                    "Schools + safety message resonates with longer-tenure families",
-                ],
-                "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            })
-            st.dataframe(identity_universe_1, use_container_width=True, hide_index=True)
-
-            st.divider()
-            st.markdown("#### 🏳️‍🌈 Identity Universe 2 — LGBTQ+ Presence")
-            identity_universe_2 = pd.DataFrame({
-                "Precinct": [137, 22, 25, 24, 39],
-                "Neighborhood": ["U Street", "U Street", "Adams Morgan", "Adams Morgan", "Mount Pleasant/Co Hts"],
-                "LGBTQ_Context": [
-                    "Historic Black LGBTQ+ corridor",
-                    "Near Shaw/U St queer nightlife corridor",
-                    "Adams Morgan w/ established LGBTQ+ residential + nightlife",
-                    "Younger queer renters, high density",
-                    "Growing LGBTQ+ presence",
-                ],
-                "Deramo_Edge": [
-                    "2nd out LGBTQ+ on DC Council, first Latino — historic",
-                    "Record vs Raj: 5 years ANC vs zero elected record",
-                    "Safety from discrimination explicitly in Jackie's platform",
-                    "Note: Raj also queer — message must be RECORD not just identity (ideally Blade and Advocate to boost Jackie down stretch)",
-                    "Cross-universe: LGBTQ+ + crime + business all align here",
-                ],
-                "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            })
-            st.dataframe(identity_universe_2, use_container_width=True, hide_index=True)
-
-            st.divider()
-            st.markdown("#### 👴 Identity Universe 3 — White 46+ Sleeper Vote")
-            st.caption("Deramo can run up margins here and score Lynch #2 votes.")
-            identity_universe_3 = pd.DataFrame({
-                "Precinct": [35, 24, 22, 25, 40],
-                "Neighborhood": ["Adams Morgan", "Adams Morgan", "U Street", "Adams Morgan", "Mount Pleasant"],
-                "Profile": [
-                    "High median age — white long-tenure homeowners",
-                    "Highest owner-occupancy — invested, pragmatic, anti-ideology",
-                    "Significant presence in this precinct",
-                    "School-parent overlap",
-                    "Mt Pleasant older white homeowners",
-                ],
-                "Deramo_Edge": [
-                    "46-65: Deramo 11%, Brown 10% — genuinely competitive",
-                    "Owner-occupants respond to safety/business record not union politics",
-                    "McDuffie leads 46-65 on mayor — realistic path to winning McDuffie voters",
-                    "65+ problem (Deramo 0%) but 65-plus white and Hiispanic gettable",
-                    "Tenure 5+ years — long enough to care, short enough to not be locked in",
-                ],
-                "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            })
-            st.dataframe(identity_universe_3, use_container_width=True, hide_index=True)
-
-            st.divider()
-            st.markdown("#### 🗳️ Identity Universe 4 — Not Leftists")
-            identity_universe_4 = pd.DataFrame({
-                "Precinct": [38, 36, 37, 38, 137],
-                "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
-                "Profile": [
-                    "Many longer-tenured residents and moderate Dems",
-                    "Columbia Heights — homeowners, pragmatic, not ideological",
-                    "Working class moderate Dems, crime top concern",
-                    "Brown's ANC base but Deramo can compete",
-                    "Moderate Dems frustrated with governance",
-                ],
-                "Deramo_Edge": [
-                    "Moderates: Deramo 9%, Raj 1% — Raj is irrelevant here",
-                    "Conservative Dems: Brown 38%, Deramo 0% — tough sledding but cut margins",
-                    "DSA endorsement net negative among moderates (-27% vs +20%)",
-                    "Nadeau endorsed Brown — 23% of moderates less likely with Nadeau",
-                    "The ask: rank Brown or Deramo 1-2, leave Raj unranked",
-                ],
-                "RCV_Ask": [
-                    "Deramo #1, Brown #2 — or Brown #1, Deramo #2",
-                    "Either order — stress RCV math",
-                    "If Brown voter: Brown #1, Deramo #2, Raj unranked",
-                    "If Deramo voter: Deramo #1, Brown #2, Raj unranked",
-                    "Same regardless of preference order",
-                ],
-            })
-            st.dataframe(identity_universe_4, use_container_width=True, hide_index=True)
-
-            st.divider()
-            st.markdown("#### 🤝 Identity Universe 5 — Non-Black Minority + Working Class")
-            identity_universe_5 = pd.DataFrame({
-                "Precinct": [36, 39, 35, 41, 42],
-                "Neighborhood": ["U Street", "Mount Pleasant", "Adams Morgan", "Columbia Heights", "Columbia Heights"],
-                "Profile": [
-                    "Multiracial, mixed-income voter at nearly quarter Hispanic",
-                    "'Other' race voters: Deramo 11%, Raj 20% — competitive",
-                    "First in Asian American population at 8.5%; 5th in Hispanic",
-                    "Hispanic community well-represented at 31%",
-                    "At 25% Hispanic second only to Precinct 41",
-                ],
-                "Deramo_Edge": [
-                    "Other race: three-way split — Deramo competitive",
-                    "No college degree: Brown 33%, Deramo 6%, Raj 0%",
-                    "Working class: crime + business message lands harder than DSA ideology",
-                    "Working class: crime + business message lands harder than DSA ideology",
-                    "Bilingual outreach: Deramo's Portuguese + Spanish-adjacent campaigning",
-                ],
-                "RCV_Ask": ["Deramo #1, Brown #2"] * 5,
-            })
-            st.dataframe(identity_universe_5, use_container_width=True, hide_index=True)
-
-            st.divider()
-            st.markdown("#### 🦅 Identity Universe 6 — White NonLeft (Moderate + Conservative)")
-            st.caption("Most underrated universe. Raj is radioactive here. It's Brown vs Deramo.")
-            identity_universe_6 = pd.DataFrame({
-                "Precinct": [35, 36, 37, 38, 22],
-                "Neighborhood": ["Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View", "U Street"],
-                "Profile": [
-                    "Long-tenure white homeowners, bought pre-2010, moderate-to-conservative Dems",
-                    "Highest owner-occupancy, most invested in neighborhood stability",
-                    "Park View white moderates, active on crime and school quality",
-                    "Park View: school-parent overlap, Georgia Ave safety concern",
-                    "14th St corridor white moderates — watched businesses close 12 years",
-                ],
-                "Poll_Data": [
-                    "Conservatives: Brown 38%, Raj 5%, Deramo 0% — Brown owns but Raj irrelevant",
-                    "Moderates: Brown 24%, Deramo 9%, Raj 1% — two-person race",
-                    "White 46-65 on mayor: McDuffie 52% — these voters exist and align",
-                    "Nadeau endorsement: moderates 29% less likely — Brown's liability here",
-                    "DSA endorsement: moderates 27% less likely — Raj radioactive",
-                ],
-                "Deramo_Message": [
-                    "'Public safety is foundational' — not ideology, results",
-                    "Homeowner investment angle: business closures hurt property values",
-                    "Schools + crime — closures hurt kids, need pragmatism not marching orders",
-                    "Former State Dept / DHS — competence credential resonates",
-                    "12 years of Nadeau, businesses still closing — Jackie = change",
-                ],
-                "RCV_Strategy": [
-                    "If Brown voter: Brown #1, Deramo #2, Raj unranked",
-                    "If undecided: Deramo #1, Brown #2 — both beat Raj",
-                    "Key ask: Path to 2nd on Yanes Reyes and Lynch ballots",
-                    "Conservative Dems may stop at #1, educate on RCV math",
-                    "White moderate undecideds are the direct Deramo target here",
-                ],
-            })
-            st.dataframe(identity_universe_6, use_container_width=True, hide_index=True)
-
-    # ══════════════════════════════════════════════════════════
-    # TAB 4 — TARGETING MODEL
+    # TAB 3 — TARGETING MODEL
     # ══════════════════════════════════════════════════════════
     with tab4:
         if not unlocked:
@@ -790,7 +379,7 @@ if unlocked:
 
 
     # ══════════════════════════════════════════════════════════
-    # TAB 5 — PRECINCT HEATMAP
+    # TAB 4 — PRECINCT HEATMAP
     # ══════════════════════════════════════════════════════════
         with tab5:
             if not unlocked:
@@ -864,7 +453,7 @@ if unlocked:
                 )
                 
                 # ══════════════════════════════════════════════════════════
-    # TAB 6 — SORTABLE DATA
+    # TAB 5 — SORTABLE DATA
     # ══════════════════════════════════════════════════════════
     with tab6:
         if not unlocked:
@@ -907,99 +496,3 @@ if unlocked:
             )
             st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
 
-
-            # ══════════════════════════════════════════════════════════
-    # TAB 7 — WAPO CANDIDATE SURVEY
-    # ══════════════════════════════════════════════════════════
-    with tab7:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("📋 Washington Post Candidate Survey")
-            st.caption("Source: Washington Post, June 3 2026. Binary questions show Yes/No. Open-ended responses are concise summaries to adjust for candidates listing myriad proposals for each issue when in governing reality you eventually have to prioritize.")
-
-            candidates = ["Jackie Reyes Yanes", "Terry Lynch", "Aparna Raj", "Rashida Brown", "Miguel Trindade Deramo"]
-
-            def candidate_table(rows, candidates):
-                html = '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:13px;">'
-                html += '<thead><tr>'
-                html += '<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;width:80px;font-weight:500;">Issue</th>'
-                for c in candidates:
-                    html += f'<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd;font-weight:500;">{c}</th>'
-                html += '</tr></thead><tbody>'
-                for row in rows:
-                    html += '<tr>'
-                    for i, cell in enumerate(row):
-                        style = 'padding:6px 8px;border-bottom:0.5px solid #eee;vertical-align:top;'
-                        if i == 0:
-                            style += 'font-weight:500;width:80px;white-space:nowrap;'
-                        html += f'<td style="{style}">{cell}</td>'
-                    html += '</tr>'
-                html += '</tbody></table></div>'
-                return html
-
-            st.markdown("#### 🏘️ Economy & Housing")
-            econ_rows = [
-                ["Tax Policy",
-                "Targeted relief and incentives, stronger spending oversight",
-                "Top 1% and billionaires tax, professional athlete tax",
-                "Higher capital gains tax, stronger Business Activity Tax",
-                "Higher inheritance tax, stronger Business Activity Tax",
-                "Taxes to disincentivize empty lots, no sales tax increase"],
-                ["DC Economy",
-                "Pivot from fed-reliant economy toward local small business revival",
-                "Introduce program to sell vacant properties at market value",
-                "Green New Deal for DC and social housing at scale",
-                "Reskill workforce for health care, tech, and AI thru programs",
-                "Incentivize business and investment, bring back streateries"],
-                ["Econ Inequality",
-                "Help local businesses avoid displacement and hire local workforce",
-                "Additional top 1% or billionaires tax to fund education programs",
-                "Free child care for all thru stronger Business Activity Tax",
-                "Free child care for all and higher pay for early childhood educators",
-                "Housing costs thru zoning, investment, supply market and subsidized"],
-                ["Rent Stabilization", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                ["Congestion Pricing", "❌ No", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
-                ["Robotaxis", "❌ No", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-            ]
-            st.markdown(candidate_table(econ_rows, candidates), unsafe_allow_html=True)
-
-            st.divider()
-
-            st.markdown("#### 🚔 Public Safety")
-            safety_rows = [
-                ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
-                ["Curfew Detail",
-                "Temporary, targeted solution while ramping up rec and work programs",
-                "Curfew should be one of many tools including youth athletics",
-                "DC youth would face attacks due to presence of ICE, let the youth design programs",
-                "Advisory boards, mental health services, safe spaces, and year-round employment",
-                "Reactivate advisory council and invest in violence interruption programs",],
-                ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
-                ["Police Detail",
-                "Community policing and public services",
-                "Community policing and public services",
-                "Divest from overtime payment to fund other services",
-                "Community policing and public services",
-                "Accountability for overtime payment and public services"],
-            ]
-            st.markdown(candidate_table(safety_rows, candidates), unsafe_allow_html=True)
-
-            st.divider()
-
-            st.markdown("#### 🏫 Social Policy")
-            social_rows = [
-                ["Schools",
-                "Stronger pipelines for local residents to enter education workforce",
-                "Youth engagement after school hours through arts, sports, and clubs",
-                "Democratize by consolidating power within board of education",
-                "Increase teacher pay, decrease class sizes",
-                "Leverage Dept of Health and Human Services to address truancy"],
-                ["Trump/Congress",
-                "Standing firm when necessary",
-                "Forge alliances with DMV groups",
-                "Take the fight nationwide",
-                "Work strategically with mayor",
-                "Scale up DNC Home Rule Caucus"],
-            ]
-            st.markdown(candidate_table(social_rows, candidates), unsafe_allow_html=True)
