@@ -37,7 +37,7 @@ if unlocked:
 
         st.markdown("""
                     
-        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll of the race, which was fielded back in March.
+        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll of the race, which was fielded back in March. Each campaign has been very active with staff and sign game around Ward 1 with 55% of voters undecided entering the stretch run.
         """)         
         st.markdown("""
         #### All likely voters including undecideds (est.):
