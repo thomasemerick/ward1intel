@@ -351,29 +351,10 @@ if unlocked:
             """, unsafe_allow_html=True)
             st.caption("Final Priority Score = 60% red dot count + 35% registered Dems + 5% untapped voters (2024 non-voters). All scores normalized within Ward 1 only. PPP poll data helped to validate which metrics to use as proxies in Ward 1.")
             
-            st.markdown("""
-                #### The Theory of the Case:
 
-                Raj has a hard ceiling. Polling says 74% of her base is very liberal, she gets 1% among moderates,
-                0% among conservatives, and has no small business or public safety record.
-                Brown is strong but Nadeau's endorsement is a liability among the exact voters
-                Reyes Yanes needs. Jackie wins by being the only candidate who takes seriously the voters Raj ignores and Brown can't fully reach: parents, small business owners, crime-weary long-tenure residents, LGBTQ+ voters who want record not just identity, and the Latino community that sees two of their own in the race.
-
-                **The RCV math that makes it possible:**
-                - 54% of Ward 1 Dems undecided in March, so the race is genuinely open
-                - Lynch + Reyes Yanes = voter transfers to help Reyes Yanes advance to final round
-                - Brown's Nadeau endorsement is a net negative among moderates and men over 45
-                - Raj's DSA brand is net negative among men, moderates, and conservatives
-                - Doors knocked in Tier 1 districts carry outsized value for Jackie
-
-                """)
 
                 
-            st.success("""
-                **Path to Victory Plan in One Paragraph:**
-
-                Precinct 39 (Mount Pleasant/Columbia Heights) is Reyes Yanes's #1 target — 8 red dots across crime, business, schools, LGBTQ, Anti-Nadeau, Hispanic, and non-DSA universes, with 3,911 registered Dems. Precincts 22 (U Street) and 25 (Adams Morgan) round out the Tier 1 trifecta. Columbia Heights (36) is the sleeper: Largest registered Dem pool in the ward at 3,962 with strong signals from demos of Not_Leftist and Minrty_NoAlign (minority not aligned with base of Raj or Brown). Adams Morgan (35) and Columbia Heights (41) complete Tier 2. Every door knocked in these 6 precincts reaches voters who are persuadable on 4+ dimensions simultaneously, making for some of the most critical canvassing in the ward.
-                """)
+      
 
 
             import streamlit.components.v1 as components
