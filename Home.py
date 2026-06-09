@@ -86,50 +86,7 @@ if unlocked:
 
     
 
-        # Identity crosstabs
-        st.markdown("#### First-Choice Vote Share by Demographic Group")
-        st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
-
-        identity_matrix = pd.DataFrame({
-            "Demographic Group": [
-                "White voters",
-                "Black / African-American voters",
-                "Hispanic / Latino voters",
-                "Other race voters",
-                "18-45 years old",
-                "46-65 years old",
-                "65+ years old",
-                "Women",
-                "Men",
-                "Non-binary",
-                "Very liberal",
-                "Somewhat liberal",
-                "Moderate",
-                "Conservative",
-                "No college degree",
-                "4-year college degree",
-                "Post-graduate degree",
-                "White moderate voters (est.)",
-                "White conservative voters",
-            ],
-            "Deramo %": [7, 1, 20, 11, 9, 11, 0, 6, 9, 0, 8, 5, 9, 0, 6, 4, 10, 15, 0],
-            "Brown %": [9, 15, 20, 23, 10, 10, 21, 17, 7, 22, 8, 8, 24, 38, 33, 5, 9, 20, 38],
-            "Raj %": [26, 2, 9, 20, 29, 13, 6, 17, 19, 51, 33, 10, 1, 5, 0, 22, 26, 8, 5],
-            "Share_of_Ward1_Dems": [59, 23, 8, 10, 45, 30, 25, 56, 42, 2, 46, 27, 22, 4, 24, 35, 35, 18, 8],
-        })
-
-        st.dataframe(
-            identity_matrix,
-            use_container_width=True,
-            hide_index=True,
-            column_config={
-                "Deramo %": st.column_config.ProgressColumn("Deramo %", min_value=0, max_value=40, format="%d%%"),
-                "Brown %": st.column_config.ProgressColumn("Brown %", min_value=0, max_value=40, format="%d%%"),
-                "Raj %": st.column_config.ProgressColumn("Raj %", min_value=0, max_value=40, format="%d%%"),
-                "Share_of_Ward1_Dems": st.column_config.NumberColumn("% of Electorate", format="%d%%"),
-                "Deramo_vs_Raj": st.column_config.NumberColumn("vs Raj", format="%+d pts"),
-            }
-        )
+        
 
 
             # ══════════════════════════════════════════════════════════
