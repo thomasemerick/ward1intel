@@ -22,7 +22,7 @@ if unlocked:
 
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "♻️ RCV Sim",
-        "📋 WaPo Survey"
+        "📋 WaPo Survey",
         "🎯 Targeting Model",
         "🗺️ Precinct Heatmap",
         "📊 Sortable Data",
@@ -88,7 +88,7 @@ if unlocked:
 
     
 
-            # Identity crosstabs
+        # Identity crosstabs
         st.markdown("#### First-Choice Vote Share by Demographic Group")
         st.caption("Source: GGWash/PPP Ward 1 poll March 27-29 2026. Decided voters only.")
 
