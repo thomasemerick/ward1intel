@@ -35,7 +35,19 @@ if unlocked:
         st.subheader("♻️ Results From Polling in Late March")
         st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
-       
+        st.markdown("""
+                    
+        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll of the race, which was fielded back in March.
+        """)         
+        st.markdown("""
+        #### All likely voters including undecideds (est.):
+        - 🔵 Raj: 18%
+        - 🟡 Brown: 13%  
+        - 🟢 Trindade Deramo: 7%
+        - 🟠 Reyes Yanes: 4%
+        - ⚪ Lynch: 3%
+        - ❓ Undecided: 55%
+        """)
 
         st.markdown("#### RCV Simulation Among Decided Voters")
             # RCV Simulation
@@ -65,15 +77,7 @@ if unlocked:
             }
         )
 
-        st.markdown("""
-        #### All likely voters including undecideds (est.):
-        - 🔵 Raj: 18%
-        - 🟡 Brown: 13%  
-        - 🟢 Deramo: 7%
-        - 🟠 Reyes Yanes: 4%
-        - ⚪ Lynch: 3%
-        - ❓ Undecided: 55%
-        """)
+
         
         st.info("""
         **🗳️ RCV Flashback: The Kathryn Garcia Playbook (NYC 2021)**
