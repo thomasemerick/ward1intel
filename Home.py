@@ -20,12 +20,10 @@ unlocked = access_code == "floront"
 
 if unlocked:
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    tab1, tab2, tab3 = st.tabs([
         "♻️ RCV Sim",
-        "📋 WaPo Survey",
+        "📋 Issue Survey",
         "🎯 Targeting Model",
-        "🗺️ Precinct Heatmap",
-        "📊 Sortable Data",
     ])
 
 
@@ -378,16 +376,6 @@ if unlocked:
                 """)
 
 
-    # ══════════════════════════════════════════════════════════
-    # TAB 4 — PRECINCT HEATMAP
-    # ══════════════════════════════════════════════════════════
-    with tab4:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("🗺️ Heatmap of Registered Dems Who Stayed Home Last Cycle")
-            st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
-            
             import streamlit.components.v1 as components
             with open("ward1_heatmap.html", "r") as f:
                 html = f.read()
@@ -452,15 +440,6 @@ if unlocked:
                 }
             )
                 
-                # ══════════════════════════════════════════════════════════
-    # TAB 5 — SORTABLE DATA
-    # ══════════════════════════════════════════════════════════
-    with tab5:
-        if not unlocked:
-            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-        else:
-            st.subheader("📊 Sortable Data")
-            st.caption("All raw variables used to compute the targeting model. Click any column header to sort.")
 
             underlying = pd.read_csv('ward1_underlying.csv')
             underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
