@@ -48,7 +48,7 @@ if unlocked:
             ],
             "Raj %": [42, 43, 45, 51],
             "Brown %": [25, 26, 29, 49],
-            "Reyes Yanes %": [16, 17, 20, 0],
+            "Trindade Deramo %": [16, 17, 20, 0],
             "Reyes_Yanes %": [9, 10, 0, 0],
             "Lynch %": [8, 0, 0, 0],
             "Exhausted %": [0, 4, 6, 0],
@@ -58,7 +58,7 @@ if unlocked:
             column_config={
                 "Raj %": st.column_config.NumberColumn(format="%d%%"),
                 "Brown %": st.column_config.NumberColumn(format="%d%%"),
-                "Deramo %": st.column_config.NumberColumn(format="%d%%"),
+                "Trindade Deramo %": st.column_config.NumberColumn("Trindade Deramo %", format="%d%%"),
                 "Reyes_Yanes %": st.column_config.NumberColumn("Reyes Yanes %", format="%d%%"),
                 "Lynch %": st.column_config.NumberColumn(format="%d%%"),
                 "Exhausted %": st.column_config.NumberColumn(format="%d%%"),
