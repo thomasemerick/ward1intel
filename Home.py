@@ -55,12 +55,6 @@ if unlocked:
             "Reyes_Yanes %": [9, 10, 0, 0],
             "Lynch %": [8, 0, 0, 0],
             "Exhausted %": [0, 4, 6, 0],
-            "Notes": [
-                "Raj leads by 17pts among decided, but 54% still undecided",
-                "Most Lynch voters exhaust, wasted votes per GGWash simulation",
-                "Projected: Reyes Yanes transfers mostly to Brown and Reyes Yanes",
-                "If Reyes Yanes eliminated in R3: Brown needs almost all Reyes Yanes transfers to beat Raj",
-            ],
         })
 
         st.dataframe(rcv_rounds, use_container_width=True, hide_index=True,
