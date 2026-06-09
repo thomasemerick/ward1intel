@@ -137,7 +137,7 @@ if unlocked:
             # ══════════════════════════════════════════════════════════
     # TAB 2 — WAPO CANDIDATE SURVEY
     # ══════════════════════════════════════════════════════════
-    with tab7:
+    with tab2:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
@@ -233,7 +233,7 @@ if unlocked:
     # ══════════════════════════════════════════════════════════
     # TAB 3 — TARGETING MODEL
     # ══════════════════════════════════════════════════════════
-    with tab4:
+    with tab3:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
@@ -381,81 +381,81 @@ if unlocked:
     # ══════════════════════════════════════════════════════════
     # TAB 4 — PRECINCT HEATMAP
     # ══════════════════════════════════════════════════════════
-        with tab5:
-            if not unlocked:
-                st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
-            else:
-                st.subheader("🗺️ Heatmap of Registered Dems Who Stayed Home Last Cycle")
-                st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
-                
-                import streamlit.components.v1 as components
-                with open("ward1_heatmap.html", "r") as f:
-                    html = f.read()
-                components.html(html, height=600, scrolling=False)
+    with tab4:
+        if not unlocked:
+            st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
+        else:
+            st.subheader("🗺️ Heatmap of Registered Dems Who Stayed Home Last Cycle")
+            st.caption("Darker red = more registered Democrats who didn't vote in the 2024 primary. Hover each precinct for details.")
+            
+            import streamlit.components.v1 as components
+            with open("ward1_heatmap.html", "r") as f:
+                html = f.read()
+            components.html(html, height=600, scrolling=False)
 
-                st.divider()
-                st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
-                precinct_ref = pd.DataFrame({
-                    "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
-                    "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
-                                    "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
-                                    "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
-                                    "Columbia Heights", "Park View", "U Street"],
-                    "Ward Area": ["Southeast", "South Central", "South Central", "Southwest", "Southwest",
-                                "West", "Central", "East", "Northeast",
-                                "North", "North", "North",
-                                "Northeast", "Northeast", "Southeast"],
-                    "One_Phrase": [
-                        "Howard-adjacent transitional block, mixed tenure, smallest Dem pool in ward",
-                        "Restaurants, bars, and residential; heart of U Street corridor",
-                        "Latino commercial corridor, Columbia Heights Metro hub",
-                        "Dense renters, East side 18th St, Pitchers/ALOHO side",
-                        "Rowhouse renters, West side 18th St + Columbia Rd bars/dining",
-                        "Upper Adams Morgan, longer-tenure homeowners, Rock Creek edge",
-                        "Largest Dem pool in ward, 14th St transit crossroads",
-                        "Working-class corridor, crime-focused voters",
-                        "Transitional rowhouse blocks, family-heavy Park View",
-                        "#1 target — multi-issue powerhouse, Mt Pleasant meets Col Hts",
-                        "Latino Mount Pleasant, Rock Creek Park edge, family density",
-                        "High Hispanic density, working-class families, north Col Hts",
-                        "Compact dense blocks, Metro-adjacent, smaller north Col Hts",
-                        "Quieter rowhouses, Park View proper, Georgia Ave corridor",
-                        "Residential U Street both sides, smaller but high LGBTQ signal",
-                    ],
-                    "Boundaries": [
-                        "4th to 1st; Rhode Island to Michigan",
-                        "16th to 9th; U->S 15th-14th->T->Vermont to Florida",
-                        "16th to 11th; Florida to Euclid",
-                        "18th to 16th; U to Euclid",
-                        "Connecticut to 18th; Florida to Adams Mills",
-                        "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
-                        "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
-                        "11th to 4th; Florida to Columbia",
-                        "11th to Park Place, Columbia to Park Road",
-                        "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
-                        "Rock Creek to 16th; Lamont to Piney Branch",
-                        "16th to Holmead; Park to Spring",
-                        "Holmead to New Hampshire; Park to Spring",
-                        "New Hampshr to Park Plc; Park Rd to Rock Crk Church Rd",
-                        "13th to Wiltberger Ave; S to T->Vermont->Florida",
-                    ],
-                    "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
-                })
+            st.divider()
+            st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
+            precinct_ref = pd.DataFrame({
+                "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
+                "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
+                                "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
+                                "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
+                                "Columbia Heights", "Park View", "U Street"],
+                "Ward Area": ["Southeast", "South Central", "South Central", "Southwest", "Southwest",
+                            "West", "Central", "East", "Northeast",
+                            "North", "North", "North",
+                            "Northeast", "Northeast", "Southeast"],
+                "One_Phrase": [
+                    "Howard-adjacent transitional block, mixed tenure, smallest Dem pool in ward",
+                    "Restaurants, bars, and residential; heart of U Street corridor",
+                    "Latino commercial corridor, Columbia Heights Metro hub",
+                    "Dense renters, East side 18th St, Pitchers/ALOHO side",
+                    "Rowhouse renters, West side 18th St + Columbia Rd bars/dining",
+                    "Upper Adams Morgan, longer-tenure homeowners, Rock Creek edge",
+                    "Largest Dem pool in ward, 14th St transit crossroads",
+                    "Working-class corridor, crime-focused voters",
+                    "Transitional rowhouse blocks, family-heavy Park View",
+                    "#1 target — multi-issue powerhouse, Mt Pleasant meets Col Hts",
+                    "Latino Mount Pleasant, Rock Creek Park edge, family density",
+                    "High Hispanic density, working-class families, north Col Hts",
+                    "Compact dense blocks, Metro-adjacent, smaller north Col Hts",
+                    "Quieter rowhouses, Park View proper, Georgia Ave corridor",
+                    "Residential U Street both sides, smaller but high LGBTQ signal",
+                ],
+                "Boundaries": [
+                    "4th to 1st; Rhode Island to Michigan",
+                    "16th to 9th; U->S 15th-14th->T->Vermont to Florida",
+                    "16th to 11th; Florida to Euclid",
+                    "18th to 16th; U to Euclid",
+                    "Connecticut to 18th; Florida to Adams Mills",
+                    "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
+                    "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
+                    "11th to 4th; Florida to Columbia",
+                    "11th to Park Place, Columbia to Park Road",
+                    "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
+                    "Rock Creek to 16th; Lamont to Piney Branch",
+                    "16th to Holmead; Park to Spring",
+                    "Holmead to New Hampshire; Park to Spring",
+                    "New Hampshr to Park Plc; Park Rd to Rock Crk Church Rd",
+                    "13th to Wiltberger Ave; S to T->Vermont->Florida",
+                ],
+                "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
+            })
 
-                st.dataframe(precinct_ref, use_container_width=True, hide_index=True,
-                    column_config={
-                        "Reg_Dems": st.column_config.ProgressColumn(
-                            "Registered Dems", min_value=0, max_value=4500, format="%d"
-                        ),
-                        "One_Phrase": st.column_config.TextColumn("Description", width="large"),
-                        "Boundaries": st.column_config.TextColumn("Street Boundaries", width="large"),
-                    }
-                )
+            st.dataframe(precinct_ref, use_container_width=True, hide_index=True,
+                column_config={
+                    "Reg_Dems": st.column_config.ProgressColumn(
+                        "Registered Dems", min_value=0, max_value=4500, format="%d"
+                    ),
+                    "One_Phrase": st.column_config.TextColumn("Description", width="large"),
+                    "Boundaries": st.column_config.TextColumn("Street Boundaries", width="large"),
+                }
+            )
                 
                 # ══════════════════════════════════════════════════════════
     # TAB 5 — SORTABLE DATA
     # ══════════════════════════════════════════════════════════
-    with tab6:
+    with tab5:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
