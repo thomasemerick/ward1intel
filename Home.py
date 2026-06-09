@@ -239,7 +239,7 @@ if unlocked:
         else:
             st.subheader("🎯 Ward 1 Targeting Model")
             st.markdown("""
-            **This is a data-driven canvassing model for Jackie Reyes Yanes — June 16, 2026 primary.**
+            **This is a data-driven canvassing model to inform which precincts to prioritize for each variable.**
 
             Every precinct scored across 9 validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
             The matrix below tells you exactly where to knock doors and why.
