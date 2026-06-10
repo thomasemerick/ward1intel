@@ -1,6 +1,6 @@
 """
 Run from ward1intel folder: python3 add_candidate_markers.py
-Injects circular headshot markers for all 5 candidates into ward1_heatmap.html
+Embeds images as base64 — works on both localhost and Streamlit Cloud.
 """
 import base64, re
 
@@ -49,7 +49,7 @@ for name, info in candidates.items():
 with open("ward1_heatmap.html", "r") as f:
     html = f.read()
 
-# Find the map variable name (e.g. map_f26062cc...)
+# Find the map variable name
 map_var = re.search(r'var (map_[a-f0-9]+) = L\.map\(', html)
 if not map_var:
     print("ERROR: could not find Leaflet map variable")
@@ -58,7 +58,7 @@ map_id = map_var.group(1)
 print(f"Found map variable: {map_id}")
 
 # Build JS marker block
-js = f"\n    // ── Candidate markers ──────────────────────────────────────────\n"
+js = "\n    // ── Candidate markers ──────────────────────────────────────────\n"
 for name, info in candidates.items():
     key = name.split()[0].lower()
     safe = name.replace("'", "\\'")
