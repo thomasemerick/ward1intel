@@ -1,8 +1,10 @@
 """
 Run from ward1intel folder: python3 add_candidate_markers.py
-Embeds images as base64 — works on both localhost and Streamlit Cloud.
+Resizes images to 80x80 thumbnails before base64 encoding — keeps file small.
+Requires: pip install Pillow
 """
-import base64, re
+import base64, re, io
+from PIL import Image
 
 candidates = {
     "Jackie Reyes Yanes": {
@@ -37,19 +39,22 @@ candidates = {
     },
 }
 
-# Read images as base64
+# Resize and encode each image
 for name, info in candidates.items():
-    with open(info["file"], "rb") as f:
-        b64 = base64.b64encode(f.read()).decode("utf-8")
-    ext = info["file"].split(".")[-1].lower()
-    info["mime"] = "image/jpeg" if ext in ("jpg", "jpeg") else "image/png"
+    img = Image.open(info["file"]).convert("RGB")
+    img.thumbnail((80, 80), Image.LANCZOS)
+    buf = io.BytesIO()
+    img.save(buf, format="JPEG", quality=75)
+    b64 = base64.b64encode(buf.getvalue()).decode("utf-8")
+    info["mime"] = "image/jpeg"
     info["b64"] = b64
+    print(f"{name}: {len(b64)} chars after resize")
 
 # Read HTML
 with open("ward1_heatmap.html", "r") as f:
     html = f.read()
 
-# Find the map variable name
+# Find map variable
 map_var = re.search(r'var (map_[a-f0-9]+) = L\.map\(', html)
 if not map_var:
     print("ERROR: could not find Leaflet map variable")
@@ -57,7 +62,7 @@ if not map_var:
 map_id = map_var.group(1)
 print(f"Found map variable: {map_id}")
 
-# Build JS marker block
+# Build JS
 js = "\n    // ── Candidate markers ──────────────────────────────────────────\n"
 for name, info in candidates.items():
     key = name.split()[0].lower()
@@ -75,16 +80,12 @@ for name, info in candidates.items():
         .bindTooltip('<b>{safe}</b><br><span style="font-size:11px;color:#555">{info["address"]}</span>', {{sticky: true}});
 """
 
-# Inject just before </body>
-if "</body>" not in html:
-    print("ERROR: could not find </body> tag")
-    exit(1)
-
+# Inject before </body>
 html = html.replace("</body>", f"<script>{js}\n</script>\n</body>")
 
 with open("ward1_heatmap.html", "w") as f:
     f.write(html)
 
-print(f"Done — injected markers for {len(candidates)} candidates into ward1_heatmap.html")
+print(f"\nDone — injected markers for {len(candidates)} candidates")
 for name, info in candidates.items():
     print(f"  {name}: {info['lat']}, {info['lng']}")
