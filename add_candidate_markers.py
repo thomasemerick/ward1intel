@@ -1,6 +1,6 @@
 """
 Run from ward1intel folder: python3 add_candidate_markers.py
-Strips any old markers first, then injects fresh circular headshot markers.
+Injects circular headshot markers for all 5 candidates into ward1_heatmap.html
 """
 import base64, re
 
@@ -49,16 +49,16 @@ for name, info in candidates.items():
 with open("ward1_heatmap.html", "r") as f:
     html = f.read()
 
-# Strip any previously injected candidate markers
-html = re.sub(
-    r'\n    // ── Candidate markers ──.*',
-    '',
-    html,
-    flags=re.DOTALL
-)
+# Find the map variable name (e.g. map_f26062cc...)
+map_var = re.search(r'var (map_[a-f0-9]+) = L\.map\(', html)
+if not map_var:
+    print("ERROR: could not find Leaflet map variable")
+    exit(1)
+map_id = map_var.group(1)
+print(f"Found map variable: {map_id}")
 
 # Build JS marker block
-js = "\n    // ── Candidate markers ──────────────────────────────────────────\n"
+js = f"\n    // ── Candidate markers ──────────────────────────────────────────\n"
 for name, info in candidates.items():
     key = name.split()[0].lower()
     safe = name.replace("'", "\\'")
@@ -71,13 +71,16 @@ for name, info in candidates.items():
         popupAnchor: [0, -30],
     }});
     L.marker([{info["lat"]}, {info["lng"]}], {{icon: icon_{key}}})
-        .addTo(map_f26062cc2f9c7363a8bf91f68bbefdef)
+        .addTo({map_id})
         .bindTooltip('<b>{safe}</b><br><span style="font-size:11px;color:#555">{info["address"]}</span>', {{sticky: true}});
 """
 
-# Inject before closing </script>
-insert_point = html.rfind("</script>")
-html = html[:insert_point] + js + "\n" + html[insert_point:]
+# Inject just before </body>
+if "</body>" not in html:
+    print("ERROR: could not find </body> tag")
+    exit(1)
+
+html = html.replace("</body>", f"<script>{js}\n</script>\n</body>")
 
 with open("ward1_heatmap.html", "w") as f:
     f.write(html)
