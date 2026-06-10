@@ -1,6 +1,6 @@
 """
 Run from ward1intel folder: python3 add_candidate_markers.py
-Injects circular headshot markers for all 5 candidates into ward1_heatmap.html
+Strips any old markers first, then injects fresh circular headshot markers.
 """
 import base64, re
 
@@ -8,32 +8,32 @@ candidates = {
     "Jackie Reyes Yanes": {
         "file": "Jackie-Reyes-Yanes.jpg",
         "address": "707 Kenyon St NW",
-        "lat": 38.9317,
-        "lng": -77.0284,
+        "lat": 38.9335,
+        "lng": -77.0315,
     },
     "Aparna Raj": {
         "file": "aparna-raj.png",
         "address": "2656 15th St NW",
-        "lat": 38.9282,
-        "lng": -77.0371,
+        "lat": 38.9265,
+        "lng": -77.0395,
     },
     "Miguel Trindade Deramo": {
         "file": "Miguel-Trindade-Deramo.jpeg",
         "address": "2420 14th St NW",
-        "lat": 38.9253,
-        "lng": -77.0322,
+        "lat": 38.9198,
+        "lng": -77.0305,
     },
     "Rashida Brown": {
         "file": "rashida-brown.jpeg",
         "address": "430 Irving St NW",
-        "lat": 38.9279,
-        "lng": -77.0241,
+        "lat": 38.9268,
+        "lng": -77.0190,
     },
     "Terry Lynch": {
         "file": "terry-lynch.jpg",
         "address": "1737 Kenyon St NW",
-        "lat": 38.9308,
-        "lng": -77.0340,
+        "lat": 38.9295,
+        "lng": -77.0420,
     },
 }
 
@@ -45,7 +45,19 @@ for name, info in candidates.items():
     info["mime"] = "image/jpeg" if ext in ("jpg", "jpeg") else "image/png"
     info["b64"] = b64
 
-# Build JS to inject before </script> at end of file
+# Read HTML
+with open("ward1_heatmap.html", "r") as f:
+    html = f.read()
+
+# Strip any previously injected candidate markers
+html = re.sub(
+    r'\n    // ── Candidate markers ──.*',
+    '',
+    html,
+    flags=re.DOTALL
+)
+
+# Build JS marker block
 js = "\n    // ── Candidate markers ──────────────────────────────────────────\n"
 for name, info in candidates.items():
     key = name.split()[0].lower()
@@ -63,16 +75,8 @@ for name, info in candidates.items():
         .bindTooltip('<b>{safe}</b><br><span style="font-size:11px;color:#555">{info["address"]}</span>', {{sticky: true}});
 """
 
-# Inject before the last </script>
-with open("ward1_heatmap.html", "r") as f:
-    html = f.read()
-
-# Insert just before closing </script> tag at end
+# Inject before closing </script>
 insert_point = html.rfind("</script>")
-if insert_point == -1:
-    print("ERROR: could not find </script> tag")
-    exit(1)
-
 html = html[:insert_point] + js + "\n" + html[insert_point:]
 
 with open("ward1_heatmap.html", "w") as f:
