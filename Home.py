@@ -20,7 +20,8 @@ unlocked = access_code == "floront"
 
 if unlocked:
 
-    tab1, tab2, tab3 = st.tabs([
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "Overview",
         "♻️ RCV Sim",
         "📋 Issue Survey",
         "🎯 Targeting Model",
@@ -28,10 +29,62 @@ if unlocked:
 
 
     # ══════════════════════════════════════════════════════════
-    # TAB 1 — RCV SIM
+    # TAB 1 — Overview
     # ══════════════════════════════════════════════════════════
 
     with tab1:
+        st.subheader("Overview")
+        st.caption("Broad contours of the race")
+
+        st.markdown("""
+                    
+        This is an extremely fascinating five-way race with no candidate hitting 20% among likely voters in the one major poll fielded back in March. Each campaign has been very active with staff and sign game around Ward 1 with 55% of voters undecided entering the stretch run.
+        """)         
+        st.markdown("""
+        #### All likely voters including undecideds (est.):
+        - ❓ Undecided: 55%
+        - 🔵 Raj: 18%
+        - 🟡 Brown: 13%  
+        - 🟢 Trindade Deramo: 7%
+        - 🟠 Reyes Yanes: 4%
+        - ⚪ Lynch: 3%
+        """)
+
+        st.markdown("#### RCV Simulation Among Decided Voters")
+            # RCV Simulation
+        rcv_rounds = pd.DataFrame({
+            "Round": [
+                "Round 1 — All decided voters",
+                "Round 2 — After Lynch eliminated",
+                "Round 3 — After Reyes Yanes eliminated (projected)",
+                "Round 4 — Final: Brown vs Raj (projected)",
+            ],
+            "Raj %": [42, 43, 45, 51],
+            "Brown %": [25, 26, 29, 49],
+            "Trindade Deramo %": [16, 17, 20, 0],
+            "Reyes_Yanes %": [9, 10, 0, 0],
+            "Lynch %": [8, 0, 0, 0],
+            "Exhausted %": [0, 4, 6, 0],
+        })
+
+        st.dataframe(rcv_rounds, use_container_width=True, hide_index=True,
+            column_config={
+                "Raj %": st.column_config.NumberColumn(format="%d%%"),
+                "Brown %": st.column_config.NumberColumn(format="%d%%"),
+                "Trindade Deramo %": st.column_config.NumberColumn("Trindade Deramo %", format="%d%%"),
+                "Reyes_Yanes %": st.column_config.NumberColumn("Reyes Yanes %", format="%d%%"),
+                "Lynch %": st.column_config.NumberColumn(format="%d%%"),
+                "Exhausted %": st.column_config.NumberColumn(format="%d%%"),
+            }
+        )
+
+
+
+    # ══════════════════════════════════════════════════════════
+    # TAB 2 — RCV SIM
+    # ══════════════════════════════════════════════════════════
+
+    with tab2:
         st.subheader("♻️ Results From Polling in Late March")
         st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
 
@@ -94,9 +147,9 @@ if unlocked:
 
 
             # ══════════════════════════════════════════════════════════
-    # TAB 2 — WAPO CANDIDATE SURVEY
+    # TAB 3 — WAPO CANDIDATE SURVEY
     # ══════════════════════════════════════════════════════════
-    with tab2:
+    with tab3:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
@@ -190,9 +243,9 @@ if unlocked:
             st.markdown(candidate_table(social_rows, candidates), unsafe_allow_html=True)
 
     # ══════════════════════════════════════════════════════════
-    # TAB 3 — TARGETING MODEL
+    # TAB 4 — TARGETING MODEL
     # ══════════════════════════════════════════════════════════
-    with tab3:
+    with tab4:
         if not unlocked:
             st.info("### 🔒 Access After Meeting\nEnter the access code to view targeting intelligence.\n\n**Contact Thomas Emerick to request access.**")
         else:
@@ -328,16 +381,16 @@ if unlocked:
                                 "Columbia Heights", "Park View", "U Street"],
                 "Visual Markers": [
                     "Howard Playground, LeDroit Park",
-                    "Lincoln Theater, U Street bars",
+                    "Lincoln Theater, Busboys & Poets",
                     "Malcolm X Park, Cardozo Campus",
-                    "Madam's Organ, Marie Reed Campus",
-                    "Duplex, Kalorama Park",
+                    "Madam's Organ, Marie Reed Rec",
+                    "Washington Hilton, Kalorama Park",
                     "Columbia Rd Safeway, Lanier Hts",
                     "Columbia Hts Metro+Community Ctr",
                     "Howard University, 930 Club",
                     "Bruce Monroe Park, Midlands",
                     "Mt Pleasant bars, Co Hts Target",
-                    "Argyle Market, Bancroft Campus",
+                    "Argyle Market, Bancroft School",
                     "Park Rd Safeway, Thip Khao",
                     "Mi Casita Bakery/Deli, The Coupe",
                     "Afro Lounge, Looking Glass Lounge",
