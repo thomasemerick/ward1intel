@@ -8,32 +8,32 @@ candidates = {
     "Jackie Reyes Yanes": {
         "file": "Jackie-Reyes-Yanes.jpg",
         "address": "707 Kenyon St NW",
-        "lat": 38.9317,
-        "lng": -77.0284,
+        "lat": 38.9335,
+        "lng": -77.0315,
     },
     "Aparna Raj": {
         "file": "aparna-raj.png",
         "address": "2656 15th St NW",
-        "lat": 38.9282,
-        "lng": -77.0371,
+        "lat": 38.9265,
+        "lng": -77.0395,
     },
     "Miguel Trindade Deramo": {
         "file": "Miguel-Trindade-Deramo.jpeg",
         "address": "2420 14th St NW",
-        "lat": 38.9253,
-        "lng": -77.0322,
+        "lat": 38.9198,
+        "lng": -77.0305,
     },
     "Rashida Brown": {
         "file": "rashida-brown.jpeg",
         "address": "430 Irving St NW",
-        "lat": 38.9279,
-        "lng": -77.0241,
+        "lat": 38.9268,
+        "lng": -77.0190,
     },
     "Terry Lynch": {
         "file": "terry-lynch.jpg",
         "address": "1737 Kenyon St NW",
-        "lat": 38.9308,
-        "lng": -77.0340,
+        "lat": 38.9295,
+        "lng": -77.0420,
     },
 }
 
