@@ -65,7 +65,7 @@ with tab1:
             "Madam's Organ, Marie Reed Rec",
             "Washington Hilton, Kalorama Park",
             "Columbia Rd Safeway, Lanier Hts",
-            "Columbia Hts Metro+Community Ctr",
+            "Columbia Hts Metro & Community Ctr",
             "Howard University, 930 Club",
             "Bruce Monroe Park, Midlands",
             "Mt Pleasant bars, Co Hts Target",
