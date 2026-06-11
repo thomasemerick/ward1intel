@@ -176,7 +176,7 @@ with tab3:
         ["Econ Inequality",
         "Help local businesses avoid displacement and hire local workforce",
         "Additional top 1% or billionaires tax to fund education programs",
-        "Free child care for all through stronger Business Activity Tax",
+        "Free child care for all thru stronger Business Activity Tax",
         "Free child care for all and higher pay for early childhood educators",
         "Housing costs thru zoning, investment, supply market and subsidized"],
         ["Rent Stabilization", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
