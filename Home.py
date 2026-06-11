@@ -193,7 +193,7 @@ with tab3:
         ["Curfew Detail",
         "Temporary, targeted solution while ramping up rec and work programs",
         "Curfew should be one of many tools including youth athletics",
-        "DC youth would face attacks due to presence of ICE, let the youth design programs",
+        "DC youth would face attacks MPD is with ICE, let the youth design programs",
         "Advisory boards, mental health services, safe spaces, and year-round employment",
         "Reactivate advisory council and invest in violence interruption programs",],
         ["Police Level", "Not enough", "Right amount", "Right amount", "Right amount", "Right amount"],
