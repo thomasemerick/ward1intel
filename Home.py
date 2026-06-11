@@ -366,6 +366,7 @@ with tab4:
 | **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
     """, unsafe_allow_html=True)
 
+    st.divider()
 
     st.markdown("#### 📂 Sortable Voting Precinct Data")
     underlying = pd.read_csv('ward1_underlying.csv')
