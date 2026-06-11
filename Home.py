@@ -159,7 +159,7 @@ with tab3:
         html += '</tbody></table></div>'
         return html
 
-    st.markdown("#### 🏘️ Economy & Housing")
+    st.markdown("#### Economy & Housing")
     econ_rows = [
         ["Tax Policy",
         "Targeted tax relief and incentives, stronger spending oversight",
@@ -187,7 +187,7 @@ with tab3:
 
     st.divider()
 
-    st.markdown("#### 🚔 Crime & Public Safety")
+    st.markdown("#### Crime & Public Safety")
     safety_rows = [
         ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
         ["Curfew Detail",
@@ -208,7 +208,7 @@ with tab3:
 
     st.divider()
 
-    st.markdown("#### 🏫 Schools & Federal Control")
+    st.markdown("#### Schools & Federal Control")
     social_rows = [
         ["Schools",
         "Stronger pipelines for local residents to enter education workforce",
