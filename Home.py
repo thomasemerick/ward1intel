@@ -45,6 +45,65 @@ with tab1:
 
     """)
 
+    import streamlit.components.v1 as components
+    with open("ward1_heatmap.html", "r") as f:
+        html = f.read()
+    components.html(html, height=600, scrolling=False)
+
+    st.divider()
+    st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
+    precinct_ref = pd.DataFrame({
+        "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
+        "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
+                        "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
+                        "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
+                        "Columbia Heights", "Park View", "U Street"],
+        "Visual Markers": [
+            "Howard Playground, LeDroit Park",
+            "Lincoln Theater, Busboys & Poets",
+            "Malcolm X Park, Cardozo Campus",
+            "Madam's Organ, Marie Reed Rec",
+            "Washington Hilton, Kalorama Park",
+            "Columbia Rd Safeway, Lanier Hts",
+            "Columbia Hts Metro+Community Ctr",
+            "Howard University, 930 Club",
+            "Bruce Monroe Park, Midlands",
+            "Mt Pleasant bars, Co Hts Target",
+            "Argyle Market, Bancroft School",
+            "Park Rd Safeway, Thip Khao",
+            "Mi Casita Bakery/Deli, The Coupe",
+            "Afro Lounge, Looking Glass Lounge",
+            "Nellie's Sports Bar, All Souls",
+        ],
+        "Boundaries": [
+            "4th to 1st; Rhode Island to Michigan",
+            "16th to 9th; U->S 15th-14th->T->Vermont to Florida",
+            "16th to 11th; Florida to Euclid",
+            "18th to 16th; U to Euclid",
+            "Connecticut to 18th; Florida to Adams Mills",
+            "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
+            "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
+            "11th to 4th; Florida to Columbia",
+            "11th to Park Place, Columbia to Park Road",
+            "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
+            "Rock Creek to 16th; Lamont to Piney Branch",
+            "16th to Holmead; Park to Spring",
+            "Holmead to New Hampshire; Park to Spring",
+            "New Hampshr to Park Plc; Park Rd to Rock Crk Church Rd",
+            "13th to Wiltberger Ave; S to T->Vermont->Florida",
+        ],
+        "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
+    })
+
+    st.dataframe(precinct_ref, use_container_width=True, hide_index=True,
+        column_config={
+            "Reg_Dems": st.column_config.ProgressColumn(
+                "Registered Dems", min_value=0, max_value=4500, format="%d"
+            ),
+            "Boundaries": st.column_config.TextColumn("Street Boundaries", width="large"),
+        }
+    )
+
 # ══════════════════════════════════════════════════════════
 # TAB 2 — RCV SIM
 # ══════════════════════════════════════════════════════════
@@ -210,8 +269,8 @@ with tab4:
     st.markdown("""
     **This is a data-driven canvassing model to inform which precincts to prioritize for each variable.**
 
-    Every precinct scored across 9 validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
-    The matrix below tells you exactly where to knock doors and why.
+    Every precinct scored across eight validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
+    Your mileage may vary on which issue is worth prioritizing, but this attempts to put in context how much these issues could be on mind in each precinct and neighborhood relative to others.
 
     **The three numbers that matter:**
     """)
@@ -219,12 +278,12 @@ with tab4:
     <ul>
     <li>🔴 Red dot = high priority universe for that precinct</li>
     <li>🟡 Yellow dot = medium priority</li>
-    <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Registered Dems = registered Democrats who didn't vote in 2024</li>
+    <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Registered Dems = number registered Democrats in the voting precinct</li>
     </ul>
     """, unsafe_allow_html=True)
 
     st.subheader("🎯 Combined Issue + Identity Priority Matrix")
-    st.caption("Every precinct scored across all 9 universes — 4 issue + 4 identity")
+    st.caption("Every precinct scored across all 8 universes — 4 issue + 4 identity")
 
     reg_dems = {20:870, 22:4038, 23:2978, 24:2756, 25:4068, 35:3479,
                 36:3962, 37:3336, 38:2718, 39:3911, 40:3322, 41:3337,
@@ -290,13 +349,6 @@ with tab4:
         }
     )
 
-    st.divider()
-    st.subheader("🗺️ Ward 1 Targeting Map")
-    st.caption("Precincts color-coded by targeting tier — Tier 1 (deep red) = highest priority")
-    import streamlit.components.v1 as components
-    with open("ward1_targeting_map.html", "r") as f:
-        targeting_html = f.read()
-    components.html(targeting_html, height=550, scrolling=False)
 
     st.divider()
     st.markdown("#### 📋 How Each Variable Is Measured")
@@ -314,65 +366,8 @@ with tab4:
 | **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
     """, unsafe_allow_html=True)
 
-    import streamlit.components.v1 as components
-    with open("ward1_heatmap.html", "r") as f:
-        html = f.read()
-    components.html(html, height=600, scrolling=False)
 
-    st.divider()
-    st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
-    precinct_ref = pd.DataFrame({
-        "Precinct": [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137],
-        "Neighborhood": ["LeDroit Park", "U Street", "Columbia Heights", "Adams Morgan", "Adams Morgan",
-                        "Adams Morgan", "Columbia Heights", "Pleasant Plains", "Park View",
-                        "Mt Pleasant/Col Hts", "Mount Pleasant", "Columbia Heights",
-                        "Columbia Heights", "Park View", "U Street"],
-        "Visual Markers": [
-            "Howard Playground, LeDroit Park",
-            "Lincoln Theater, Busboys & Poets",
-            "Malcolm X Park, Cardozo Campus",
-            "Madam's Organ, Marie Reed Rec",
-            "Washington Hilton, Kalorama Park",
-            "Columbia Rd Safeway, Lanier Hts",
-            "Columbia Hts Metro+Community Ctr",
-            "Howard University, 930 Club",
-            "Bruce Monroe Park, Midlands",
-            "Mt Pleasant bars, Co Hts Target",
-            "Argyle Market, Bancroft School",
-            "Park Rd Safeway, Thip Khao",
-            "Mi Casita Bakery/Deli, The Coupe",
-            "Afro Lounge, Looking Glass Lounge",
-            "Nellie's Sports Bar, All Souls",
-        ],
-        "Boundaries": [
-            "4th to 1st; Rhode Island to Michigan",
-            "16th to 9th; U->S 15th-14th->T->Vermont to Florida",
-            "16th to 11th; Florida to Euclid",
-            "18th to 16th; U to Euclid",
-            "Connecticut to 18th; Florida to Adams Mills",
-            "Rock Creek to 16th; Adams Mill->Euclid to Harvard",
-            "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
-            "11th to 4th; Florida to Columbia",
-            "11th to Park Place, Columbia to Park Road",
-            "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
-            "Rock Creek to 16th; Lamont to Piney Branch",
-            "16th to Holmead; Park to Spring",
-            "Holmead to New Hampshire; Park to Spring",
-            "New Hampshr to Park Plc; Park Rd to Rock Crk Church Rd",
-            "13th to Wiltberger Ave; S to T->Vermont->Florida",
-        ],
-        "Reg_Dems": [870, 4038, 2978, 2756, 4068, 3479, 3962, 3336, 2718, 3911, 3322, 3337, 1713, 1751, 1110],
-    })
-
-    st.dataframe(precinct_ref, use_container_width=True, hide_index=True,
-        column_config={
-            "Reg_Dems": st.column_config.ProgressColumn(
-                "Registered Dems", min_value=0, max_value=4500, format="%d"
-            ),
-            "Boundaries": st.column_config.TextColumn("Street Boundaries", width="large"),
-        }
-    )
-
+    st.markdown("#### 📂 Sortable Voting Precinct Data")
     underlying = pd.read_csv('ward1_underlying.csv')
     underlying['Homicides'] = underlying['Homicides'].fillna(0).astype(int)
 
