@@ -163,7 +163,7 @@ with tab3:
     econ_rows = [
         ["Tax Policy",
         "Targeted relief and incentives, stronger spending oversight",
-        "Top 1% and billionaires tax, professional athlete tax",
+        "Top 1% household incomes and billionaires tax, professional athlete tax",
         "Higher capital gains tax, stronger Business Activity Tax",
         "Higher inheritance tax, stronger Business Activity Tax",
         "Taxes to disincentivize empty lots, no sales tax increase"],
