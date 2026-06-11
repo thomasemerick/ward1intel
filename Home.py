@@ -162,7 +162,7 @@ with tab3:
     st.markdown("#### 🏘️ Economy & Housing")
     econ_rows = [
         ["Tax Policy",
-        "Targeted relief and incentives, stronger spending oversight",
+        "Targeted tax relief and incentives, stronger spending oversight",
         "Top 1% household incomes and billionaires tax, pro athlete tax",
         "Higher capital gains tax, stronger Business Activity Tax",
         "Higher inheritance tax, stronger Business Activity Tax",
