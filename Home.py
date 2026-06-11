@@ -45,6 +45,69 @@ with tab1:
 
     """)
 
+# ══════════════════════════════════════════════════════════
+# TAB 2 — RCV SIM
+# ══════════════════════════════════════════════════════════
+
+
+with tab2:
+    st.subheader("♻️ RCV Simulation")
+    st.caption("RCV Simulation by GGWash/PPP Ward 1 poll March 27-29 2026, n=232 likely Dem primary voters")
+
+    st.markdown("""
+    **Mind you, candidates have had more than two months since this poll was fielded to motivate and persuade voters. But it's the best we got.
+    """)
+
+
+    st.markdown("#### RCV Simulation Among Decided Voters")
+        # RCV Simulation
+    rcv_rounds = pd.DataFrame({
+        "Round": [
+            "Round 1 — All decided voters",
+            "Round 2 — After Lynch eliminated",
+            "Round 3 — After Reyes Yanes eliminated (projected)",
+            "Round 4 — Final: Brown vs Raj (projected)",
+        ],
+        "Raj %": [42, 43, 45, 51],
+        "Brown %": [25, 26, 29, 49],
+        "Trindade Deramo %": [16, 17, 20, 0],
+        "Reyes_Yanes %": [9, 10, 0, 0],
+        "Lynch %": [8, 0, 0, 0],
+        "Exhausted %": [0, 4, 6, 0],
+      
+    })
+
+    st.dataframe(rcv_rounds, use_container_width=True, hide_index=True,
+        column_config={
+            "Raj %": st.column_config.NumberColumn(format="%d%%"),
+            "Brown %": st.column_config.NumberColumn(format="%d%%"),
+            "Trindade Deramo %": st.column_config.NumberColumn(format="%d%%"),
+            "Reyes_Yanes %": st.column_config.NumberColumn("Reyes Yanes %", format="%d%%"),
+            "Lynch %": st.column_config.NumberColumn(format="%d%%"),
+            "Exhausted %": st.column_config.NumberColumn(format="%d%%"),
+        }
+    )
+
+    st.markdown("""
+    #### All likely voters (est.):
+    - 🔵 Raj: 18%
+    - 🟡 Brown: 13%  
+    - 🟢 Trindade Deramo: 7%
+    - 🟠 Reyes Yanes: 4%
+    - ⚪ Lynch: 3%
+    - ❓ Undecided: 55%
+    """)
+    st.markdown("""
+    #### All likely voters including undecideds (est.):
+    - 🔵 Raj: 18%
+    - 🟡 Brown: 13%  
+    - 🟢 Trindade Deramo: 7%
+    - 🟠 Reyes Yanes: 4%
+    - ⚪ Lynch: 3%
+    - ❓ Undecided: 55%
+    """)
+    
+
 
 # ══════════════════════════════════════════════════════════
 # TAB 3 — WAPO CANDIDATE SURVEY
