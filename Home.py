@@ -75,7 +75,7 @@ with tab1:
             "Afro Lounge, Looking Glass Lounge",
             "Nellie's Sports Bar, All Souls",
         ],
-        "Boundaries": [
+        "Street Boundaries (W to E; S to N)": [
             "4th to 1st; Rhode Island to Michigan",
             "16th to 9th; U>S detour 15th-14th>T>Vermont to Florida",
             "16th to 11th; Florida to Euclid",
@@ -84,7 +84,7 @@ with tab1:
             "Rock Creek to 16th; Adams Mill>Euclid to Harvard",
             "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
             "11th to 4th; Florida to Columbia",
-            "11th to Park Place, Columbia to Park Road",
+            "11th to Park Place; Columbia to Park Road",
             "RockCrk to 11th; Harv>Clmbia detour Irving 15th-14th to Lamont>Park",
             "Rock Creek to 16th; Lamont to Piney Branch",
             "16th to Holmead; Park to Spring",
