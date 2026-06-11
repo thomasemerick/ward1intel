@@ -77,7 +77,7 @@ with tab1:
         ],
         "Boundaries": [
             "4th to 1st; Rhode Island to Michigan",
-            "16th to 9th; U->S 15th-14th->T->Vermont to Florida",
+            "16th to 9th; U->S detour 15th-14th->T->Vermont to Florida",
             "16th to 11th; Florida to Euclid",
             "18th to 16th; U to Euclid",
             "Connecticut to 18th; Florida to Adams Mills",
@@ -85,7 +85,7 @@ with tab1:
             "16th to 11th; Euclid to Columbia detour Irving 15th-14th",
             "11th to 4th; Florida to Columbia",
             "11th to Park Place, Columbia to Park Road",
-            "RockCrk to 11th; Harv->Clmbia/Irv15-14 to Lamont->Park",
+            "RockCrk to 11th; Harv->Clmbia detour Irving 15th-14th to Lamont->Park",
             "Rock Creek to 16th; Lamont to Piney Branch",
             "16th to Holmead; Park to Spring",
             "Holmead to New Hampshire; Park to Spring",
