@@ -187,7 +187,7 @@ with tab3:
 
     st.divider()
 
-    st.markdown("#### 🚔 Public Safety")
+    st.markdown("#### 🚔 Crime & Public Safety")
     safety_rows = [
         ["Teen Curfew", "✅ Yes", "✅ Yes", "❌ No", "❌ No", "❌ No"],
         ["Curfew Detail",
@@ -208,15 +208,15 @@ with tab3:
 
     st.divider()
 
-    st.markdown("#### 🏫 Social Policy")
+    st.markdown("#### 🏫 Schools & Federal Control")
     social_rows = [
         ["Schools",
         "Stronger pipelines for local residents to enter education workforce",
         "Youth engagement after school hours through arts, sports, and clubs",
-        "Democratize by consolidating power within board of education",
+        "Consolidate power within the State Board of Education",
         "Increase teacher pay, decrease class sizes",
         "Leverage Dept of Health and Human Services to address truancy"],
-        ["Trump/Congress",
+        ["Trump/GOP",
         "Standing firm when necessary",
         "Forge alliances with DMV groups",
         "Take the fight nationwide",
