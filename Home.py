@@ -50,7 +50,7 @@ with tab1:
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
 
-   tooltip_style = """
+    tooltip_style = """
     <style>
     .leaflet-tooltip,
     .leaflet-tooltip.leaflet-tooltip-top,
