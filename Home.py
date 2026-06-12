@@ -49,7 +49,7 @@ with tab1:
     import streamlit.components.v1 as components
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
-    components.html(html, height=700, scrolling=False)
+    components.html(html, height=1000, scrolling=False)
 
     st.divider()
     st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
