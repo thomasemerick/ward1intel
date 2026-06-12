@@ -50,10 +50,8 @@ with tab1:
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
 
-    html = html.replace(
-        'font-size:11px;font-weight:bold;color:#333;text-shadow:1px 1px 2px white,-1px -1px 2px white',
-        'font-size:14px;font-weight:900;color:#1a56db;text-shadow:1px 1px 3px white,-1px -1px 3px white'
-    )
+    html = html.replace('font-size:11px', 'font-size:15px')
+    html = html.replace('color:#333', 'color:#1a56db')
 
     components.html(html, height=1000, scrolling=False)
 
