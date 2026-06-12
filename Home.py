@@ -44,11 +44,12 @@ with tab1:
     After all RCV rounds, Garcia lost by fewer than 8,000 votes. However, there are two additional minor candidates each polling close to 10% among decided voters in the recent PPP poll. Garcia leapfrogged Wiley to reach the final round by outperforming her on transfer votes from Andrew Yang ballots, but could have defeated Adams by doing a little better than at parity when it came to transfers from Scott Stringer or a couple other lower-finishing candidates.
 
     """)
-
+    st.divider()
+    st.markdown("#### 📍 Ward 1 Precinct Voter Heatmap")
     import streamlit.components.v1 as components
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
-    components.html(html, height=600, scrolling=False)
+    components.html(html, height=700, scrolling=False)
 
     st.divider()
     st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
