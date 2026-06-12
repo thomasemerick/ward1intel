@@ -52,25 +52,23 @@ with tab1:
 
     tooltip_style = """
     <style>
-    .leaflet-tooltip,
-    .leaflet-tooltip.leaflet-tooltip-top,
-    .leaflet-tooltip.leaflet-tooltip-bottom,
-    .leaflet-tooltip.leaflet-tooltip-left,
-    .leaflet-tooltip.leaflet-tooltip-right {
-        background: white !important;
+    .leaflet-tooltip {
         background-color: white !important;
-        opacity: 1 !important;
-        border: 2px solid #444 !important;
+        border: 2px solid #555 !important;
         border-radius: 5px !important;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.4) !important;
-        font-size: 13px !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.35) !important;
         padding: 8px 12px !important;
+        opacity: 1 !important;
         color: #111 !important;
+        font-size: 13px !important;
+    }
+    .leaflet-tooltip::before {
+        border-top-color: #555 !important;
     }
     </style>
     """
 
-    html = html.replace("</head>", tooltip_style + "</head>")
+    html = html.replace("</body>", tooltip_style + "</body>")
     components.html(html, height=1000, scrolling=False)
 
     st.divider()
