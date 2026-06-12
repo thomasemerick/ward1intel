@@ -50,25 +50,12 @@ with tab1:
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
 
-    tooltip_style = """
-    <style>
-    .leaflet-tooltip {
-        background-color: white !important;
-        border: 2px solid #555 !important;
-        border-radius: 5px !important;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.35) !important;
-        padding: 8px 12px !important;
-        opacity: 1 !important;
-        color: #111 !important;
-        font-size: 13px !important;
-    }
-    .leaflet-tooltip::before {
-        border-top-color: #555 !important;
-    }
-    </style>
-    """
+    # Make precinct labels bigger and bolder with a background pill
+    html = html.replace(
+        'font-size:11px;font-weight:bold;color:#333;text-shadow:1px 1px 2px white,-1px -1px 2px white',
+        'font-size:13px;font-weight:900;color:#111;background:rgba(255,255,255,0.85);padding:2px 5px;border-radius:3px;text-shadow:none'
+    )
 
-    html = html.replace("</body>", tooltip_style + "</body>")
     components.html(html, height=1000, scrolling=False)
 
     st.divider()
