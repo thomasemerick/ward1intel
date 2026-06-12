@@ -49,6 +49,22 @@ with tab1:
     import streamlit.components.v1 as components
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
+
+    tooltip_style = """
+    <style>
+    .leaflet-tooltip {
+        background-color: rgba(255, 255, 255, 0.97) !important;
+        border: 1px solid #888 !important;
+        border-radius: 5px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+        font-size: 13px !important;
+        padding: 6px 10px !important;
+        color: #111 !important;
+    }
+    </style>
+    """
+
+    html = html.replace("</head>", tooltip_style + "</head>")
     components.html(html, height=1000, scrolling=False)
 
     st.divider()
