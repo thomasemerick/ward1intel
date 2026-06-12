@@ -50,10 +50,9 @@ with tab1:
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
 
-    # Make precinct labels bigger and bolder with a background pill
     html = html.replace(
         'font-size:11px;font-weight:bold;color:#333;text-shadow:1px 1px 2px white,-1px -1px 2px white',
-        'font-size:13px;font-weight:900;color:#111;background:rgba(255,255,255,0.85);padding:2px 5px;border-radius:3px;text-shadow:none'
+        'font-size:14px;font-weight:900;color:#1a56db;text-shadow:1px 1px 3px white,-1px -1px 3px white'
     )
 
     components.html(html, height=1000, scrolling=False)
