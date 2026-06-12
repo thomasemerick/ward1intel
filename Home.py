@@ -51,7 +51,6 @@ with tab1:
         html = f.read()
 
     html = html.replace('font-size:11px', 'font-size:15px')
-    html = html.replace('color:#333', 'color:#1a56db')
 
     components.html(html, height=1000, scrolling=False)
 
