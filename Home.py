@@ -50,15 +50,21 @@ with tab1:
     with open("ward1_heatmap.html", "r") as f:
         html = f.read()
 
-    tooltip_style = """
+   tooltip_style = """
     <style>
-    .leaflet-tooltip {
-        background-color: rgba(255, 255, 255, 0.97) !important;
-        border: 1px solid #888 !important;
+    .leaflet-tooltip,
+    .leaflet-tooltip.leaflet-tooltip-top,
+    .leaflet-tooltip.leaflet-tooltip-bottom,
+    .leaflet-tooltip.leaflet-tooltip-left,
+    .leaflet-tooltip.leaflet-tooltip-right {
+        background: white !important;
+        background-color: white !important;
+        opacity: 1 !important;
+        border: 2px solid #444 !important;
         border-radius: 5px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.4) !important;
         font-size: 13px !important;
-        padding: 6px 10px !important;
+        padding: 8px 12px !important;
         color: #111 !important;
     }
     </style>
