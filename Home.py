@@ -52,7 +52,7 @@ with tab1:
 
     html = html.replace('font-size:11px', 'font-size:15px')
 
-    components.html(html, height=6000, scrolling=False)
+    components.html(html, height=600, scrolling=False)
 
     st.divider()
     st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
