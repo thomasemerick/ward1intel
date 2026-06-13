@@ -52,7 +52,7 @@ with tab1:
 
     html = html.replace('font-size:11px', 'font-size:15px')
 
-    components.html(html, height=1000, scrolling=False)
+    components.html(html, height=6000, scrolling=False)
 
     st.divider()
     st.markdown("#### 📍 Ward 1 Precinct Quick Reference")
@@ -258,111 +258,11 @@ with tab3:
     st.markdown(candidate_table(social_rows, candidates), unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════
-# TAB 4 — TARGETING MODEL
+# TAB 4 — Underlying Tables
 # ══════════════════════════════════════════════════════════
 with tab4:
-    st.subheader("🎯 Ward 1 Targeting Model")
-    st.markdown("""
-    **This is a data-driven canvassing model to inform which precincts to prioritize for each variable.**
-
-    Every precinct scored across eight validated universes and is sourced from DC DLCP business licenses, MPD crime data, DCBOE 2022/2024 election results, 2020/2023 Census, and PPP/GGWash poll crosstabs.
-    Your mileage may vary on which issue is worth prioritizing, but this attempts to put in context how much these issues could be on mind in each precinct and neighborhood relative to others.
-
-    **The three numbers that matter:**
-    """)
-    st.markdown("""
-    <ul>
-    <li>🔴 Red dot = high priority universe for that precinct</li>
-    <li>🟡 Yellow dot = medium priority</li>
-    <li><span style="display:inline-block;width:20px;height:10px;background:#e74c3c;border-radius:3px;vertical-align:middle;margin-right:6px"></span> Registered Dems = number registered Democrats in the voting precinct</li>
-    </ul>
-    """, unsafe_allow_html=True)
-
-    st.subheader("🎯 Combined Issue + Identity Priority Matrix")
-    st.caption("Every precinct scored across all 8 universes — 4 issue + 4 identity")
-
-    reg_dems = {20:870, 22:4038, 23:2978, 24:2756, 25:4068, 35:3479,
-                36:3962, 37:3336, 38:2718, 39:3911, 40:3322, 41:3337,
-                42:1713, 43:1751, 137:1110}
-    untapped = {40:2310, 41:2563, 39:2873, 35:2458, 36:3080, 23:2355,
-                37:2698, 38:2085, 43:1343, 22:2964, 42:1246, 25:2804,
-                24:1920, 20:671, 137:890}
-
-    scored = pd.read_csv('ward1_scored.csv')
-    scored['Reg_Dems'] = scored['Precinct'].map(reg_dems)
-    scored['Untapped'] = scored['Precinct'].map(untapped)
-
-    dot_cols = ['Crime_Dot','Business_Dot','Schools_Dot',
-                'Anti_Nadeau_Dot','Hispanic_Dot','White_46plus_Dot',
-                'Not_Leftist_Dot','Minrty_NoAlign_Dot']
-    for c in dot_cols:
-        scored[c + '_num'] = scored[c].map({'🔴': 1, '🟡': 0})
-    scored['Red_Count'] = scored[[c + '_num' for c in dot_cols]].sum(axis=1)
-
-    for col in ['Reg_Dems', 'Untapped']:
-        mn, mx = scored[col].min(), scored[col].max()
-        scored[col + '_norm'] = ((scored[col] - mn) / (mx - mn) * 10).round(2)
-
-    scored['Final_Score'] = (
-        scored['Red_Count']     * 0.60 +
-        scored['Reg_Dems_norm'] * 0.35 +
-        scored['Untapped_norm'] * 0.05
-    ).round(3)
-
-    scored = scored.sort_values('Final_Score', ascending=False).reset_index(drop=True)
-
-    def medal(i):
-        if i < 3: return f"🥇 #{i+1}"
-        elif i < 7: return f"🥈 #{i+1}"
-        elif i < 11: return f"🥉 #{i+1}"
-        else: return f"  #{i+1}"
-
-    display_cols = ['Precinct','Neighborhood','Crime_Dot','Business_Dot',
-                    'Schools_Dot','Anti_Nadeau_Dot','Hispanic_Dot',
-                    'White_46plus_Dot','Not_Leftist_Dot','Minrty_NoAlign_Dot',
-                    'Reg_Dems']
-
-    combined = scored[display_cols].rename(columns={
-        'Crime_Dot': 'Crime',
-        'Business_Dot': 'Business',
-        'Schools_Dot': 'Schools',
-        'Anti_Nadeau_Dot': 'Anti_Nadeau',
-        'Hispanic_Dot': 'Hispanic',
-        'White_46plus_Dot': 'White_46+',
-        'Not_Leftist_Dot': 'Not_Leftist',
-        'Minrty_NoAlign_Dot': 'Minrty_NoAlign',
-        'Reg_Dems': 'Registered Dems',
-    })
-
-    st.dataframe(
-        combined,
-        use_container_width=True,
-        hide_index=True,
-        column_config={
-            "Registered Dems": st.column_config.ProgressColumn(
-                "Registered Dems", min_value=0, max_value=4500, format="%d"
-            ),
-        }
-    )
-
-
-    st.divider()
-    st.markdown("#### 📋 How Each Variable Is Measured")
-    st.markdown("""
-| Variable | Source | What Makes a Precinct 🔴 |
-|---|---|---|
-| **Crime** | MPD incident data 2020–2026 | Top 5 precincts by weighted crime density (homicide x2, all others x1) |
-| **Business** | DC DLCP business licenses started Jan 1 2015-June 1 2026 | 200+ closures or more than .06 closures per registered Democrat |
-| **Schools** | Census B09001 (2023 ACS) | Under-18 population in top tier by precinct |
-| **Anti_Nadeau** | 2022 DCBOE primary results | High non-Nadeau vote rate, weighted: Czapary x2, Harris x1 |
-| **Hispanic** | Census B03003 (2023 ACS) | Hispanic/Latino population ≥ 22% |
-| **White_46+** | Census B01001A (2023 ACS) | White population 45+ in top tier by precinct |
-| **Not_Leftist** | Census composite (2023 ACS) | Low postgrad (30%) + high Black (20%) + high Hispanic (20%) + high Asian (10%) + high Anti-Nadeau rate (20%) |
-| **Minrty_NoAlign** | Census B03002 (2023 ACS) | Hispanic + Asian + Other non-white non-Black population in top tier |
-| **Registered Dems** | DCBOE 2024 precinct file | Total registered Democrats — used to weight final priority score |
-    """, unsafe_allow_html=True)
-
-    st.divider()
+    st.subheader("🎯 Precinct Data")
+    
 
     st.markdown("#### 📂 Sortable Voting Precinct Data")
     underlying = pd.read_csv('ward1_underlying.csv')
