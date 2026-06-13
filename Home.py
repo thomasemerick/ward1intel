@@ -19,7 +19,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "🗺️ Overview",
     "♻️ RCV Sim",
     "📋 Issue Survey",
-    "🎯 Targeting Model",
+    "🎯 Precinct Data",
 ])
 
 
