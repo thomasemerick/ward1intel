@@ -115,8 +115,8 @@ with tab1:
     with open("ward1_2022_heatmap.html", "r") as f:
         html_2022 = f.read()
     html_2022 = html_2022.replace('font-size:11px', 'font-size:15px')
-    components.html(html_2022, height=600, scrolling=False)
-
+    components.html(html_2022, height=900, scrolling=False)
+    st.caption("Brianne Nadeau 49%, Salah Czapary 31%, and Sabel Harris at 20% despite no precinct plurality wins.")
 # ══════════════════════════════════════════════════════════
 # TAB 2 — RCV SIM
 # ══════════════════════════════════════════════════════════
