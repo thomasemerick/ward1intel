@@ -108,6 +108,15 @@ with tab1:
         }
     )
 
+
+    st.divider()
+    st.markdown("#### 🗳️ 2022 Winner by Voting Precinct")
+    st.caption("2022 Ward 1 Council Democratic Primary — Nadeau vs Czapary vs Harris")
+    with open("ward1_2022_heatmap.html", "r") as f:
+        html_2022 = f.read()
+    html_2022 = html_2022.replace('font-size:11px', 'font-size:15px')
+    components.html(html_2022, height=600, scrolling=False)
+
 # ══════════════════════════════════════════════════════════
 # TAB 2 — RCV SIM
 # ══════════════════════════════════════════════════════════
