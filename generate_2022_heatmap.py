@@ -57,14 +57,15 @@ max_winner_votes = max(
 
 def get_color(p):
     r = RESULTS_2022[p]
-    win_votes = max(r["czapary"], r["nadeau"])
-    t = win_votes / max_winner_votes
+    sorted_votes = sorted([r["czapary"], r["nadeau"], r["harris"]], reverse=True)
+    margin = (sorted_votes[0] - sorted_votes[1]) / r["total"]
+    t_scaled = min(margin * 4, 1.0)  # amplify so small margins still show contrast
     if r["czapary"] > r["nadeau"]:
         greens = ["#c8e6c9", "#a5d6a7", "#66bb6a", "#388e3c", "#1b5e20"]
-        return greens[min(int(t * len(greens)), len(greens)-1)]
+        return greens[min(int(t_scaled * len(greens)), len(greens)-1)]
     else:
         yellows = ["#fff9c4", "#fff176", "#f9a825", "#ef6c00", "#e65100"]
-        return yellows[min(int(t * len(yellows)), len(yellows)-1)]
+        return yellows[min(int(t_scaled * len(yellows)), len(yellows)-1)]
 
 m = folium.Map(location=[38.928, -77.032], zoom_start=14, tiles="CartoDB positron")
 
@@ -97,8 +98,8 @@ for p, geojson in precinct_geojsons.items():
 
 legend_html = """<div style="position:fixed;bottom:30px;left:30px;z-index:9999;background:white;padding:12px 16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.25);font-family:sans-serif;font-size:12px;line-height:1.8">
     <b style="font-size:13px">2022 Ward 1 Council Primary</b><br>
-    <span style="color:#1b5e20;font-size:16px">■</span> Czapary won (darker = more votes)<br>
-    <span style="color:#e65100;font-size:16px">■</span> Nadeau won (darker = more votes)
+    <span style="color:#1b5e20;font-size:16px">■</span> Czapary won (darker = bigger margin over Nadeau)<br>
+    <span style="color:#e65100;font-size:16px">■</span> Nadeau won (darker = bigger margin over Czapary)
 </div>"""
 m.get_root().html.add_child(folium.Element(legend_html))
 m.save("ward1_2022_heatmap.html")
