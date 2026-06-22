@@ -13,7 +13,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("🗳️ DC Ward 1 Democratic Primary Intel")
-st.caption("Data and reporting on the June 16 primary and aftermath | By Thomas Emerick")
+st.caption("Data and tools for the June 16 primary | By Thomas Emerick")
 
 tab1, tab2, tab3, tab4 = st.tabs([
     "🗺️ Overview",
