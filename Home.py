@@ -334,7 +334,7 @@ with tab4:
                          "Adams Morgan","Columbia Heights","Pleasant Plains","Park View",
                          "Mt Pleasant/Col Hts","Mount Pleasant","Columbia Heights",
                          "Columbia Heights","Park View","U Street"],
-        "Reg_Dems":     ["🟡","🔴","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+        "Reg_Dems": [870,4038,2978,2756,4068,3479,3962,3336,2718,3911,3322,3337,1713,1751,1110],
         "Crime":        ["🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴"],
         "Business":     ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🔴","🟡","🟡"],
         "Schools":      ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡"],
@@ -351,14 +351,19 @@ with tab4:
         "Homeowner":    ["🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🔴","🔴","🟡"],
     })
 
-    st.dataframe(combined, use_container_width=True, hide_index=True)
+    st.dataframe(combined, use_container_width=True, hide_index=True,
+        column_config={
+            "Reg_Dems": st.column_config.ProgressColumn(
+                "Reg. Dems", min_value=0, max_value=4500, format="%d"
+            ),
+        }
+    )
 
     st.divider()
     st.markdown("#### 📋 How Each Variable Is Measured")
     st.markdown("""
 | Variable | Source | What Makes a Precinct 🔴 |
 |---|---|---|
-| **Reg_Dems** | DCBOE 2024 precinct file | Top 4 precincts by registered Democrats (≥ 3,911) |
 | **Crime** | MPD incident data 2020–2026 | Top 5 precincts by weighted crime density (homicide ×2) |
 | **Business** | DC DLCP business licenses | Top 4 precincts by closures among businesses opened since 2015 |
 | **Schools** | Census B09001 (2023 ACS) | Top 4 precincts by under-18 population (≥ 16.8%) |
