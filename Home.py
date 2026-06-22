@@ -316,8 +316,8 @@ with tab4:
     DC business license records, and 2022 primary results.
 
     Red dots indicate precincts where the underlying data suggests that issue 
-    carries particular weight. Campaign mileage may vary — this is a starting point 
-    for any candidate or organizer, not a prescription.
+    carries particular weight. Campaign mileage may vary as this is a starting point 
+    for any candidate or organizer.
 
     - 🔴 High salience — data suggests this issue is especially relevant here
     - 🟡 Moderate or mixed signal
