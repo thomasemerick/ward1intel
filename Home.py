@@ -326,7 +326,7 @@ with tab4:
     """)
 
     st.subheader("🗺️ Precinct Identity & Issue Salience Matrix")
-    st.caption("15 Ward 1 precincts scored across 15 issue and identity variables using public data sources")
+    st.caption("Ward 1 precincts scored across 14 issue and identity variables using public data sources, along with the number of registered Democratic voters in each precinct for context. Red = top tier among Ward 1 voting precincts.")
 
     combined = pd.DataFrame({
         "Precinct":     [20,   22,   23,   24,   25,   35,   36,   37,   38,   39,   40,   41,   42,   43,   137],
