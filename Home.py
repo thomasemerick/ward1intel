@@ -311,7 +311,7 @@ with tab4:
     st.markdown("""
     ## 🎯 Ward 1 Precinct Issue Salience Model
 
-    A data-driven map of which issues are likely to resonate in each Ward 1 precinct — 
+    A data-driven map of which issues are likely to resonate in each Ward 1 precinct. It's 
     built from 2024 DCBOE turnout data, Census demographics, MPD crime data, 
     DC business license records, and 2022 primary results.
 
