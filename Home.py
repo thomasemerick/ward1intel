@@ -308,60 +308,70 @@ with tab4:
     )
     st.caption("Sources: MPD (2020–2026), DC DLCP business licenses (opened 2015+, now closed), DCBOE 2022 primary, Census ACS 2023, Census DHC 2020")
 
+    st.divider()
+
     st.markdown("""
-    ## 🎯 Ward 1 Precinct Issue Salience Model
+    ## 🎯 Precinct Identity & Issue Salience Matrix
 
-    A data-driven map of which issues are likely to resonate in each Ward 1 precinct. It's 
-    built from 2024 DCBOE turnout data, Census demographics, MPD crime data, 
-    DC business license records, and 2022 primary results.
+    A data-driven map of which issues and demographic identities are likely to resonate 
+    in each Ward 1 precinct — built from 2024 DCBOE registration data, Census demographics, 
+    MPD crime data, DC business license records, and 2022 primary results.
 
-    Red dots indicate precincts where the underlying data suggests that issue 
-    carries particular weight. Campaign mileage may vary as this is a starting point 
-    for any candidate or organizer.
+    🔴 indicates precincts where the underlying data suggests that variable carries 
+    particular weight. Campaign mileage may vary — this is a starting point for any 
+    candidate or organizer, not a prescription.
 
-    - 🔴 High salience — data suggests this issue is especially relevant here
+    - 🔴 High salience — data suggests this variable is especially relevant here
     - 🟡 Moderate or mixed signal
-    - **Untapped Voters** = registered Dems who didn't vote in 2024
     """)
 
-    st.subheader("🗺️ Precinct Issue Salience Matrix")
-    st.caption("15 Ward 1 precincts scored across 10 issue and identity variables using public data sources")
+    st.subheader("🗺️ Precinct Identity & Issue Salience Matrix")
+    st.caption("15 Ward 1 precincts scored across 15 issue and identity variables using public data sources")
 
     combined = pd.DataFrame({
-        "Precinct": [40, 41, 39, 35, 36, 23, 37, 38, 43, 22, 42, 25, 24, 20, 137],
-        "Neighborhood": [
-            "Mount Pleasant", "Columbia Heights", "Mount Pleasant", "Adams Morgan", "Columbia Heights",
-            "Columbia Heights", "Pleasant Plains", "Park View", "Park View", "U Street",
-            "Columbia Heights", "Adams Morgan", "Adams Morgan", "LeDroit Park", "U Street"
-        ],
-        "Crime": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡"],
-        "Business": ["🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡"],
-        "Schools": ["🟡","🟡","🟡","🔴","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "LGBTQ": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-        "Anti_Nadeau": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🔴","🟡"],
-        "Hispanic": ["🟡","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡"],
-        "LGBTQ_Id": ["🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡"],
-        "White_46+": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "Moderate": ["🔴","🟡","🔴","🔴","🔴","🟡","🔴","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
-        "White_NonLeft": ["🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡"],
-        "Untapped_Voters": [2310, 2563, 2873, 2458, 3080, 2355, 2698, 2085, 1343, 2964, 1246, 2804, 1920, 671, 890],
+        "Precinct":     [20,   22,   23,   24,   25,   35,   36,   37,   38,   39,   40,   41,   42,   43,   137],
+        "Neighborhood": ["LeDroit Park","U Street","Columbia Heights","Adams Morgan","Adams Morgan",
+                         "Adams Morgan","Columbia Heights","Pleasant Plains","Park View",
+                         "Mt Pleasant/Col Hts","Mount Pleasant","Columbia Heights",
+                         "Columbia Heights","Park View","U Street"],
+        "Reg_Dems":     ["🟡","🔴","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+        "Crime":        ["🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴"],
+        "Business":     ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🔴","🔴","🟡","🟡"],
+        "Schools":      ["🟡","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🔴","🔴","🟡","🟡"],
+        "Anti_Nadeau":  ["🟡","🔴","🟡","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡"],
+        "Hispanic":     ["🟡","🟡","🔴","🟡","🔴","🟡","🟡","🔴","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+        "Black":        ["🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🔴","🔴"],
+        "White":        ["🟡","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡"],
+        "Asian":        ["🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+        "Asian_Other":  ["🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡"],
+        "Czapary_22":   ["🟡","🔴","🟡","🔴","🔴","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡","🟡"],
+        "Harris_22":    ["🟡","🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🟡"],
+        "Postgrad":     ["🟡","🟡","🟡","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡"],
+        "Left_Score":   ["🟡","🟡","🔴","🔴","🔴","🔴","🟡","🟡","🟡","🟡","🔴","🟡","🟡","🟡","🟡"],
+        "Homeowner":    ["🔴","🟡","🟡","🟡","🟡","🟡","🟡","🔴","🔴","🟡","🟡","🟡","🔴","🔴","🟡"],
     })
 
-    st.dataframe(combined, use_container_width=True)
+    st.dataframe(combined, use_container_width=True, hide_index=True)
 
     st.divider()
     st.markdown("#### 📋 How Each Variable Is Measured")
     st.markdown("""
-    | Variable | Source | What Makes a Precinct 🔴 |
-    |---|---|---|
-    | **Crime** | MPD incident data 2020–2026 | Top precincts by weighted crime density (homicide x2, all others x1) |
-    | **Business** | DC DLCP business licenses | High closure rate among businesses opened since 2015 |
-    | **Schools** | Census B09001 (2023 ACS) | Above-average under-18 population |
-    | **LGBTQ** | Venue geography + residential research | Known LGBTQ venue concentration and residential density |
-    | **Anti_Nadeau** | 2022 DCBOE primary results | High non-Nadeau vote share (Czapary x2 weight, Harris x1) |
-    | **Hispanic** | Census B03003 (2023 ACS) | Hispanic/Latino population ≥ 22% |
-    | **LGBTQ_Id** | Census same-sex household data | Same-sex household density |
-    | **White_46+** | Census B01001A (2023 ACS) | Above-average white population 45+ |
-    | **Moderate** | Census composite | Low postgrad + high Anti-Nadeau vote
-                
-    """)
+| Variable | Source | What Makes a Precinct 🔴 |
+|---|---|---|
+| **Reg_Dems** | DCBOE 2024 precinct file | Top 4 precincts by registered Democrats (≥ 3,911) |
+| **Crime** | MPD incident data 2020–2026 | Top 5 precincts by weighted crime density (homicide ×2) |
+| **Business** | DC DLCP business licenses | Top 4 precincts by closures among businesses opened since 2015 |
+| **Schools** | Census B09001 (2023 ACS) | Top 4 precincts by under-18 population (≥ 16.8%) |
+| **Anti_Nadeau** | 2022 DCBOE primary results | Top 3 precincts by non-Nadeau vote share (Czapary ×2, Harris ×1) |
+| **Hispanic** | Census B03003 (2023 ACS) | Top 4 precincts by Hispanic/Latino population (≥ 16.8%) |
+| **Black** | Census B03002 (2023 ACS) | Top 5 precincts by Black population (≥ 31.7%) |
+| **White** | Census B03002 (2023 ACS) | Top 4 precincts by White population (≥ 53.1%) |
+| **Asian** | Census B02001 (2023 ACS) | Top 3 precincts by Asian population (≥ 7.3%) |
+| **Asian_Other** | Census B02001 (2023 ACS) | Top 4 precincts by Asian + Other non-white population (≥ 13.6%) |
+| **Czapary_22** | 2022 DCBOE primary results | Top 4 precincts by raw Czapary vote count (≥ 397) |
+| **Harris_22** | 2022 DCBOE primary results | Top 5 precincts by raw Harris vote count (≥ 303) |
+| **Postgrad** | Census B15003 (2023 ACS) | Top 4 precincts by postgraduate degree holders (≥ 38.2%) |
+| **Left_Score** | Inverted Not_Leftist composite | Top 5 precincts by left-leaning composite score (≥ 6.2) |
+| **Homeowner** | Census B25003 (2023 ACS) | Top 5 precincts by homeownership rate (≥ 40.9%) |
+    """, unsafe_allow_html=True)
+    st.caption("All thresholds derived from Ward 1 precinct distributions. Red = top tier within Ward 1 only.")
