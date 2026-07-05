@@ -37,15 +37,15 @@ merged = gdf.merge(precincts_data, on="Precinct").reset_index(drop=True)
 
 colormap = cm.LinearColormap(
     colors=['#fff5f0', '#fc8a6b', '#de2d26', '#67000d'],
-    vmin=merged["Untapped"].min(),
-    vmax=merged["Untapped"].max(),
-    caption="Untapped Registered Democrats (didn't vote in 2024 primary)"
+    vmin=merged["Registered_Dems"].min(),
+    vmax=merged["Registered_Dems"].max(),
+    caption="Total Registered Democrats"
 )
 
 m = folium.Map(location=[38.930, -77.032], zoom_start=14, tiles="CartoDB positron")
 
 for _, row in merged.iterrows():
-    color = colormap(row["Untapped"])
+    color = colormap(row["Registered_Dems"])
     tooltip_html = f"""
     <b style="font-size:14px">Precinct {row['Precinct']} — {row['Neighborhood']}</b><br>
     🎯 Untapped Voters: <b>{row['Untapped']:,}</b><br>
