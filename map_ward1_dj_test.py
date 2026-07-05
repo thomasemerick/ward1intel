@@ -30,9 +30,13 @@ precincts_data = pd.DataFrame({
 precincts_data["Untapped"] = precincts_data["Registered_Dems"] - precincts_data["Votes_Cast_2024"]
 precincts_data["Turnout_pct"] = (precincts_data["Votes_Cast_2024"] / precincts_data["Registered_Dems"] * 100).round(1)
 
-gdf = gpd.read_file("/Users/blaw/ward1intel/districtjosh_precincts.geojson")
+gdf = gpd.read_file("/Users/blaw/ward1intel/precincts.geojson")
 gdf = gdf[gdf["ward"] == "1"].copy()
 gdf["Precinct"] = gdf["precinct"].astype(int)
+gdf = gdf.set_crs(epsg=4326)
+gdf["Precinct"] = gdf["NAME"].str.extract(r"(\d+)").astype(int)
+ward1_precincts = [20, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 43, 137]
+gdf = gdf[gdf["Precinct"].isin(ward1_precincts)].reset_index(drop=True)
 merged = gdf.merge(precincts_data, on="Precinct").reset_index(drop=True)
 
 colormap = cm.LinearColormap(
