@@ -52,9 +52,9 @@ for _, row in merged.iterrows():
     color = colormap(row["Untapped"])
     tooltip_html = f"""
     <b style="font-size:14px">Precinct {row['Precinct']} — {row['Neighborhood']}</b><br>
-    🎯 Untapped Voters: <b>{row['Untapped']:,}</b><br>
+    📋 Registered Dems: <b>{row['Registered_Dems']:,}</b><br>
     📊 2024 Turnout: {row['Turnout_pct']}%<br>
-    📋 Registered Dems: {row['Registered_Dems']:,}
+    🎯 Untapped Voters: {row['Untapped']:,}
     """
     folium.GeoJson(
         row["geometry"].__geo_interface__,
